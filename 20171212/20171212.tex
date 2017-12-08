@@ -26,7 +26,10 @@
 			isbn = false, doi = false,
 			backend=biber]{biblatex}
 \addbibresource{20171212.bib}
-\AtEveryCitekey{\clearfield{title}\clearfield{issn}}
+\AtEveryCitekey{
+	\clearfield{title}\clearfield{issn}
+	\clearfield{month}\clearfield{url}
+}
 
 %% Falls Anzeige der \sections, \subsections etc. gewuenscht, kann zB.
 %% das infolines theme geladen werden. Wichtig ist jedoch, dass andere
@@ -184,7 +187,8 @@ Klein--Gordon eq., respectively.
 {$p_\beta \neq 0$}
 \begin{itemize}
 \item Since $\beta$ is cyclic in \cref{eq:lagrangian-decoupled},
-the trsfed.\ 2nd Friedmann eq.\ can be integrated\footfullcite{Lan2016}
+the trsfed.\ 2nd Friedmann eq.\ can be integrated%
+\footfullcite{Lan2016,Andrianov2015}
 \begin{align}
 \text{const.} \equiv p_\beta \coloneqq \frpa{L}{\dot{\beta}} &=
 -6\mscrs\varkappa^{1/2}\frac{\dot{\beta}}{\overline{N}}
@@ -292,7 +296,7 @@ H_\perp &= -\mscrs\frac{p_\beta^2}{12\varkappa^{1/2}}
 +\varkappa^{3/2}V\ee^{g\mscrs_\chi\chi}.
 \end{align}
 \item
-Applying the Dirac quantisation rules with the Laplace--Beltrami opeator, one 
+Applying the Dirac quantisation rules with Laplace--Beltrami opeator, one 
 gets the mss.\ Wheeler--DeWitt eq.\ with $\rbr{\beta,\chi}$
 %$\widehat{H}_\perp \rfun{\Psi}{\beta,\chi} = 0$,
 \begin{align}
@@ -319,8 +323,20 @@ gets the mss.\ Wheeler--DeWitt eq.\ with $\rbr{\beta,\chi}$
 \item
 Inserting %the separating Ansatz
 $\rfun{\Psi}{\beta,\chi} = \ee^{-\ii k_\beta\mscrs_\beta\beta} 
-\rfun{\psi}{\chi}$, the remaining
-eq. $\BbbD\psi=\nu^2\psi$ turns out to be Besselian, and the mode functions are
+\rfun{\psi}{\chi}$, the separated eq.\
+\begin{align}
+% \ee^{-\ii k_\beta\mscrs_\beta\beta}\rbr{
+% -\mscrl\mscrs\frac{\hslash^2}{2\varkappa^{3/2}}\rfun{\psi''}{\chi}
+% -\mscrs\frac{\hslash^2k_\beta^2}{12\varkappa^{1/2}}\rfun{\psi}{\chi}
+% +\varkappa^{3/2}V\ee^{g\mscrs_\chi\chi}\rfun{\psi}{\chi}
+% } = 0,
+\BbbD \rfun{\psi}{\chi} = k_\beta^2 \rfun{\psi}{\chi},\qquad
+\BbbD \coloneqq
+-\mscrl \frac{6}{\varkappa} \partial_\chi^2
++ \mscrs\mscrv \frac{12\varkappa^2\vbr{V}}{\hslash^2},
+\label{eq:separated-10}
+\end{align}
+turns out to be Besselian, and the mode functions are
 \begin{align}
 \rfun{\Psi_\nu}{\beta, \chi} \coloneqq
 \ee^{-\ii \nu \gamma} \rfun{\psi_\nu}{\chi} \coloneqq
@@ -329,8 +345,8 @@ eq. $\BbbD\psi=\nu^2\psi$ turns out to be Besselian, and the mode functions are
 \end{align}
 in which
 \begin{align}
-\nu \coloneqq \sqrt{\frac{2\varkappa}{3}}\frac{k_\beta}{g},\quad
-\gamma \coloneqq \sqrt{\frac{3}{2\varkappa}}g\beta,\quad
+\nu \coloneqq \sqrt{\frac{2\varkappa}{3}}\frac{1}{g}\,k_\beta,\quad
+\gamma \coloneqq \sqrt{\frac{3}{2\varkappa}}\frac{g}{1}\,\beta,\qquad
 \sigma^2 \coloneqq 
 \frac{8\varkappa^3\vbr{V}\ee^{g\mscrs_\chi\chi}}{\hslash^2 g^2},\\
 \label{eq:trsf-quantum-sigma}
@@ -458,16 +474,18 @@ $\dot{\rho}_\text{S} + \nabla\cdot \vec{j}_\text{S} = 0$, because
 \cref{eq:WDW-10} is KG-like.
 \item $\mathrm{K}_{\ii\nu}$%
 \footfullcite{Yakubovich2006,Passian2009,Szmytkowski2010} for $\rbr{+,+}$, 
-$\mathrm{F}_{\ii\nu}$ and $\mathrm{G}_{\ii\nu}$ (not $\mathrm{J}_{\ii\nu}$!) 
-for $+,-$ can be proved to be orthogonal and complete individually, as well 
-as normalised.
+$\mathrm{F}_{\ii\nu}$ and $\mathrm{G}_{\ii\nu}$ for $\rbr{+,-}$ can be proved to 
+be orthogonal and complete individually, as well as can be normalised.
+\begin{itemize}
+\item $\mathrm{J}_{\ii\nu}$'s for $\rbr{+,-}$ are not orthogonal
+\end{itemize}
+
 \end{itemize}
 \end{frame}
 
 \begin{frame}%
 {Peculiarity for the phantom model}%
-{Orthonormality and completeness for mode functions; self-adjointness for 
-operators}
+{Orthogonality for mode functions; Hermiticity for operators}
 \begin{itemize}
 % \item Imposing self-adjointness for $\widehat{p}_\chi = -\ii\hslash
 % \partial_\chi$, one finds that $\mathrm{J}_{-\vbr{\nu}}$ leads to
@@ -479,16 +497,35 @@ operators}
 % \rbr{\frac{1}{\rfun{\mupGamma}{\nu+1}} + \rfun{\Omicron}{z^2}}.
 % \end{align}
 
-\item $\cbr{\rfun{\mathrm{J}_{\nu}}{\sigma}}$'s are not orthogonal
+\item $\rfun{\mathrm{J}_{\nu}}{\sigma}$'s are not orthogonal under the 
+Schrödinger product
 \begin{align}
-\int_0^{+\infty}\frac{\dd\sigma}{\sigma}
-\rfun{\mathrm{J}_{\nu}}{\sigma}
-\rfun{\mathrm{J}_{\tilde{\nu}}}{\sigma} =
-\frac{2\rfun{\sin}{\pp\rbr{\nu-\tilde{\nu}}/2}}{\pp\rbr{\nu^2-\tilde{\nu}^2}}.
+\rbr{\mathrm{J}_{\nu},\mathrm{J}_{\tilde{\nu}}}_\text{S}
+\propto \int_{-\infty}^{+\infty} \dd x\,
+\rfun{\mathrm{J}_{\nu}^*}{\ee^x}
+\rfun{\mathrm{J}_{\tilde{\nu}}}{\ee^x} =
+\frac{2\rfun{\sin}{\pp\rbr{\nu-\tilde{\nu}}/2}}{\pp\rbr{\nu^2-\tilde{\nu}^2}},
+\end{align}
+therefore $\BbbD$ in \cref{eq:separated-10} is not Hermitian (though we do not 
+need it so far)
+
+\item $\widehat{p}_\chi^2$ is not Hermitian for
+$\cbr{\rfun{\mathrm{J}_{\nu}}{\sigma}}$ under Schrödinger product
+\begin{align}
+\int_{-\infty}^{+\infty} \dd x\,
+\mathrm{J}_{\nu}^*\rbr{-\partial_x^2\mathrm{J}_{\tilde{\nu}}}
+-\int_{-\infty}^{+\infty} \dd x\,
+\rbr{-\partial_x^2\mathrm{J}_{\nu}}^*\mathrm{J}_{\tilde{\nu}}
+= \frac{2}{\pp}\sin\frac{\pp\rbr{\nu-\tilde{\nu}}}{2}.
 \end{align}
 
+\item Restricting
+\begin{align}
+\nu = 2n+\nu_0,\qquad n\in\BbbN,\,\nu_0\in\left[0,2\right)
+\end{align}
+saves Hermiticity for $p_\chi^2$ and $\BbbD$ and orthogonality of the 
+modes under Schrödinger product.
 
-\item Imposing self-adjointness for $\widehat{p}_\chi^2$, one finds that
 \end{itemize}
 \end{frame}
 
@@ -531,11 +568,16 @@ $\rbr{+,+}$, $\rbr{+,-}$ and $\rbr{-,+}$.
 {233}
 In order to integrate the separated minisuperspace Wheeler--DeWitt equation
 \begin{align}
-\ee^{-\ii k_\beta\mscrs_\beta\beta}\rbr{
--\mscrl\mscrs\frac{\hslash^2}{2\varkappa^{3/2}}\rfun{\psi''}{\chi}
--\mscrs\frac{\hslash^2k_\beta^2}{12\varkappa^{1/2}}\rfun{\psi}{\chi}
-+\varkappa^{3/2}V\ee^{g\mscrs_\chi\chi}\rfun{\psi}{\chi}
-} = 0,
+% \ee^{-\ii k_\beta\mscrs_\beta\beta}\rbr{
+% -\mscrl\mscrs\frac{\hslash^2}{2\varkappa^{3/2}}\rfun{\psi''}{\chi}
+% -\mscrs\frac{\hslash^2k_\beta^2}{12\varkappa^{1/2}}\rfun{\psi}{\chi}
+% +\varkappa^{3/2}V\ee^{g\mscrs_\chi\chi}\rfun{\psi}{\chi}
+% } = 0,
+\BbbD \rfun{\psi}{\chi} = k_\beta^2 \rfun{\psi}{\chi},\qquad
+\BbbD \coloneqq
+-\mscrl \frac{6}{\varkappa} \partial_\chi^2
++ \mscrs\mscrv \frac{12\varkappa^2\vbr{V}}{\hslash^2},
+\tag{\ref{eq:separated-10} rev.}
 \end{align}
 one can transform
 \begin{align}
