@@ -109,7 +109,7 @@ Institut de Ci\`encies del Cosmos (ICCUB), Universitat de Barcelona, Spain}
 \section{Classical model and the implicitised trajectories}
 
 \begin{frame}%
-{The Friedmann-Lemaître model}%
+{The Friedmann--Lemaître model}%
 {123}
 \begin{itemize}
 \item Flat Robertson--Walker metric
@@ -179,6 +179,27 @@ L = \varkappa^{3/2}\overline{N}
 The Euler--Lagrange equations w.r.t.\ $\overline{N}$, $\beta$ and
 $\chi$ will be called the trsfed.\ 1st, 2nd Friedmann eqs.\ and the
 Klein--Gordon eq., respectively.
+\end{itemize}
+\end{frame}
+
+\begin{frame}%
+{Generalisation of the decoupling technique}%
+{233}
+\begin{itemize}
+\item Beyond isotropy
+\begin{itemize}
+\item Bianchi Type-I
+\end{itemize}
+\item Beyond one Liouville field
+\begin{itemize}
+\item Two exponential potentials: $V_1 = V_2$ and special $\lambda_i$
+\item Multiple Liouville fields: mixing kinetic
+terms\footfullcite{Andrianov2015}
+\end{itemize}
+\item Beyond classic matter
+\begin{itemize}
+\item Non-Hermitian, $PT$-symmetric Liouville fields\footfullcite{ANDRIANOV2010,Andrianov2016}
+\end{itemize}
 \end{itemize}
 \end{frame}
 
@@ -285,14 +306,6 @@ automatically consistent with the trsfed.\ Klein--Gordon equation.
 \section{Dirac quantisation and the wave functions}
 
 \begin{frame}%
-{Introduction}%
-{Introduction}
-\begin{itemize}
-	\item
-\end{itemize}
-\end{frame}
-
-\begin{frame}%
 {Dirac quantisation}%
 {233}
 \begin{itemize}
@@ -353,14 +366,12 @@ Writing $\rfun{\Psi}{\beta,\chi} = \rfun{\varphi}{\beta}
 turns out to be Besselian, and the mode functions are
 \begin{align}
 \rfun{\Psi_\nu}{\beta, \chi} \coloneqq
-\rbr{c_1 \rfun{\varphi_{\nu}^{(1)}}{\gamma}
-+c_2 \rfun{\varphi_{\nu}^{(2)}}{\gamma}}
-\rbr{a_1\rfun{\mathrm{B}_{\nu}^{(1)}}{\sigma}
-+a_2\rfun{\mathrm{B}_{\nu}^{(2)}}{\sigma}},\quad
-\nu \ge 0,
-\end{align}
-in which
-\begin{align}
+\sum_{i=1}^2 c_i \rfun{\varphi_{\nu}^{(i)}}{\gamma}
+\sum_{j=1}^2 a_j\rfun{\mathrm{B}_{\nu}^{(j)}}{\sigma},\quad
+\nu \ge 0;
+% \end{align}
+% in which
+% \begin{align}
 \nu \coloneqq \sqrt{\frac{2\varkappa}{3}}\frac{1}{g}\,k_\beta,\quad
 \gamma \coloneqq \sqrt{\frac{3}{2\varkappa}}\frac{g}{1}\,\beta,\qquad
 \sigma^2 \coloneqq 
@@ -550,7 +561,7 @@ therefore $\BbbD$ in \cref{eq:separated-10} is not Hermitian (though we do not
 need it so far)
 
 \item $\widehat{p}_\chi^2$ is not Hermitian for
-$\cbr{\rfun{\mathrm{J}_{\nu}}{\sigma}}$ under Schrödinger product
+$\cbr{\rfun{\mathrm{J}_{\nu}}{\sigma}}$ under the Schrödinger product
 \begin{align}
 \int_{-\infty}^{+\infty} \dd x\,
 \mathrm{J}_{\nu}^*\rbr{-\partial_x^2\mathrm{J}_{\tilde{\nu}}}
@@ -650,8 +661,28 @@ satisfies
 \int\dd\chi\,\rho_\text{M}^\kappa \equiv \rbr{\Psi_1,\Psi_2}_\text{M}^{\kappa}$:
 it may be understood as a prob.\ density; but
 \item The corresponding conserved $\vec{\mscrJ}_\text{M}^\kappa$ does not exist.
+
 \end{itemize}
 
+\end{itemize}
+\end{frame}
+
+\section{Conclusions}
+
+\begin{frame}%
+{Issues}%
+{233}
+\begin{itemize}
+\item A normalising $\kappa$ for $\rbr{\cdot,\cdot}_\text{M}^\kappa$ has not yet been able to be evaluated, hence a quantitative comparison of $\rbr{\cdot,\cdot}_\text{S}$ and $\rbr{\cdot,\cdot}_\text{M}^\kappa$ is not yet possible.
+\end{itemize}
+\end{frame}
+
+\begin{frame}%
+{Outlook}%
+{233}
+\begin{itemize}
+\item $PT$-symmetric instead of phantom field
+\item Cosmological perturbation
 \end{itemize}
 \end{frame}
 
