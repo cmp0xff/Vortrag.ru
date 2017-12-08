@@ -197,28 +197,37 @@ the trsfed.\ 2nd Friedmann eq.\ can be integrated%
 \frac{\lambda\dot{\alpha}+\mscrl\varkappa\dot{\phi}}{\overline{N}}.
 \end{align}
 
-\item For $p_\beta \neq 0$, fixing the \alert{implicitising gauge}
+\item For $p_\beta \neq 0$, fixing the \emph{implicitising gauge}
 $\overline{N} = -6\mscrs\sqrt{\varkappa}\dot{\beta}/p_\beta$, the trsfed.\
 1st Friedmann equation can be integrated
 \begin{align}
 \ee^{\mscrs_\chi g\chi} &=
 \frac{p_\beta^2}{12\varkappa^2\vbr{V}}
-\rfun{S^2}{\mscrs_\beta \sqrt{\frac{3}{2\varkappa}}\,g \beta},
+\rfun{S^2}{\mscrs_\beta \sqrt{\frac{3}{2\varkappa}}\,g \beta+C},
 %\ee^{\mscrs_\chi g\chi} &= p_\beta^2/12\varkappa^2\vbr{V}\cdot
 %\rfun{f^2}{s_\beta \sqrt{3/2\varkappa}\,g \beta}
 %\quad\text{or}\\
 %\ee^{6\alpha+\lambda\phi} &= p_\beta^2/12\varkappa^2\vbr{V}\cdot
 %\rfun{f^2}{\sqrt{3/2\varkappa}\,\rbr{\lambda\alpha+\mscrl\varkappa\phi}},
 \end{align}
-in which $\mscrv \coloneqq \sgn V$, and
+in which $\mscrv \coloneqq \sgn V$, $\rbr{\text{sgn},\text{sgn}}$ means 
+$\rbr{\mscrl,\mscrs\mscrv}$, and
 \begin{align}
-\rfun{S}{\gamma} \coloneqq
-\begin{cases}
-\rfun{\sech}{\gamma+C_{++}} & \rbr{\mscrl, \mscrs\mscrv} = \rbr{+,+}, \\
-\rfun{\csch}{\gamma+C_{+-}} & \rbr{\mscrl, \mscrs\mscrv} = \rbr{+,-}, \\
-\rfun{\sec}{\gamma+C_{-+}} & \rbr{\mscrl, \mscrs\mscrv} = \rbr{-,+}, \\
-\ii\rfun{\csc}{\gamma+C_{--}} & \rbr{\mscrl, \mscrs\mscrv} = \rbr{-,-}. \\
-\end{cases}
+\begin{aligned}
+\rfun{{}_{\rbr{+,+}}S}{\gamma} &\coloneqq \rfun{\sech}{\gamma},
+&\quad
+\rfun{{}_{\rbr{+,-}}S}{\gamma} &\coloneqq \rfun{\csch}{\gamma},\\
+\rfun{{}_{\rbr{-,+}}S}{\gamma} &\coloneqq \rfun{\sec}{\gamma},
+&\quad
+\rfun{{}_{\rbr{-,-}}S}{\gamma} &\coloneqq \rfun{\ii\csc}{\gamma}.\\
+\end{aligned}
+% \rfun{S}{\gamma} \coloneqq
+% \begin{cases}
+% \rfun{\sech}{\gamma+C_{++}} & \rbr{\mscrl, \mscrs\mscrv} = \rbr{+,+}, \\
+% \rfun{\csch}{\gamma+C_{+-}} & \rbr{\mscrl, \mscrs\mscrv} = \rbr{+,-}, \\
+% \rfun{\sec}{\gamma+C_{-+}} & \rbr{\mscrl, \mscrs\mscrv} = \rbr{-,+}, \\
+% \ii\rfun{\csc}{\gamma+C_{--}} & \rbr{\mscrl, \mscrs\mscrv} = \rbr{-,-}. \\
+% \end{cases}
 \end{align}
 \end{itemize}
 \end{frame}
@@ -239,6 +248,7 @@ in which $\mscrv \coloneqq \sgn V$, and
 \end{itemize}
 \item The implicitised integral for $\rbr{-,+}$
 \begin{itemize}
+	\item is $\beta$-even for $C = 0$
 	\item contains infinite distinct solutions
 	\item has infinite asymptotes, which are pairwise parallel
 \end{itemize}
@@ -312,7 +322,7 @@ gets the mss.\ Wheeler--DeWitt eq.\ with $\rbr{\beta,\chi}$
 \end{align}
 \item
 \Cref{eq:WDW-10} is KG-like, hyperbolic for $\mscrl = +1$ and 
-\alert{elliptic} for $\mscrl = -1$.
+\emph{elliptic} for $\mscrl = -1$.
 \end{itemize}
 \end{frame}
 
@@ -321,46 +331,65 @@ gets the mss.\ Wheeler--DeWitt eq.\ with $\rbr{\beta,\chi}$
 {233}
 \begin{itemize}
 \item
-Inserting %the separating Ansatz
-$\rfun{\Psi}{\beta,\chi} = \ee^{-\ii k_\beta\mscrs_\beta\beta} 
-\rfun{\psi}{\chi}$, the separated eq.\
+Writing $\rfun{\Psi}{\beta,\chi} = \rfun{\varphi}{\beta}
+\rfun{\psi}{\chi}$, \cref{eq:WDW-10} can be separated into
+% Inserting %the separating Ansatz
+% $\rfun{\Psi}{\beta,\chi} = \ee^{-\ii k_\beta\mscrs_\beta\beta} 
+% \rfun{\psi}{\chi}$, the separated eq.\
 \begin{align}
 % \ee^{-\ii k_\beta\mscrs_\beta\beta}\rbr{
 % -\mscrl\mscrs\frac{\hslash^2}{2\varkappa^{3/2}}\rfun{\psi''}{\chi}
 % -\mscrs\frac{\hslash^2k_\beta^2}{12\varkappa^{1/2}}\rfun{\psi}{\chi}
 % +\varkappa^{3/2}V\ee^{g\mscrs_\chi\chi}\rfun{\psi}{\chi}
 % } = 0,
-\BbbD \rfun{\psi}{\chi} = k_\beta^2 \rfun{\psi}{\chi},\qquad
+\partial_\beta^2\rfun{\varphi}{\beta} &= k_\beta^2\rfun{\varphi}{\beta};\\
+\BbbD \rfun{\psi}{\chi} &= k_\beta^2 \rfun{\psi}{\chi},\qquad
 \BbbD \coloneqq
 -\mscrl \frac{6}{\varkappa} \partial_\chi^2
-+ \mscrs\mscrv \frac{12\varkappa^2\vbr{V}}{\hslash^2},
++ \mscrs\mscrv \frac{12\varkappa^2\vbr{V}}{\hslash^2}.
 \label{eq:separated-10}
 \end{align}
+\item \Cref{eq:separated-10}
 turns out to be Besselian, and the mode functions are
 \begin{align}
 \rfun{\Psi_\nu}{\beta, \chi} \coloneqq
-\ee^{-\ii \nu \gamma} \rfun{\psi_\nu}{\chi} \coloneqq
-\ee^{-\ii \nu \gamma} \rbr{C_1\rfun{\mathrm{B}_{\nu}^{(1)}}{\sigma}
-+C_2\rfun{\mathrm{B}_{\nu}^{(2)}}{\sigma}},
+\rbr{c_1 \rfun{\varphi_{\nu}^{(1)}}{\gamma}
++c_2 \rfun{\varphi_{\nu}^{(2)}}{\gamma}}
+\rbr{a_1\rfun{\mathrm{B}_{\nu}^{(1)}}{\sigma}
++a_2\rfun{\mathrm{B}_{\nu}^{(2)}}{\sigma}},\quad
+\nu \ge 0,
 \end{align}
 in which
 \begin{align}
 \nu \coloneqq \sqrt{\frac{2\varkappa}{3}}\frac{1}{g}\,k_\beta,\quad
 \gamma \coloneqq \sqrt{\frac{3}{2\varkappa}}\frac{g}{1}\,\beta,\qquad
 \sigma^2 \coloneqq 
-\frac{8\varkappa^3\vbr{V}\ee^{g\mscrs_\chi\chi}}{\hslash^2 g^2},\\
+\frac{8\varkappa^3\vbr{V}\ee^{g\mscrs_\chi\chi}}{\hslash^2 g^2},
 \label{eq:trsf-quantum-sigma}
-\rfun{\mathrm{B}^{(i)}_{\nu}}{\sigma} \coloneqq
-\begin{cases}
-\mathrm{K}\text{ or }\rfun{\mathrm{I}_{\ii\nu}}{\sigma}
-& \rbr{\mscrl, \mscrs\mscrv} = \rbr{+,+}, \\
-\mathrm{F}\text{ or }\rfun{\mathrm{G}_{\ii\nu}}{\sigma}
-& \rbr{\mscrl, \mscrs\mscrv} = \rbr{+,-}, \\
-\mathrm{J}\text{ or }\rfun{\mathrm{Y}_{\nu}}{\sigma}
-& \rbr{\mscrl, \mscrs\mscrv} = \rbr{-,+}, \\
-\mathrm{K}\text{ or }\rfun{\mathrm{I}_{\nu}}{\sigma}
-& \rbr{\mscrl, \mscrs\mscrv} = \rbr{-,-}. \\
-\end{cases}
+\\
+% \end{align}
+% and
+% \begin{align}
+\begin{aligned}
+\rfun{{}_{\rbr{+,+}}\mathrm{B}^{(i)}_{\nu}}{\sigma} &\coloneqq
+\mathrm{K}\text{ and }\rfun{\mathrm{I}_{\ii\nu}}{\sigma},\quad&
+\rfun{{}_{\rbr{+,-}}\mathrm{B}^{(i)}_{\nu}}{\sigma} &\coloneqq
+\mathrm{F}\text{ and }\rfun{\mathrm{G}_{\ii\nu}}{\sigma},\nonumber \\
+\rfun{{}_{\rbr{-,+}}\mathrm{B}^{(i)}_{\nu}}{\sigma} &\coloneqq
+\mathrm{J}\text{ and }\rfun{\mathrm{Y}_{\nu}}{\sigma},\quad&
+\rfun{{}_{\rbr{-,-}}\mathrm{B}^{(i)}_{\nu}}{\sigma} &\coloneqq
+\mathrm{K}\text{ and }\rfun{\mathrm{I}_{\nu}}{\sigma}.
+\end{aligned}
+% \begin{cases}
+% \mathrm{K}\text{ or }\rfun{\mathrm{I}_{\ii\nu}}{\sigma}
+% & \rbr{\mscrl, \mscrs\mscrv} = \rbr{+,+}, \\
+% \mathrm{F}\text{ or }\rfun{\mathrm{G}_{\ii\nu}}{\sigma}
+% & \rbr{\mscrl, \mscrs\mscrv} = \rbr{+,-}, \\
+% \mathrm{J}\text{ or }\rfun{\mathrm{Y}_{\nu}}{\sigma}
+% & \rbr{\mscrl, \mscrs\mscrv} = \rbr{-,+}, \\
+% \mathrm{K}\text{ or }\rfun{\mathrm{I}_{\nu}}{\sigma}
+% & \rbr{\mscrl, \mscrs\mscrv} = \rbr{-,-}. \\
+% \end{cases}
 \end{align}
 \item Adapted to imaginary order, $\rfun{\mathrm{F}_{\nu}}{\sigma}$ and
 $\rfun{\mathrm{G}_{\nu}}{\sigma}$ are defined in \footfullcite{Dunster1990}.
@@ -377,21 +406,28 @@ as $\alpha \to +\infty$
 \item $\rbr{-,+}$: 
 \begin{itemize}
 \item
-$\forall n \in \BbbZ$, $\vbr{\rfun{\mathrm{Y}_{n}}{\sigma}} \to +\infty$ as 
+$\forall n \in \BbbN$, $\vbr{\rfun{\mathrm{Y}_{n}}{\sigma}} \to +\infty$ as 
 $\alpha \to -\infty$.
 \item
-$\forall\nu\in\BbbR\backslash\BbbZ$, choose $\mathrm{J}_{-\nu}$ instead of 
-$\mathrm{Y}_{+\nu}$, since $\mathrm{J}_{\pm\nu}$ are also linearly independent.
+$\forall\nu\in\BbbR^+\backslash\BbbN$, choose $\mathrm{J}_{-\nu}$ instead of 
+$\mathrm{Y}_{\nu}$, since $\mathrm{J}_{\pm\nu}$ are also linearly independent.
 \item
-$\forall\nu\in\BbbR^+\backslash\BbbZ$, $\vbr{\rfun{\mathrm{J}_{-\nu}}{\sigma}} 
+$\forall\nu\in\BbbR^+\backslash\BbbN$, $\vbr{\rfun{\mathrm{J}_{-\nu}}{\sigma}} 
 \to +\infty$ as $\alpha \to -\infty$.
 \end{itemize}
 \item $\rbr{-,-}$: $\vbr{\rfun{\mathrm{K}_{\nu}}{\sigma}} \to +\infty$
 as $\alpha \to -\infty$; $\vbr{\rfun{\mathrm{I}_{\nu}}{\sigma}} \to +\infty$
 as $\alpha \to +\infty$
-\item These are not to included in the space of physical wave functions.
-\item For $\rbr{-,+}$, \alert{only $\mathrm{J}_{\nu}$ with 
-$\nu \ge 0$ survives}.
+\item These are not to be included in the space of physical wave 
+functions. $\forall \nu \ge 0$,
+\begin{itemize}
+\item $\rbr{+,+}$: $\rfun{\mathrm{K}_{\ii\nu}}{\sigma}$ survives
+\item $\rbr{+,-}$: $F$ and $\rfun{\mathrm{G}_{\ii\nu}}{\sigma}$ survives
+\item $\rbr{-,+}$: $\rfun{\mathrm{J}_{\nu}}{\sigma}$ survives
+\item $\rbr{-,-}$: drops out
+\end{itemize}
+%\item For $\rbr{-,+}$, \emph{only $\mathrm{J}_{\nu}$ with 
+%$\nu \ge 0$ survives}.
 \end{itemize}
 
 \end{frame}
@@ -402,9 +438,9 @@ $\nu \ge 0$ survives}.
 {233}
 \begin{itemize}
 \item Baustelle
-\item In order to match the quantum number $k_\beta$ (or \alert{linearly}, 
+\item In order to match the quantum number $k_\beta$ (or \emph{linearly}, 
 $\nu$) with the classical first integral $p_\beta$, one may apply the 
-\alert{principle of constructive interference}.
+\emph{principle of constructive interference}.
 
 \item Writing the mode function in the WKB form
 \begin{align}
@@ -413,7 +449,6 @@ $\nu$) with the classical first integral $p_\beta$, one may apply the
 \end{align}
 the principle demands that $\partial S/\partial k_\beta = 0$ be equivalent to 
 the classical trajectory.
-
 \end{itemize}
 \end{frame}
 
@@ -432,20 +467,25 @@ reads
 +\rfun{\Omicron}{\frac{1}{\sigma}}.
 \end{align}
 
-There are two phases with opposite signs. %$\rfun{\theta_\nu^{\pm}}{\sigma}$.
-Applying the principle to the full mode function $\Psi_\nu$, one has
-$\sigma/\nu = \rfun{\sech}{\mscrs_\beta\gamma}$, which match the trajectory if
+\item There are two phases with opposite signs.
+%$\rfun{\theta_\nu^{\pm}}{\sigma}$.
+Assuming $c$, $a$ are real and applying \emph{the principle} to 
+$\rfun{\Psi_\nu}{\sigma}$, one has$\sigma/\nu = 
+\rfun{\sech}{\mscrs_\beta\gamma}$, which matches the trajectory with $C = 0$ if
 \begin{align}
 \hslash k_\beta \equiv \hslash \sqrt{\frac{3}{2\varkappa}}g\hslash\nu
 = p_\beta,
 \end{align}
-as expected.
+
+\item Non-vanishing $C$ can be compensated by the phase of $c$'s and $a$'s.
 
 \item Fixing $\nu/\sigma<1$, the asymptotic expansion is not oscillatory,
-but exponential; hence no WKB approximation works.
+but exponential; it is not within the WKB regime.
+\end{itemize}
 
-\item The conclusions also hold for $\rfun{\mathrm{F}_{\ii\nu}}{\sigma}$
-and $\rfun{\mathrm{G}_{\ii\nu}}{\sigma}$ for $\rbr{+,-}$, as well as 
+\begin{itemize}
+\item The conclusions also hold for $\rfun{\mathrm{F}_{\ii\nu}}{\sigma}$, 
+$\rfun{\mathrm{G}_{\ii\nu}}{\sigma}$ for $\rbr{+,-}$, and
 $\rfun{\mathrm{J}_{\nu}}{\sigma}$ for $\rbr{-,+}$.
 \end{itemize}
 \end{frame}
@@ -456,7 +496,7 @@ $\rfun{\mathrm{J}_{\nu}}{\sigma}$ for $\rbr{-,+}$.
 \begin{itemize}
 \item To make sense of amplitude and wave packet, an inner product is necessary
 
-\item A common starting point of most approaches is the \alert{Schrödinger 
+\item A common starting point of most approaches is the \emph{Schrödinger 
 product}
 \begin{align}
 \rbr{\Psi_1,\Psi_2}_\text{S} \coloneqq
@@ -474,8 +514,8 @@ $\dot{\rho}_\text{S} + \nabla\cdot \vec{j}_\text{S} = 0$, because
 \cref{eq:WDW-10} is KG-like.
 \item $\mathrm{K}_{\ii\nu}$%
 \footfullcite{Yakubovich2006,Passian2009,Szmytkowski2010} for $\rbr{+,+}$, 
-$\mathrm{F}_{\ii\nu}$ and $\mathrm{G}_{\ii\nu}$ for $\rbr{+,-}$ can be proved to 
-be orthogonal and complete individually, as well as can be normalised.
+$\mathrm{F}_{\ii\nu}$ and $\mathrm{G}_{\ii\nu}$ for $\rbr{+,-}$ can be proved 
+to be orthogonal and complete individually, as well as can be normalised.
 \begin{itemize}
 \item $\mathrm{J}_{\ii\nu}$'s for $\rbr{+,-}$ are not orthogonal
 \end{itemize}
@@ -484,7 +524,7 @@ be orthogonal and complete individually, as well as can be normalised.
 \end{frame}
 
 \begin{frame}%
-{Peculiarity for the phantom model}%
+{Peculiarity of the phantom model $\rbr{-,+}$}%
 {Orthogonality for mode functions; Hermiticity for operators}
 \begin{itemize}
 % \item Imposing self-adjointness for $\widehat{p}_\chi = -\ii\hslash
@@ -519,16 +559,101 @@ $\cbr{\rfun{\mathrm{J}_{\nu}}{\sigma}}$ under Schrödinger product
 = \frac{2}{\pp}\sin\frac{\pp\rbr{\nu-\tilde{\nu}}}{2}.
 \end{align}
 
-\item Restricting
+\item In order to save Hermiticity for $p_\chi^2$ and $\BbbD$ and 
+orthogonality of the modes under Schrödinger product, one can restrict
 \begin{align}
-\nu = 2n+\nu_0,\qquad n\in\BbbN,\,\nu_0\in\left[0,2\right)
+\nu = 2n+\nu_0,\qquad n\in\BbbN,\quad\nu_0\in \left[0,2\right).
 \end{align}
-saves Hermiticity for $p_\chi^2$ and $\BbbD$ and orthogonality of the 
-modes under Schrödinger product.
 
+\item The classical trajectory is $\beta$-even; imposing the same 
+condition fixes $\nu_0 = 1$.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}%
+{Discritisation of the phantom model $\rbr{-,+}$}%
+{233}
+
+
+\begin{alertblock}{Levels of the phantom model are discretised}
+\dots if one imposes Hermiticity of squared momenta under the Schrödinger
+product
+\end{alertblock}
+
+\begin{itemize}
+\item This kind of subtlety on Hermiticity is named as \emph{self-adjoint 
+extension}, which arises already for infinite square 
+well\footfullcite{Bonneau2001}.
+\item It also applies to $x^{-2}$ potentials%
+\footfullcite{Essin2006,Araujo2004}, which is of cosmological relevance%
+\footfullcite{Bouhmadi-Lopez2009}.
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}%
+{Further inner products for wave functions}%
+{Klein--Gordon and Mostafazadeh product}
+\begin{itemize}
+\item Since \cref{eq:WDW-10} is KG-like, another popular choice is the KG 
+product
+\begin{align}
+\rbr{\Psi_1,\Psi_2}_\text{KG}^g \coloneqq \ii g \cbr{
+\rbr{\Psi_1,\dot\Psi_2}_\text{S} -
+\rbr{\dot\Psi_1,\Psi_2}_\text{S}},\quad g > 0.
+\end{align}
+\begin{itemize}
+\item $\rho_\text{KG}$ is real but may go negative
+\item Unique $\vec{J}_\text{KG}$ exists such that $\dot{\rho}_\text{KG} + 
+\nabla\cdot \vec{J}_\text{KG} = 0$.
+\end{itemize}
+
+\item \citeauthor{Mostafazadeh2002}\footfullcite{Mostafazadeh2002} found
+% a class of
+a inner products \emph{for Hermitian $\BbbD$ with positive spectrum}:
+$\forall \kappa > 0$,
+\begin{align}
+% \rbr{\Psi_1,\Psi_2}_\text{M}^{\kappa,a} &\coloneqq
+% \rbr{\Psi_1,\Psi_2}_\text{M}^{\kappa} +
+% \kappa \rbr{\Psi_1,\Psi_2}_\text{KG}^a,\\
+\rbr{\Psi_1,\Psi_2}_\text{M}^{\kappa} &\coloneqq\kappa\cbr{
+\rbr{\Psi_1,\BbbD^{+1/2}\Psi_2}_\text{S}
++\rbr{\dot\Psi_1,\BbbD^{-1/2}\dot\Psi_2}_\text{S}},
+\end{align}
+ and $-1 < a < 1$.
+\begin{itemize}
+%\item Varying $a$ leads to unitarily equivalent 
+%products\footfullcite{Mostafazadeh2004}; restrict to $a=0$
+\item $\rho_\text{M}^\kappa$ may go complex
+\item Unique $\vec{J}_\text{M}^\kappa$ exists such that 
+$\dot{\rho}_\text{M}^\kappa + 
+\nabla\cdot \vec{J}_\text{M}^\kappa = 0$.
+\end{itemize}
 \end{itemize}
 \end{frame}
 
+\begin{frame}%
+{Mostafazadeh density}%
+{233}
+\begin{itemize}
+\item It can be shown\footfullcite{Mostafazadeh2006} that
+\begin{align}
+\varrho_\text{M}^\kappa \coloneqq\kappa\cbr{
+\vbr{\BbbD^{+1/4}\Psi}^2+\vbr{\BbbD^{-1/4}\dot{\Psi}}^2}
+\end{align}
+satisfies
+\begin{itemize}
+\item $\varrho_\text{M}^\kappa$ is non-negative
+\item $\int\dd\chi\,\varrho_\text{M}^\kappa = 
+\int\dd\chi\,\rho_\text{M}^\kappa \equiv \rbr{\Psi_1,\Psi_2}_\text{M}^{\kappa}$:
+it may be understood as a prob.\ density; but
+\item The corresponding conserved $\vec{\mscrJ}_\text{M}^\kappa$ does not exist.
+\end{itemize}
+
+\end{itemize}
+\end{frame}
 
 
 \section*{Appendix}
