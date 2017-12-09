@@ -23,6 +23,7 @@
 \input{./phys-chem.tex}
 
 \usepackage[%style=numeric,
+			firstinits=true,
 			isbn = false, doi = false,
 			backend=biber]{biblatex}
 \addbibresource{20171212.bib}
@@ -108,23 +109,26 @@ Institut de Ci\`encies del Cosmos (ICCUB), Universitat de Barcelona, Spain}
 
 \section{Classical model and the implicitised trajectories}
 
+\subsection{Lagrangian formalism}
+
 \begin{frame}%
 {The Friedmann--Lemaître model}%
 {123}
 \begin{itemize}
-\item Flat Robertson--Walker metric
-$\dd s^2 = -\rfun{N^2}{t}\,\dd t^2
-+\varkappa^{-1}\ee^{2\rfun{\alpha}{t}}\,\dd\Omega_3^2$,
-where $\varkappa \coloneqq 8\pp\nG$, $\dd\Omega_3^2$ dimensionless spacial 
-metric.
+\item Flat Robertson--Walker metric $\dd s^2 = -\rfun{N^2}{t}\,\dd t^2
++\varkappa^{-1}\ee^{2\rfun{\alpha}{t}}\,\dd\Omega_3^2$
+\begin{itemize}
+	\item $\varkappa \coloneqq 8\pp\nG$;
+	$\dd\Omega_3^2$ dimensionless spacial metric
+\end{itemize}
 
-\item Homogeneous real Klein--Gordon field with potential
+\item Real Klein--Gordon field with potential
 $V\ee^{\lambda\phi}$ (Liouville), where $\lambda, V\in \BbbR$,
 and kinetic term with sign $\mscrl = \pm 1$ (quintessence
 / phantom model).
 
 \item Total action $\mscrS \coloneqq S_{\text{EH}} + S_\text{GHY} + S_\text{L}
-= \int\dd\Omega_3^2\int\dd t\,L$, in which the effective Lagrangian reads
+= \int\dd\Omega_3^2\int\dd t\,L$, %in which the effective Lagrangian reads
 \begin{align}
 %S_{\text{Einstein--Hilbert}} + S_\text{Gibbons--Hawking--York} + 
 %S_\text{Liouville}
@@ -183,12 +187,12 @@ Klein--Gordon eq., respectively.
 \end{frame}
 
 \begin{frame}%
-{Generalisation of the decoupling technique}%
+{Possible generalisation of the decoupling technique}%
 {233}
 \begin{itemize}
 \item Beyond isotropy
 \begin{itemize}
-\item Bianchi Type-I
+\item Bianchi Type-I: under investigation
 \end{itemize}
 \item Beyond one Liouville field
 \begin{itemize}
@@ -198,18 +202,18 @@ terms\footfullcite{Andrianov2015}
 \end{itemize}
 \item Beyond classic matter
 \begin{itemize}
-\item Non-Hermitian, $PT$-symmetric Liouville fields\footfullcite{ANDRIANOV2010,Andrianov2016}
+\item Non-Hermitian, $PT$-symmetric Liouville fields\footfullcite{ANDRIANOV2010,Andrianov2016}: may avoid big-rip etc.
 \end{itemize}
 \end{itemize}
 \end{frame}
 
 \begin{frame}%
 {Implicitised integration}%
-{$p_\beta \neq 0$}
+{General integral for $p_\beta \neq 0$}
 \begin{itemize}
 \item Since $\beta$ is cyclic in \cref{eq:lagrangian-decoupled},
 the trsfed.\ 2nd Friedmann eq.\ can be integrated%
-\footfullcite{Lan2016,Andrianov2015}
+\footfullcite[The same first integral in Hamiltonian formalism has been found in][]{Lan2016,Andrianov2015}
 \begin{align}
 \text{const.} \equiv p_\beta \coloneqq \frpa{L}{\dot{\beta}} &=
 -6\mscrs\varkappa^{1/2}\frac{\dot{\beta}}{\overline{N}}
@@ -231,15 +235,15 @@ $\overline{N} = -6\mscrs\sqrt{\varkappa}\dot{\beta}/p_\beta$, the trsfed.\
 %\ee^{6\alpha+\lambda\phi} &= p_\beta^2/12\varkappa^2\vbr{V}\cdot
 %\rfun{f^2}{\sqrt{3/2\varkappa}\,\rbr{\lambda\alpha+\mscrl\varkappa\phi}},
 \end{align}
-in which $\mscrv \coloneqq \sgn V$, $\rbr{\text{sgn},\text{sgn}}$ means 
+in which $\mscrv \coloneqq \sgn V$, $\rbr{\mathrm{sgn},\mathrm{sgn}}$ means 
 $\rbr{\mscrl,\mscrs\mscrv}$, and
 \begin{align}
 \begin{aligned}
 \rfun{{}_{\rbr{+,+}}S}{\gamma} &\coloneqq \rfun{\sech}{\gamma},
-&\quad
+&\qquad
 \rfun{{}_{\rbr{+,-}}S}{\gamma} &\coloneqq \rfun{\csch}{\gamma},\\
 \rfun{{}_{\rbr{-,+}}S}{\gamma} &\coloneqq \rfun{\sec}{\gamma},
-&\quad
+&\qquad
 \rfun{{}_{\rbr{-,-}}S}{\gamma} &\coloneqq \rfun{\ii\csc}{\gamma}.\\
 \end{aligned}
 % \rfun{S}{\gamma} \coloneqq
@@ -251,6 +255,21 @@ $\rbr{\mscrl,\mscrs\mscrv}$, and
 % \end{cases}
 \end{align}
 \end{itemize}
+\end{frame}
+
+\begin{frame}%
+{Trajectories}%
+{Quintessence $\rbr{+,+}$}
+\end{frame}
+
+\begin{frame}%
+{Trajectories}%
+{Quintessence $\rbr{+,-}$}
+\end{frame}
+
+\begin{frame}%
+{Trajectories}%
+{Phantom $\rbr{-,+}$}
 \end{frame}
 
 \begin{frame}%
@@ -284,7 +303,7 @@ functions, see below.
 
 \begin{frame}%
 {Implicitised integration}%
-{$p_\beta = 0$}
+{Specific integral for $p_\beta = 0$}
 \begin{itemize}
 \item For $p_\beta = 0$, one has $\beta \equiv \beta_0$ or $\phi-\phi_0 =
 -\mscrl\lambda\alpha/\kappa$, which is the familiar power-law special
@@ -301,20 +320,35 @@ automatically consistent with the trsfed.\ Klein--Gordon equation.
 \end{itemize}
 \end{frame}
 
-
-
-\section{Dirac quantisation and the wave functions}
+\begin{frame}%
+{Trajectories}%
+{Quintessence $\rbr{+,+}$}
+\end{frame}
 
 \begin{frame}%
-{Dirac quantisation}%
+{Trajectories}%
+{Quintessence $\rbr{+,-}$}
+\end{frame}
+
+\begin{frame}%
+{Trajectories}%
+{Phantom $\rbr{-,+}$}
+\end{frame}
+
+\section{Quantised model and the wave packets}
+
+\subsection{Dirac quantisation}
+
+\begin{frame}%
+{Dirac quantisation and the mode functions}%
 {233}
 \begin{itemize}
 \item
 The primary Hamiltonian and the Hamiltonian constraint reads
 \begin{align}
-H^\text{p} &= \overline{N}H_\perp + p_{\overline{N}} v^{\overline{N}},
+H^\text{p} &= \overline{N}H_\perp + v^{\overline{N}} p_{\overline{N}},
 \\
-H_\perp &= -\mscrs\frac{p_\beta^2}{12\varkappa^{1/2}}
+H_\perp &\coloneqq -\mscrs\frac{p_\beta^2}{12\varkappa^{1/2}}
 +\mscrl\mscrs\frac{p_\chi^2}{2\varkappa^{3/2}}
 +\varkappa^{3/2}V\ee^{g\mscrs_\chi\chi}.
 \end{align}
@@ -368,9 +402,8 @@ turns out to be Besselian, and the mode functions are
 \rfun{\Psi_\nu}{\beta, \chi} \coloneqq
 \sum_{i=1}^2 c_i \rfun{\varphi_{\nu}^{(i)}}{\gamma}
 \sum_{j=1}^2 a_j\rfun{\mathrm{B}_{\nu}^{(j)}}{\sigma},\quad
-\nu \ge 0;
+\nu \ge 0; \\
 % \end{align}
-% in which
 % \begin{align}
 \nu \coloneqq \sqrt{\frac{2\varkappa}{3}}\frac{1}{g}\,k_\beta,\quad
 \gamma \coloneqq \sqrt{\frac{3}{2\varkappa}}\frac{g}{1}\,\beta,\qquad
@@ -403,7 +436,7 @@ turns out to be Besselian, and the mode functions are
 % \end{cases}
 \end{align}
 \item Adapted to imaginary order, $\rfun{\mathrm{F}_{\nu}}{\sigma}$ and
-$\rfun{\mathrm{G}_{\nu}}{\sigma}$ are defined in \footfullcite{Dunster1990}.
+$\rfun{\mathrm{G}_{\nu}}{\sigma}$ are defined in \footfullcite{Dunster1990}; also see below.
 \end{itemize}
 \end{frame}
 
@@ -443,15 +476,16 @@ functions. $\forall \nu \ge 0$,
 
 \end{frame}
 
+\subsection{Semi-classical approximation}
 
 \begin{frame}%
 {Matching quantum number with classical first integral}%
-{233}
+{Principle of constructive interference}
 \begin{itemize}
 \item Baustelle
 \item In order to match the quantum number $k_\beta$ (or \emph{linearly}, 
 $\nu$) with the classical first integral $p_\beta$, one may apply the 
-\emph{principle of constructive interference}.
+\emph{principle of constructive interference}\footfullcite{Kiefer1990}.
 
 \item Writing the mode function in the WKB form
 \begin{align}
@@ -477,10 +511,10 @@ reads
 \rbr{\nu^2-\sigma^2}^{1/4}\ee^{\pp\nu/2}}
 +\rfun{\Omicron}{\frac{1}{\sigma}}.
 \end{align}
-
+\begin{itemize}
 \item There are two phases with opposite signs.
 %$\rfun{\theta_\nu^{\pm}}{\sigma}$.
-Assuming $c$, $a$ are real and applying \emph{the principle} to 
+Assuming $c_i$, $a_j$'s are real and applying \emph{the principle} to 
 $\rfun{\Psi_\nu}{\sigma}$, one has$\sigma/\nu = 
 \rfun{\sech}{\mscrs_\beta\gamma}$, which matches the trajectory with $C = 0$ if
 \begin{align}
@@ -488,7 +522,8 @@ $\rfun{\Psi_\nu}{\sigma}$, one has$\sigma/\nu =
 = p_\beta,
 \end{align}
 
-\item Non-vanishing $C$ can be compensated by the phase of $c$'s and $a$'s.
+\item Non-vanishing $C$ can be compensated by the phase of $c_i$ and $a_j$'s.
+\end{itemize}
 
 \item Fixing $\nu/\sigma<1$, the asymptotic expansion is not oscillatory,
 but exponential; it is not within the WKB regime.
@@ -501,34 +536,40 @@ $\rfun{\mathrm{J}_{\nu}}{\sigma}$ for $\rbr{-,+}$.
 \end{itemize}
 \end{frame}
 
+\subsection{Inner product and wave packet}
+
 \begin{frame}%
 {Inner product for wave functions}%
 {Schrödinger product}
 \begin{itemize}
 \item To make sense of amplitude and wave packet, an inner product is necessary
 
-\item A common starting point of most approaches is the \emph{Schrödinger 
-product}
+\item A common starting point is the \emph{Schrödinger product}
 \begin{align}
 \rbr{\Psi_1,\Psi_2}_\text{S} \coloneqq
 \int \dd \chi\,\rfun{\Psi_1^*}{\beta,\chi} \rfun{\Psi_2}{\beta,\chi};
 \end{align}
+\item $\rbr{\Psi, \Psi}_\text{S}$ is \textcolor{blue}{positive-definite},
+and the integrand $\rfun{\rho_\text{S}}{\beta,\chi}$ is
+\textcolor{blue}{non-negative}
 
-\item In terms of a norm, $\rbr{\Psi, \Psi}_\text{S} \equiv \int \dd \chi\,
-\rfun{\rho_\text{S}}{\beta,\chi},$ in which $\rho_\text{S} \coloneqq 
-\Psi^*\Psi$. Manifestly $\rho_\text{S} \ge 0$; one has $\rbr{\Psi, 
-\Psi}_\text{S} > 0$.
+%\item In terms of a norm, $\rbr{\Psi, \Psi}_\text{S} \equiv \int \dd \chi\,
+%\rfun{\rho_\text{S}}{\beta,\chi},$ in which $\rho_\text{S} \coloneqq 
+%\Psi^*\Psi$. Manifestly $\rho_\text{S} \textcolor{blue}{\ge 0}$, and
+%$\rbr{\Psi, \Psi}_\text{S}$.
 
-\item
-The corresponding Schrödinger current does not satisfy continuity equation
+\item The corresponding Schrödinger current is \textcolor{blue}{real} but
+\textcolor{orange}{does not satisfy continuity equation}
 $\dot{\rho}_\text{S} + \nabla\cdot \vec{j}_\text{S} = 0$, because 
 \cref{eq:WDW-10} is KG-like.
 \item $\mathrm{K}_{\ii\nu}$%
 \footfullcite{Yakubovich2006,Passian2009,Szmytkowski2010} for $\rbr{+,+}$, 
 $\mathrm{F}_{\ii\nu}$ and $\mathrm{G}_{\ii\nu}$ for $\rbr{+,-}$ can be proved 
-to be orthogonal and complete individually, as well as can be normalised.
+to be \textcolor{blue}{orthogonal} and \textcolor{blue}{complete}
+among themselves, as well as \textcolor{blue}{can be normalised}.
 \begin{itemize}
-\item $\mathrm{J}_{\ii\nu}$'s for $\rbr{+,-}$ are not orthogonal
+\item $\mathrm{J}_{\ii\nu}$'s for $\rbr{+,-}$ are
+\textcolor{orange}{not orthogonal}
 \end{itemize}
 
 \end{itemize}
@@ -548,8 +589,8 @@ to be orthogonal and complete individually, as well as can be normalised.
 % \rbr{\frac{1}{\rfun{\mupGamma}{\nu+1}} + \rfun{\Omicron}{z^2}}.
 % \end{align}
 
-\item $\rfun{\mathrm{J}_{\nu}}{\sigma}$'s are not orthogonal under the 
-Schrödinger product
+\item $\rfun{\mathrm{J}_{\nu}}{\sigma}$'s are
+\textcolor{orange}{not orthogonal} under the Schrödinger product
 \begin{align}
 \rbr{\mathrm{J}_{\nu},\mathrm{J}_{\tilde{\nu}}}_\text{S}
 \propto \int_{-\infty}^{+\infty} \dd x\,
@@ -557,10 +598,10 @@ Schrödinger product
 \rfun{\mathrm{J}_{\tilde{\nu}}}{\ee^x} =
 \frac{2\rfun{\sin}{\pp\rbr{\nu-\tilde{\nu}}/2}}{\pp\rbr{\nu^2-\tilde{\nu}^2}},
 \end{align}
-therefore $\BbbD$ in \cref{eq:separated-10} is not Hermitian (though we do not 
-need it so far)
+therefore $\BbbD$ in \cref{eq:separated-10} is
+\textcolor{orange}{not Hermitian} (though we do not need it so far)
 
-\item $\widehat{p}_\chi^2$ is not Hermitian for
+\item $\widehat{p}_\chi^2$ is \textcolor{orange}{not Hermitian} for
 $\cbr{\rfun{\mathrm{J}_{\nu}}{\sigma}}$ under the Schrödinger product
 \begin{align}
 \int_{-\infty}^{+\infty} \dd x\,
@@ -585,8 +626,6 @@ condition fixes $\nu_0 = 1$.
 \begin{frame}%
 {Discritisation of the phantom model $\rbr{-,+}$}%
 {233}
-
-
 \begin{alertblock}{Levels of the phantom model are discretised}
 \dots if one imposes Hermiticity of squared momenta under the Schrödinger
 product
@@ -613,56 +652,100 @@ product
 \begin{align}
 \rbr{\Psi_1,\Psi_2}_\text{KG}^g \coloneqq \ii g \cbr{
 \rbr{\Psi_1,\dot\Psi_2}_\text{S} -
-\rbr{\dot\Psi_1,\Psi_2}_\text{S}},\quad g > 0.
+\rbr{\dot\Psi_1,\Psi_2}_\text{S}},\qquad g > 0.
 \end{align}
 \begin{itemize}
-\item $\rho_\text{KG}$ is real but may go negative
-\item Unique $\vec{J}_\text{KG}$ exists such that $\dot{\rho}_\text{KG} + 
-\nabla\cdot \vec{J}_\text{KG} = 0$.
+\item $\rbr{\Psi,\Psi}_\text{KG}^g$ is \textcolor{blue}{real} but
+\textcolor{orange}{not positive-definite}, so does the integrand
+$\rho_\text{KG}$;
+%is \textcolor{blue}{real} but may go \textcolor{orange}{negative},
+\item The corresponding $\vec{J}_\text{KG}$ is
+\textcolor{blue}{conserved} $\dot{\rho}_\text{KG} +
+\nabla\cdot \vec{J}_\text{KG} = 0$ and \textcolor{blue}{real}.
 \end{itemize}
 
-\item \citeauthor{Mostafazadeh2002}\footfullcite{Mostafazadeh2002} found
+\item Mostafazadeh\footfullcite{Mostafazadeh2002} found
 % a class of
-a inner products \emph{for Hermitian $\BbbD$ with positive spectrum}:
-$\forall \kappa > 0$,
+a product \emph{for Hermitian $\BbbD$ with positive spectrum}:
 \begin{align}
 % \rbr{\Psi_1,\Psi_2}_\text{M}^{\kappa,a} &\coloneqq
 % \rbr{\Psi_1,\Psi_2}_\text{M}^{\kappa} +
 % \kappa \rbr{\Psi_1,\Psi_2}_\text{KG}^a,\\
 \rbr{\Psi_1,\Psi_2}_\text{M}^{\kappa} &\coloneqq\kappa\cbr{
 \rbr{\Psi_1,\BbbD^{+1/2}\Psi_2}_\text{S}
-+\rbr{\dot\Psi_1,\BbbD^{-1/2}\dot\Psi_2}_\text{S}},
++\rbr{\dot\Psi_1,\BbbD^{-1/2}\dot\Psi_2}_\text{S}}, \qquad \kappa > 0.
 \end{align}
- and $-1 < a < 1$.
+% and $-1 < a < 1$.
 \begin{itemize}
 %\item Varying $a$ leads to unitarily equivalent 
 %products\footfullcite{Mostafazadeh2004}; restrict to $a=0$
-\item $\rho_\text{M}^\kappa$ may go complex
-\item Unique $\vec{J}_\text{M}^\kappa$ exists such that 
-$\dot{\rho}_\text{M}^\kappa + 
-\nabla\cdot \vec{J}_\text{M}^\kappa = 0$.
+\item $\rbr{\Psi,\Psi}_\text{M}^{\kappa}$ is
+\textcolor{blue}{positive-definite}, but the integrand $\rho_\text{M}^\kappa$
+is \textcolor{orange}{complex}
+\item The corresponding $\vec{J}_\text{M}^\kappa$ is
+\textcolor{blue}{conserved} $\dot{\rho}_\text{M}^\kappa + 
+\nabla\cdot \vec{J}_\text{M}^\kappa = 0$ but also \textcolor{orange}{complex}.
 \end{itemize}
 \end{itemize}
 \end{frame}
 
 \begin{frame}%
-{Mostafazadeh density}%
+{Mostafazadeh inner product and the corresponding density}%
 {233}
 \begin{itemize}
-\item It can be shown\footfullcite{Mostafazadeh2006} that
+\item The real power of $\BbbD$ is defined by spectral decomposition
+$\BbbD^{\gamma} \coloneqq \sum_\nu \nu^{2\gamma}\mbfP_\nu$,
+$\mbfP_\nu\Psi \coloneqq \Psi_\nu\rbr{\Psi_\nu,\Psi}_\text{S}$.
+\end{itemize}
+\begin{itemize}
+\item It can be shown\footfullcite{Mostafazadeh2006} that the density
 \begin{align}
 \varrho_\text{M}^\kappa \coloneqq\kappa\cbr{
 \vbr{\BbbD^{+1/4}\Psi}^2+\vbr{\BbbD^{-1/4}\dot{\Psi}}^2}
 \end{align}
-satisfies
 \begin{itemize}
-\item $\varrho_\text{M}^\kappa$ is non-negative
-\item $\int\dd\chi\,\varrho_\text{M}^\kappa = 
-\int\dd\chi\,\rho_\text{M}^\kappa \equiv \rbr{\Psi_1,\Psi_2}_\text{M}^{\kappa}$:
-it may be understood as a prob.\ density; but
-\item The corresponding conserved $\vec{\mscrJ}_\text{M}^\kappa$ does not exist.
+\item is \textcolor{blue}{equivalent to $\rho_\text{M}^\kappa$} up to a
+boundary term
+$\int\dd\chi\,\varrho_\text{M}^\kappa = 
+\int\dd\chi\,\rho_\text{M}^\kappa \equiv
+\rbr{\Psi_1,\Psi_2}_\text{M}^{\kappa}$;
+\item is \textcolor{blue}{non-negative}.
+%\item may be understood as a probability density;
+\end{itemize}
+\item The corresponding current $\vec{\mscrJ}_\text{M}^\kappa$
+is \textcolor{blue}{real} but
+\textcolor{orange}{not conserved}\footfullcite{Rosenstein1985}.
 
 \end{itemize}
+\end{frame}
+
+\begin{frame}%
+{Wave packets with Gaussian amplitude for continuous spectrum}%
+{Quintessence models}
+\begin{itemize}
+\item It is difficult to find an amplitude such that the wave packet is
+Gaussian
+\item Instead, one can choose a Gaussian amplitude
+\begin{align}
+\rfun{A}{\nu; \overline{\nu},\sigma} \coloneqq
+\rbr{\frac{1}{\sqrt{2\pp}\,\sigma}\rfun{\exp}{
+-\frac{\rbr{\nu-\overline{\nu}}^2}{2\sigma^2}}}^{1/2}
+\end{align}
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}%
+{Wave packets with Poissonian amplitude for discrete spectrum}%
+{Phantom model}
+\begin{itemize}
+
+\item One can choose a Poissonian amplitude
+\begin{align}
+\rfun{A_n}{\overline{n}} \coloneqq
+\rbr{\ee^{-\overline{n}}\frac{\overline{n}^n}{n!}}^{1/2}
+\end{align}
+\item In \footfullcite{Kiefer1990}, $\rfun{A_n}{\overline{n}/\sqrt{2}}$ was chosen
 
 \end{itemize}
 \end{frame}
