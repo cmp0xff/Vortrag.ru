@@ -84,6 +84,13 @@ Z\"ulpicher Stra\ss e 77, 50937 K\"oln, Germany \and
 \inst{4}
 Institut de Ci\`encies del Cosmos (ICCUB), Universitat de Barcelona, Spain}
 
+\AtBeginSection[]
+{
+ \begin{frame}<beamer>
+ \frametitle{Outline}
+ \tableofcontents[currentsection]
+ \end{frame}
+}
 
 \begin{document}
 
@@ -107,7 +114,7 @@ Institut de Ci\`encies del Cosmos (ICCUB), Universitat de Barcelona, Spain}
 \end{itemize}
 \end{frame}
 
-\section{Classical model and the implicitised trajectories}
+\section{Classical model and the implicit trajectories}
 
 \subsection{Lagrangian formalism}
 
@@ -187,28 +194,7 @@ Klein--Gordon eq., respectively.
 \end{frame}
 
 \begin{frame}%
-{Possible generalisation of the decoupling technique}%
-{233}
-\begin{itemize}
-\item Beyond isotropy
-\begin{itemize}
-\item Bianchi Type-I: under investigation
-\end{itemize}
-\item Beyond one Liouville field
-\begin{itemize}
-\item Two exponential potentials: $V_1 = V_2$ and special $\lambda_i$
-\item Multiple Liouville fields: mixing kinetic
-terms\footfullcite{Andrianov2015}
-\end{itemize}
-\item Beyond classic matter
-\begin{itemize}
-\item Non-Hermitian, $PT$-symmetric Liouville fields\footfullcite{ANDRIANOV2010,Andrianov2016}: may avoid big-rip etc.
-\end{itemize}
-\end{itemize}
-\end{frame}
-
-\begin{frame}%
-{Implicitised integration}%
+{Implicit integration}%
 {General integral for $p_\beta \neq 0$}
 \begin{itemize}
 \item Since $\beta$ is cyclic in \cref{eq:lagrangian-decoupled},
@@ -222,7 +208,7 @@ the trsfed.\ 2nd Friedmann eq.\ can be integrated%
 \frac{\lambda\dot{\alpha}+\mscrl\varkappa\dot{\phi}}{\overline{N}}.
 \end{align}
 
-\item For $p_\beta \neq 0$, fixing the \emph{implicitising gauge}
+\item For $p_\beta \neq 0$, fixing the \emph{implicit gauge}
 $\overline{N} = -6\mscrs\sqrt{\varkappa}\dot{\beta}/p_\beta$, the trsfed.\
 1st Friedmann equation \alert{can be integrated to get the trajectory}
 \begin{align}
@@ -258,7 +244,7 @@ $\rbr{\mscrl,\mscrs\mscrv}$, and
 \end{frame}
 
 \begin{frame}%
-{Implicitised integration}%
+{Implicit integration}%
 {Specific integral for $p_\beta = 0$}
 \begin{itemize}
 \item For $p_\beta = 0$, one has $\beta \equiv \beta_0$ or $\phi-\phi_0 =
@@ -279,21 +265,20 @@ automatically consistent with the trsfed.\ Klein--Gordon equation.
 
 
 
-
 \begin{frame}%
 {Trajectories for quintessence model $\rbr{+,+}$}%
 {$\sech$, with $C = 0$, $\vbr{V} = \varkappa^{-2}$ and
-$p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$, varying $\lambda$}
+$p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$; varying $\lambda$}
 \includegraphics[width=\textwidth]{./plots.nb/sech_lamb.pdf}
 \begin{itemize}
-	\item has two asymptotes
+	\item has two asymptotes $\chi \propto \pm \beta$
 \end{itemize}
 \end{frame}
 
 \begin{frame}%
 {Trajectories for quintessence model $\rbr{+,+}$}%
 {$\sech$, with $C = 0$, $\vbr{V} = \varkappa^{-2}$ and
-$\lambda^2 = 3\varkappa$, varying $p_\beta$}
+$\lambda^2 = 3\varkappa$; varying $p_\beta$}
 \includegraphics[width=\textwidth]{./plots.nb/sech_pbet.pdf}
 \begin{itemize}
 	\item has two asymptotes $\chi \propto \pm \beta$
@@ -303,7 +288,7 @@ $\lambda^2 = 3\varkappa$, varying $p_\beta$}
 \begin{frame}%
 {Trajectories for quintessence model $\rbr{+,+}$}%
 {$\sech$, with $C = 0$, $\lambda^2 = 3\varkappa$ and
-$p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$, varying $V$}
+$p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$; varying $V$}
 \includegraphics[width=\textwidth]{./plots.nb/sech_Vsqr.pdf}
 \begin{itemize}
 	\item has two asymptotes $\chi \propto \pm \beta$
@@ -313,7 +298,7 @@ $p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$, varying $V$}
 \begin{frame}%
 {Trajectories for quintessence model $\rbr{+,+}$}%
 {$\sech$, with $C = 0$, $\lambda^2 = 3\varkappa$ and
-$p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$, varying $\varkappa$}
+$p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$; varying $\varkappa$}
 \includegraphics[width=\textwidth]{./plots.nb/sech_vark.pdf}
 \begin{itemize}
 	\item has two asymptotes $\chi \propto \pm \beta$
@@ -324,7 +309,7 @@ $p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$, varying $\varkappa$}
 \begin{frame}%
 {Trajectories for quintessence model $\rbr{+,-}$}%
 {$\csch$, with $C = 0$, $\vbr{V} = \varkappa^{-2}$ and
-$p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$, varying $\lambda$}
+$p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$; varying $\lambda$}
 \includegraphics[width=\textwidth]{./plots.nb/csch_lamb_l.pdf}
 \begin{itemize}
 	\item contains two distinct solutions, separated by $\beta = 0$
@@ -335,7 +320,7 @@ $p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$, varying $\lambda$}
 \begin{frame}%
 {Trajectories for quintessence model $\rbr{+,-}$: $\csch$}%
 {$\csch$, with $C = 0$, $\vbr{V} = \varkappa^{-2}$ and
-$p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$, varying $\lambda$}
+$p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$; varying $\lambda$}
 \includegraphics[width=\textwidth]{./plots.nb/csch_lamb_r.pdf}
 \begin{itemize}
 	\item contains two distinct solutions, separated by $\beta = 0$
@@ -346,7 +331,7 @@ $p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$, varying $\lambda$}
 \begin{frame}%
 {Trajectories for quintessence model $\rbr{+,-}$: $\csch$}%
 {$\csch$, with $V = \varkappa^{-2}$ and
-$\lambda^2 = \varkappa$, varying $p_\beta$}
+$\lambda^2 = \varkappa$; varying $p_\beta$}
 \includegraphics[width=\textwidth]{./plots.nb/csch_pbet_l.pdf}
 \begin{itemize}
 	\item contains two distinct solutions, separated by $\beta = 0$
@@ -357,7 +342,7 @@ $\lambda^2 = \varkappa$, varying $p_\beta$}
 \begin{frame}%
 {Trajectories for phantom model $\rbr{-,+}$}%
 {$\csc$, with $C = 0$, $V = \varkappa^{-2}$ and
-$p_\beta^2 = 3\varkappa^2\sqrt{\vbr{V}}$, varying $\lambda$}
+$p_\beta^2 = 3\varkappa^2\sqrt{\vbr{V}}$; varying $\lambda$}
 \includegraphics[width=\textwidth]{./plots.nb/csc_lamb_l.pdf}
 \begin{columns}
 \begin{column}{.55\textwidth}
@@ -377,7 +362,7 @@ $p_\beta^2 = 3\varkappa^2\sqrt{\vbr{V}}$, varying $\lambda$}
 \begin{frame}%
 {Trajectories for phantom model $\rbr{-,+}$}%
 {$\csc$, with $C = 0$, $V = \varkappa^{-2}$ and
-$p_\beta^2 = 3\varkappa^2\sqrt{\vbr{V}}$, varying $\lambda$}
+$p_\beta^2 = 3\varkappa^2\sqrt{\vbr{V}}$; varying $\lambda$}
 \includegraphics[width=\textwidth]{./plots.nb/csc_lamb_r.pdf}
 \begin{columns}
 \begin{column}{.55\textwidth}
@@ -397,7 +382,7 @@ $p_\beta^2 = 3\varkappa^2\sqrt{\vbr{V}}$, varying $\lambda$}
 \begin{frame}%
 {Trajectories for phantom model $\rbr{-,+}$}%
 {$\csc$, with $C = 0$, $\vbr{V} = \varkappa^{-2}$ and
-$\lambda^2 = 3\varkappa$, varying $p_\beta$}
+$\lambda^2 = 3\varkappa$; varying $p_\beta$}
 \includegraphics[width=\textwidth]{./plots.nb/csc_pbet_l.pdf}
 \begin{columns}
 \begin{column}{.55\textwidth}
@@ -422,7 +407,7 @@ $\lambda^2 = 3\varkappa$, varying $p_\beta$}
 
 \item The integral for $\rbr{-,-}$ is not real.
 
-\item The implicitised integral enables one to compare trajectories with wave 
+\item The implicit integration enables one to compare trajectories with wave 
 functions, see below.
 \end{itemize}
 \end{frame}
@@ -433,7 +418,7 @@ functions, see below.
 
 \begin{frame}%
 {Dirac quantisation and the mode functions}%
-{233}
+%{233}
 \begin{itemize}
 \item
 The primary Hamiltonian and the Hamiltonian constraint reads
@@ -467,7 +452,7 @@ gets the mss.\ Wheeler--DeWitt eq.\ with $\rbr{\beta,\chi}$
 
 \begin{frame}%
 {Separation of the variables and mode functions}%
-{233}
+%{233}
 \begin{itemize}
 \item
 Writing $\rfun{\Psi}{\beta,\chi} = \rfun{\varphi}{\beta}
@@ -528,13 +513,13 @@ turns out to be Besselian, and the mode functions are
 % \end{cases}
 \end{align}
 \item Adapted to imaginary order, $\rfun{\mathrm{F}_{\nu}}{\sigma}$ and
-$\rfun{\mathrm{G}_{\nu}}{\sigma}$ are defined in \footfullcite{Dunster1990}; also see below.
+$\rfun{\mathrm{G}_{\nu}}{\sigma}$ are defined in \footfullcite{Dunster1990}.
 \end{itemize}
 \end{frame}
 
 \begin{frame}
 {Physical mode functions}%
-{233}
+%{233}
 \begin{itemize}
 \item Physical mode functions are expected to be regular on the boundary.
 \item $\rbr{+,+}$: $\vbr{\rfun{\mathrm{I}_{\ii\nu}}{\sigma}} \to +\infty$
@@ -558,7 +543,8 @@ as $\alpha \to +\infty$
 functions. $\forall \nu \ge 0$,
 \begin{itemize}
 \item $\rbr{+,+}$: $\rfun{\mathrm{K}_{\ii\nu}}{\sigma}$ survives
-\item $\rbr{+,-}$: $F$ and $\rfun{\mathrm{G}_{\ii\nu}}{\sigma}$ survives
+\item $\rbr{+,-}$: $\rfun{\mathrm{F}_{\ii\nu}}{\sigma}$ and
+$\rfun{\mathrm{G}_{\ii\nu}}{\sigma}$ survives
 \item $\rbr{-,+}$: $\rfun{\mathrm{J}_{\nu}}{\sigma}$ survives
 \item $\rbr{-,-}$: drops out
 \end{itemize}
@@ -717,7 +703,7 @@ condition fixes $\nu_0 = 1$.
 
 \begin{frame}%
 {Discritisation of the phantom model $\rbr{-,+}$}%
-{233}
+%{233}
 \begin{alertblock}{Levels of the phantom model are discretised}
 \dots if one imposes Hermiticity of squared momenta under the Schrödinger
 product
@@ -783,7 +769,7 @@ is \textcolor{orange}{complex}
 
 \begin{frame}%
 {Mostafazadeh inner product and the corresponding density}%
-{233}
+%{233}
 \begin{itemize}
 \item The real power of $\BbbD$ is defined by spectral decomposition
 $\BbbD^{\gamma} \coloneqq \sum_\nu \nu^{2\gamma}\mbfP_\nu$,
@@ -812,7 +798,7 @@ is \textcolor{blue}{real} but
 \end{frame}
 
 \begin{frame}%
-{Wave packets with Gaussian amplitude for continuous spectrum}%
+{Wave packets of Gaussian amplitude for continuous spectrum}%
 {Quintessence models}
 \begin{itemize}
 \item It is difficult to find an amplitude such that the wave packet is
@@ -831,18 +817,75 @@ $\rfun{A}{\nu;\overline{\nu},\sigma/\sqrt{2}}$ was chosen.
 \end{frame}
 
 \begin{frame}%
-{Wave packets with Gaussian amplitude and the corresponding trajectory}%
-{Quintessence model $\rbr{+,+}$ with $\mathrm{K}_{\ii\nu}$}
+{Wave packets of Gaussian amplitude for quintessence model $\rbr{+,+}$}%
+{$\mathrm{K}_{\ii\nu}$, with $\lambda = \varkappa^{1/2}/2$,
+$V = -\varkappa^{-2}$, $\overline{k}_\beta = -2$ and $\sigma_\beta = 5/4$}
+\begin{columns}
+\begin{column}{.49\textwidth}
+\begin{block}{Schödinger}
+\only<1>{
+\includegraphics[width=\textwidth]{./plots.paper.nb/naive_cosh_2d.pdf}}
+\only<2>{
+\includegraphics[width=\textwidth]{./plots.paper.nb/naive_cosh_3d.pdf}}
+\end{block}
+\end{column}
+\begin{column}{.49\textwidth}
+\begin{block}{Mostafazadeh}
+\only<1>{
+\includegraphics[width=\textwidth]{./plots.paper.nb/mosta_cosh_2d.pdf}}
+\only<2>{
+\includegraphics[width=\textwidth]{./plots.paper.nb/mosta_cosh_3d.pdf}}
+\end{block}
+\end{column}
+\end{columns}
 \end{frame}
 
 \begin{frame}%
-{Wave packets with Gaussian amplitude and the corresponding trajectory}%
-{Quintessence model $\rbr{+,-}$ with $\mathrm{F}_{\ii\nu}$}
+{Wave packets of Gaussian amplitude for quintessence model $\rbr{+,-}$}%
+{$\mathrm{F}_{\ii\nu}$, with $\lambda = 4\varkappa^{1/2}/5$,
+$V = +\varkappa^{-2}$, $\overline{k}_\beta = -7/2$ and $\sigma_\beta = 7/5$}
+\begin{columns}
+\begin{column}{.49\textwidth}
+\begin{block}{Schödinger}
+\only<1>{
+\includegraphics[width=\textwidth]{./plots.paper.nb/naive_sinh_F_2d.pdf}}
+\only<2>{
+\includegraphics[width=\textwidth]{./plots.paper.nb/naive_sinh_F_3d.pdf}}
+\end{block}
+\end{column}
+\begin{column}{.49\textwidth}
+\begin{block}{Mostafazadeh}
+\only<1>{
+\includegraphics[width=\textwidth]{./plots.paper.nb/mosta_sinh_F_2d.pdf}}
+\only<2>{
+\includegraphics[width=\textwidth]{./plots.paper.nb/mosta_sinh_F_3d.pdf}}
+\end{block}
+\end{column}
+\end{columns}
 \end{frame}
 
 \begin{frame}%
-{Wave packets with Gaussian amplitude and the corresponding trajectory}%
-{Quintessence model $\rbr{+,-}$ with $\mathrm{G}_{\ii\nu}$}
+{Wave packets of Gaussian amplitude for quintessence model $\rbr{+,-}$}%
+{$\mathrm{G}_{\ii\nu}$, with $\lambda = 4\varkappa^{1/2}/5$,
+$V = +\varkappa^{-2}$, $\overline{k}_\beta = -7/2$ and $\sigma_\beta = 7/5$}
+\begin{columns}
+\begin{column}{.49\textwidth}
+\begin{block}{Schödinger}
+\only<1>{
+\includegraphics[width=\textwidth]{./plots.paper.nb/naive_sinh_G_2d.pdf}}
+\only<2>{
+\includegraphics[width=\textwidth]{./plots.paper.nb/naive_sinh_G_3d.pdf}}
+\end{block}
+\end{column}
+\begin{column}{.49\textwidth}
+\begin{block}{Mostafazadeh}
+\only<1>{
+\includegraphics[width=\textwidth]{./plots.paper.nb/mosta_sinh_G_2d.pdf}}
+\only<2>{
+\includegraphics[width=\textwidth]{./plots.paper.nb/mosta_sinh_G_3d.pdf}}
+\end{block}
+\end{column}
+\end{columns}
 \end{frame}
 
 \begin{frame}%
@@ -863,33 +906,94 @@ $\rfun{A_n}{\overline{n}/\sqrt{2}}$ was chosen.
 \end{frame}
 
 \begin{frame}%
-{Wave packets with Poissonian amplitude and the corresponding trajectory}%
-{Phantom model $\rbr{-,+}$ with discrete $\mathrm{J}_{2n+1}$}
+{Wave packets of Poissonian amplitude for phantom model}%
+{$\mathrm{J}_{2n+1}$, with $\lambda = 2\varkappa^{1/2}$,
+$V = +\varkappa^{-2}$ and $\overline{k}_\beta = 8$}
+\begin{columns}
+\begin{column}{.49\textwidth}
+\begin{block}{Schödinger}
+\only<1>{
+\includegraphics[width=\textwidth]{./plots.paper.nb/naive_cos_1_2d_m.pdf}}
+\only<2>{
+\includegraphics[width=\textwidth]{./plots.paper.nb/naive_cos_1_3d_m.pdf}}
+\end{block}
+\end{column}
+\begin{column}{.49\textwidth}
+\begin{block}{Mostafazadeh}
+\only<1>{
+\includegraphics[width=\textwidth]{./plots.paper.nb/mosta_cos_1_2d_m.pdf}}
+\only<2>{
+\includegraphics[width=\textwidth]{./plots.paper.nb/mosta_cos_1_3d_m.pdf}}
+\end{block}
+\end{column}
+\end{columns}
 \end{frame}
 
 \begin{frame}%
-{Wave packets with Gaussian amplitude and the corresponding trajectory}%
-{Phantom model $\rbr{-,+}$ with continuous $\mathrm{J}_{\nu}$}
+{Wave packets of Gaussian amplitude for phantom model}%
+{$\mathrm{J}_{\nu}$, with $\lambda = 2\varkappa^{1/2}$,
+$V = +\varkappa^{-2}$, $\overline{k}_\beta = 8$ and $\sigma_\beta = 11/2$}
+\begin{columns}
+\begin{column}{.49\textwidth}
+\begin{block}{Schödinger}
+\only<1>{
+\includegraphics[width=\textwidth]{./plots.paper.nb/naive_cos_gauss_2d.pdf}}
+\only<2>{
+\includegraphics[width=\textwidth]{./plots.paper.nb/naive_cos_gauss_3d.pdf}}
+\end{block}
+\end{column}
+\begin{column}{.49\textwidth}
+\begin{block}{Mostafazadeh}
+\only<1>{
+\includegraphics[width=\textwidth]{./plots.paper.nb/mosta_cos_gauss_2d.pdf}}
+\only<2>{
+\includegraphics[width=\textwidth]{./plots.paper.nb/mosta_cos_gauss_3d.pdf}}
+\end{block}
+\end{column}
+\end{columns}
 \end{frame}
 
 \section{Conclusions}
 
 \begin{frame}%
 {Issues}%
-{233}
+%{233}
 \begin{itemize}
-\item A normalising $\kappa$ for $\rbr{\cdot,\cdot}_\text{M}^\kappa$ has not yet been able to be evaluated, hence a quantitative comparison of $\rbr{\cdot,\cdot}_\text{S}$ and $\rbr{\cdot,\cdot}_\text{M}^\kappa$ is not yet possible.
-\item Wave packets with Gaussian profile are to be constructed, instead of inserting Gaussian / Possonian amplitude
-\item Quantum-corrected $\overline{\nu}$ is to be understood
+\item Wave packets with multiple branches in $\rbr{+,-}$ and $\rbr{-,+}$ is to
+be understood
+\item Quantum-corrected $\overline{k}_\beta$ is to be understood
+\item Wave packets with Gaussian profile are to be constructed, instead of
+inserting Gaussian / Possonian amplitude artificially.
+\item A normalising $\kappa$ for $\rbr{\cdot,\cdot}_\text{M}^\kappa$ is to be evaluated, otherwise a quantitative comparison of
+$\rbr{\cdot,\cdot}_\text{S}$ and $\rbr{\cdot,\cdot}_\text{M}^\kappa$ is not
+possible.
 \end{itemize}
 \end{frame}
 
 \begin{frame}%
 {Outlook}%
-{233}
+%{233}
 \begin{itemize}
-\item Beyond classic matter: $PT$-symmetric instead of phantom field
-\item Beyond homogeneity: cosmological perturbation
+\item Beyond isotropy: generalise to Bianchi models
+\begin{itemize}
+\item Bianchi Type-I: natural extension; \alert{under investigation}
+\end{itemize}
+
+\item Beyond homogeneity: cosmological perturbation,
+\alert{under investigation}
+
+\item Beyond single field
+\begin{itemize}
+\item Two exponential potentials: $V_1 = V_2$ and special $\lambda_i$
+\item Multiple Liouville fields: mixing kinetic
+terms needed\footfullcite{Andrianov2015}
+\end{itemize}
+
+\item Beyond classic matter
+\begin{itemize}
+\item Non-Hermitian, $PT$-symmetric Liouville fields\footfullcite{ANDRIANOV2010,Andrianov2016}: may avoid big-rip etc.
+\end{itemize}
+
 \end{itemize}
 \end{frame}
 
@@ -899,7 +1003,7 @@ $\rfun{A_n}{\overline{n}/\sqrt{2}}$ was chosen.
 \begin{frame}%
 {Integration of the transformed first Friedmann equation}%
 {General integral for $p_\beta \neq 0$}
-In order to integrate the equation under the implicitising gauge
+In order to integrate the equation under the implicit gauge
 \begin{align}
 \mscrs\frac{p_\beta^2}{12}\rbr{
 -\mscrl\frac{\varkappa^{1/2}}{6}\rbr{\frde{\chi}{\beta}}^2
@@ -970,26 +1074,26 @@ which is of the standard Besselian form.
 
 % \end{frame}
 
-\begin{frame}[fragile]
-  \frametitle{Laden des Themes}
-  \begin{block}{Das Theme kann mit den folgenden Optionen geladen werden}
-    \begin{small}
-\begin{verbatim}
-\usetheme[%
-% uk,      %% Farben aller Fakultaeten
-wiso,     %% Wiso-Fakultaet
-% jura,    %% Rechtswissenschaftliche Fakultaet
-% medizin, %% Medizinische Fakultaet
-% philo,   %% Philosophische Fakultaet
-% matnat,  %% Mathematisch-Naturwissenschaftliche Fakultaet
-% human,   %% Humanwissenschaftliche Fakultaet
-% verw,    %% Universitaetsverwaltung
-]{UzK}
-\end{verbatim}
-    \end{small}
-
-  \end{block}
-\end{frame}
+%\begin{frame}[fragile]
+%  \frametitle{Laden des Themes}
+%  \begin{block}{Das Theme kann mit den folgenden Optionen geladen werden}
+%    \begin{small}
+%\begin{verbatim}
+%\usetheme[%
+%% uk,      %% Farben aller Fakultaeten
+%wiso,     %% Wiso-Fakultaet
+%% jura,    %% Rechtswissenschaftliche Fakultaet
+%% medizin, %% Medizinische Fakultaet
+%% philo,   %% Philosophische Fakultaet
+%% matnat,  %% Mathematisch-Naturwissenschaftliche Fakultaet
+%% human,   %% Humanwissenschaftliche Fakultaet
+%% verw,    %% Universitaetsverwaltung
+%%]{UzK}
+%\end{verbatim}
+%    \end{small}
+%
+%  \end{block}
+%\end{frame}
 
 % \begin{frame}
 %   \frametitle{Die Fußzeile}
@@ -1024,23 +1128,23 @@ wiso,     %% Wiso-Fakultaet
 % 
 % \end{frame}
 
-\begin{frame}
-  \frametitle{\texttt{block}-Umgebungen}
-  \begin{block}{Standard (\texttt{block})}
-    Verwendet die Farbe "`Blaugrau Mittel"' als Blocktitel-Hintergrund
-  \end{block}
-
-  \begin{exampleblock}{\texttt{exampleblock}}
-    Bei Verwendung der Fußzeile mit allen Fakultätsfarben
-    Titelhintergrund in Wiso-Grün, sonst in der jeweiligen
-    Fakultätsfarbe
-  \end{exampleblock}
-
-  \begin{alertblock}{\texttt{alertblock}}
-    Verwendet das Rot der Folientitel
-  \end{alertblock}
-
-\end{frame}
+%\begin{frame}
+%  \frametitle{\texttt{block}-Umgebungen}
+%  \begin{block}{Standard (\texttt{block})}
+%    Verwendet die Farbe "`Blaugrau Mittel"' als Blocktitel-Hintergrund
+%  \end{block}
+%
+%  \begin{exampleblock}{\texttt{exampleblock}}
+%    Bei Verwendung der Fußzeile mit allen Fakultätsfarben
+%    Titelhintergrund in Wiso-Grün, sonst in der jeweiligen
+%    Fakultätsfarbe
+%  \end{exampleblock}
+%
+%  \begin{alertblock}{\texttt{alertblock}}
+%    Verwendet das Rot der Folientitel
+%  \end{alertblock}
+%
+%\end{frame}
 
 
 % \begin{frame}
