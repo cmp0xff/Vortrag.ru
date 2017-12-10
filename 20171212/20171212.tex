@@ -163,7 +163,7 @@ the \emph{rescaled} special orthogonal transformation
 \alpha \\ \phi
 \end{pmatrix} = \frac{\mscrs}{g}
 \begin{pmatrix}
-\lambda & -\mscrl\kappa \\
+\lambda & -\mscrl\varkappa \\
 -6 & \lambda
 \end{pmatrix}
 \begin{pmatrix}
@@ -213,7 +213,7 @@ terms\footfullcite{Andrianov2015}
 \begin{itemize}
 \item Since $\beta$ is cyclic in \cref{eq:lagrangian-decoupled},
 the trsfed.\ 2nd Friedmann eq.\ can be integrated%
-\footfullcite[The same first integral in Hamiltonian formalism has been found in][]{Lan2016,Andrianov2015}
+\footfullcite[The same first integral in canonical formalism has been found in][]{Lan2016,Andrianov2015}
 \begin{align}
 \text{const.} \equiv p_\beta \coloneqq \frpa{L}{\dot{\beta}} &=
 -6\mscrs\varkappa^{1/2}\frac{\dot{\beta}}{\overline{N}}
@@ -258,81 +258,173 @@ $\rbr{\mscrl,\mscrs\mscrv}$, and
 \end{frame}
 
 \begin{frame}%
-{Trajectories}%
-{Quintessence model $\rbr{+,+}$}
-\end{frame}
-
-\begin{frame}%
-{Trajectories}%
-{Quintessence model $\rbr{+,-}$}
-\end{frame}
-
-\begin{frame}%
-{Trajectories}%
-{Phantom model $\rbr{-,+}$}
-\end{frame}
-
-\begin{frame}%
-{Integration}%
-{Discussions}
-\begin{itemize}
-\item The integrals are consistent with the trsfed.\ Klein--Gordon equation.
-\item The integral for $\rbr{+,+}$
-\begin{itemize}
-	\item has two asymptotes
-\end{itemize}
-\item The implicitised integral for $\rbr{+,-}$ 
-\begin{itemize}
-	\item contains two distinct solutions
-	\item has three asymptotes
-\end{itemize}
-\item The implicitised integral for $\rbr{-,+}$
-\begin{itemize}
-	\item is $\beta$-even for $C = 0$
-	\item contains infinite distinct solutions
-	\item has infinite asymptotes, which are pairwise parallel
-\end{itemize}
-\item The integral for $\rbr{-,-}$
-\begin{itemize}
-	\item is not real
-\end{itemize}
-\item The implicitised integral enables one to compare trajectories with wave 
-functions, see below.
-\end{itemize}
-\end{frame}
-
-\begin{frame}%
 {Implicitised integration}%
 {Specific integral for $p_\beta = 0$}
 \begin{itemize}
 \item For $p_\beta = 0$, one has $\beta \equiv \beta_0$ or $\phi-\phi_0 =
--\mscrl\lambda\alpha/\kappa$, which is the familiar power-law special
+-\mscrl\lambda\alpha/\varkappa$, which is the familiar power-law special
 solution\footfullcite{Dabrowski2006}.
 
 \item Further integrating the first Friedmann equation demands $\rbr{+,-}$
 or $\rbr{-,+}$ to guarantee $\overline{N} > 0$, and the result is
 automatically consistent with the trsfed.\ Klein--Gordon equation.
 
-\item Fixing $\overline{N} = \rbr{2\varkappa^2\vbr{V}}^{-1/2}$ yields
-\begin{align}
-\ee^{g\mscrs_\chi\chi} = \rbr{\frac{2\kappa}{g\rbr{t-t_0}}}^2.
-\end{align}
+% \item Fixing $\overline{N} = \rbr{2\varkappa^2\vbr{V}}^{-1/2}$ yields
+% \begin{align}
+% \ee^{g\mscrs_\chi\chi} = \rbr{\frac{2\varkappa}{g\rbr{t-t_0}}}^2.
+%\end{align}
+\end{itemize}
+\end{frame}
+
+
+
+
+
+\begin{frame}%
+{Trajectories for quintessence model $\rbr{+,+}$}%
+{$\sech$, with $C = 0$, $\vbr{V} = \varkappa^{-2}$ and
+$p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$, varying $\lambda$}
+\includegraphics[width=\textwidth]{./plots.nb/sech_lamb.pdf}
+\begin{itemize}
+	\item has two asymptotes
 \end{itemize}
 \end{frame}
 
 \begin{frame}%
-{Trajectories}%
-{Quintessence model $\rbr{+,+}$}
+{Trajectories for quintessence model $\rbr{+,+}$}%
+{$\sech$, with $C = 0$, $\vbr{V} = \varkappa^{-2}$ and
+$\lambda^2 = 3\varkappa$, varying $p_\beta$}
+\includegraphics[width=\textwidth]{./plots.nb/sech_pbet.pdf}
+\begin{itemize}
+	\item has two asymptotes $\chi \propto \pm \beta$
+\end{itemize}
 \end{frame}
 
 \begin{frame}%
-{Trajectories}%
-{Quintessence model $\rbr{+,-}$}
+{Trajectories for quintessence model $\rbr{+,+}$}%
+{$\sech$, with $C = 0$, $\lambda^2 = 3\varkappa$ and
+$p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$, varying $V$}
+\includegraphics[width=\textwidth]{./plots.nb/sech_Vsqr.pdf}
+\begin{itemize}
+	\item has two asymptotes $\chi \propto \pm \beta$
+\end{itemize}
 \end{frame}
 
 \begin{frame}%
-{Trajectories}%
-{Phantom model $\rbr{-,+}$}
+{Trajectories for quintessence model $\rbr{+,+}$}%
+{$\sech$, with $C = 0$, $\lambda^2 = 3\varkappa$ and
+$p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$, varying $\varkappa$}
+\includegraphics[width=\textwidth]{./plots.nb/sech_vark.pdf}
+\begin{itemize}
+	\item has two asymptotes $\chi \propto \pm \beta$
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}%
+{Trajectories for quintessence model $\rbr{+,-}$}%
+{$\csch$, with $C = 0$, $\vbr{V} = \varkappa^{-2}$ and
+$p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$, varying $\lambda$}
+\includegraphics[width=\textwidth]{./plots.nb/csch_lamb_l.pdf}
+\begin{itemize}
+	\item contains two distinct solutions, separated by $\beta = 0$
+	\item has three asymptotes $\chi \propto \pm \beta$ and $\beta = 0$
+\end{itemize}
+\end{frame}
+
+\begin{frame}%
+{Trajectories for quintessence model $\rbr{+,-}$: $\csch$}%
+{$\csch$, with $C = 0$, $\vbr{V} = \varkappa^{-2}$ and
+$p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$, varying $\lambda$}
+\includegraphics[width=\textwidth]{./plots.nb/csch_lamb_r.pdf}
+\begin{itemize}
+	\item contains two distinct solutions, separated by $\beta = 0$
+	\item has three asymptotes $\chi \propto \pm \beta$ and $\beta = 0$
+\end{itemize}
+\end{frame}
+
+\begin{frame}%
+{Trajectories for quintessence model $\rbr{+,-}$: $\csch$}%
+{$\csch$, with $V = \varkappa^{-2}$ and
+$\lambda^2 = \varkappa$, varying $p_\beta$}
+\includegraphics[width=\textwidth]{./plots.nb/csch_pbet_l.pdf}
+\begin{itemize}
+	\item contains two distinct solutions, separated by $\beta = 0$
+	\item has three asymptotes $\chi \propto \pm \beta$ and $\beta = 0$
+\end{itemize}
+\end{frame}
+
+\begin{frame}%
+{Trajectories for phantom model $\rbr{-,+}$}%
+{$\csc$, with $C = 0$, $V = \varkappa^{-2}$ and
+$p_\beta^2 = 3\varkappa^2\sqrt{\vbr{V}}$, varying $\lambda$}
+\includegraphics[width=\textwidth]{./plots.nb/csc_lamb_l.pdf}
+\begin{columns}
+\begin{column}{.55\textwidth}
+\begin{itemize}
+	\item contains infinite distinct solutions
+	\item has infinite parallel asymptotes $\beta \propto n\pp $
+\end{itemize}
+\end{column}
+\begin{column}{.4\textwidth}
+\begin{itemize}
+\item is $\beta$-even for $C = 0$
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}%
+{Trajectories for phantom model $\rbr{-,+}$}%
+{$\csc$, with $C = 0$, $V = \varkappa^{-2}$ and
+$p_\beta^2 = 3\varkappa^2\sqrt{\vbr{V}}$, varying $\lambda$}
+\includegraphics[width=\textwidth]{./plots.nb/csc_lamb_r.pdf}
+\begin{columns}
+\begin{column}{.55\textwidth}
+\begin{itemize}
+	\item contains infinite distinct solutions
+	\item has infinite parallel asymptotes $\beta \propto n\pp $
+\end{itemize}
+\end{column}
+\begin{column}{.4\textwidth}
+\begin{itemize}
+\item is $\beta$-even for $C = 0$
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}%
+{Trajectories for phantom model $\rbr{-,+}$}%
+{$\csc$, with $C = 0$, $\vbr{V} = \varkappa^{-2}$ and
+$\lambda^2 = 3\varkappa$, varying $p_\beta$}
+\includegraphics[width=\textwidth]{./plots.nb/csc_pbet_l.pdf}
+\begin{columns}
+\begin{column}{.55\textwidth}
+\begin{itemize}
+	\item contains infinite distinct solutions
+	\item has infinite parallel asymptotes $\beta \propto n\pp $
+\end{itemize}
+\end{column}
+\begin{column}{.4\textwidth}
+\begin{itemize}
+\item is $\beta$-even for $C = 0$
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}%
+{Integration}%
+{Further discussions}
+\begin{itemize}
+\item The integrals are consistent with the trsfed.\ Klein--Gordon equation.
+
+\item The integral for $\rbr{-,-}$ is not real.
+
+\item The implicitised integral enables one to compare trajectories with wave 
+functions, see below.
+\end{itemize}
 \end{frame}
 
 \section{Quantised model and the wave packets}
@@ -806,7 +898,7 @@ $\rfun{A_n}{\overline{n}/\sqrt{2}}$ was chosen.
 
 \begin{frame}%
 {Integration of the transformed first Friedmann equation}%
-{$p_\beta \neq 0$}
+{General integral for $p_\beta \neq 0$}
 In order to integrate the equation under the implicitising gauge
 \begin{align}
 \mscrs\frac{p_\beta^2}{12}\rbr{
@@ -831,8 +923,6 @@ to get
 which is of the standard inverse hyperbolic / trigonometric form
 \textcolor{orange}{except for $\rbr{-,-}$}.
 \end{frame}
-
-
 
 \begin{frame}%
 {Integration of the separated minisuperspace WDW equation}%
