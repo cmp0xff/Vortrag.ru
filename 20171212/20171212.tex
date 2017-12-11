@@ -108,33 +108,39 @@ Institut de Ci\`encies del Cosmos (ICCUB), Universitat de Barcelona, Spain}
 
 \begin{frame}%
 {Introduction}%
-{Introduction}
+{Quintessence and phantom Liouville field}
 \begin{itemize}
-	\item
+\item Observed accelerated expansion can be explained by a cosmological 
+constant\footfullcite{COPELAND2006,Bamba2012}, but its origin has not yet been 
+understood.
+\item Proposals have been made of quintessence and phantom fields, which are 
+minimally-coupled real scalar fields with $\mscrl = \pm 1$\footnote{The 
+signature of metric is mostly positive.}
+\begin{align}
+\mscrS = \int\dd^4 x\,\sqrt{-g}\,\cbr{-\mscrl \frac{g^{\mu\nu}}{2}
+\rbr{\partial_\mu\phi}\rbr{\partial_\nu\phi} - \rfun{\mscrV}{\phi}}.
+\end{align}
+
+\item $\rfun{\mscrV}{\phi} = V\ee^{\lambda\phi}$ where $\lambda, V\in \BbbR$ is 
+of interest, and can be called Liouville\footfullcite{NAKAYAMA2004}.
 \end{itemize}
 \end{frame}
 
-\section{Classical model and the implicit trajectories}
-
-\subsection{Lagrangian formalism}
-
 \begin{frame}%
-{The Friedmann--Lemaître model}%
-{123}
+{Introduction}%
+{Friedmann--Lemaître model}
 \begin{itemize}
-\item Flat Robertson--Walker metric $\dd s^2 = -\rfun{N^2}{t}\,\dd t^2
-+\varkappa^{-1}\ee^{2\rfun{\alpha}{t}}\,\dd\Omega_3^2$
-\begin{itemize}
-	\item $\varkappa \coloneqq 8\pp\nG$;
-	$\dd\Omega_3^2$ dimensionless spacial metric
-\end{itemize}
+\item Assuming homogeneity and isotropy, one applies a flat Robertson--Walker 
+metric
+\begin{align}
+\dd s^2 = -\rfun{N^2}{t}\,\dd t^2 + \varkappa 
+\ee^{2\rfun{\alpha}{t}}\,\dd\Omega_{3\text{F}}^2
+\end{align}
+with $\varkappa \coloneqq 8\pp\nG$, $\dd\Omega_{3\text{F}}^2 \coloneqq 
+\dd\chi^2+\chi^2\rbr{\dd\theta^2+\sin^2\theta\,\dd\varphi^2}$.
 
-\item Real Klein--Gordon field with potential
-$V\ee^{\lambda\phi}$ (Liouville), where $\lambda, V\in \BbbR$,
-and kinetic term with sign $\mscrl = \pm 1$ (quintessence
-/ phantom model).
-
-\item Total action $\mscrS \coloneqq S_{\text{EH}} + S_\text{GHY} + S_\text{L}
+\item Combined with the Liouville field, the total action reads
+$\mscrS \coloneqq \mscrS_{\text{EH}} + \mscrS_\text{GHY} + \mscrS_\text{L}
 = \int\dd\Omega_3^2\int\dd t\,L$, %in which the effective Lagrangian reads
 \begin{align}
 %S_{\text{Einstein--Hilbert}} + S_\text{Gibbons--Hawking--York} + 
@@ -144,9 +150,17 @@ L&\coloneqq \varkappa^{3/2}N\ee^{3\alpha}
 +\mscrl\frac{\dot{\phi}^2}{2N^2}-V\ee^{\lambda\phi}},
 \label{eq:eff-lag-10}
 \end{align}
-in which dot means $\dd/\dd t$ and $\mscrl = \pm 1$.
+in which dot means $\dd/\dd t$.
+
+\item The model turns out to be integrable, both classically and 
+quantum-mechanically, enabling one studying the relation between the classical
+and quantum theory.
 \end{itemize}
 \end{frame}
+
+\section{Classical model and the implicit trajectories}
+
+\subsection{Lagrangian formalism}
 
 \begin{frame}%
 {Decoupling the variables}%
@@ -251,9 +265,10 @@ $\rbr{\mscrl,\mscrs\mscrv}$, and
 -\mscrl\lambda\alpha/\varkappa$, which is the familiar power-law special
 solution\footfullcite{Dabrowski2006}.
 
-\item Further integrating the first Friedmann equation demands $\rbr{+,-}$
-or $\rbr{-,+}$ to guarantee $\overline{N} > 0$, and the result is
-automatically consistent with the trsfed.\ Klein--Gordon equation.
+\item Further integrating the transformed first Friedmann equation demands 
+$\rbr{+,-}$ or $\rbr{-,+}$ to guarantee $\overline{N} > 0$.
+% and the result is automatically consistent with the trsfed.\ Klein--Gordon 
+% equation.
 
 % \item Fixing $\overline{N} = \rbr{2\varkappa^2\vbr{V}}^{-1/2}$ yields
 % \begin{align}
@@ -295,15 +310,15 @@ $p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$; varying $V$}
 \end{itemize}
 \end{frame}
 
-\begin{frame}%
-{Trajectories for quintessence model $\rbr{+,+}$}%
-{$\sech$, with $C = 0$, $\lambda^2 = 3\varkappa$ and
-$p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$; varying $\varkappa$}
-\includegraphics[width=\textwidth]{./plots.nb/sech_vark.pdf}
-\begin{itemize}
-	\item has two asymptotes $\chi \propto \pm \beta$
-\end{itemize}
-\end{frame}
+% \begin{frame}%
+% {Trajectories for quintessence model $\rbr{+,+}$}%
+% {$\sech$, with $C = 0$, $\lambda^2 = 3\varkappa$ and
+% $p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$; varying $\varkappa$}
+% \includegraphics[width=\textwidth]{./plots.nb/sech_vark.pdf}
+% \begin{itemize}
+% 	\item has two asymptotes $\chi \propto \pm \beta$
+% \end{itemize}
+% \end{frame}
 
 
 \begin{frame}%
@@ -403,7 +418,7 @@ $\lambda^2 = 3\varkappa$; varying $p_\beta$}
 {Integration}%
 {Further discussions}
 \begin{itemize}
-\item The integrals are consistent with the trsfed.\ Klein--Gordon equation.
+%\item The integrals are consistent with the trsfed.\ Klein--Gordon equation.
 
 \item The integral for $\rbr{-,-}$ is not real.
 
@@ -705,10 +720,8 @@ condition fixes $\nu_0 = 1$.
 \begin{frame}%
 {Discritisation of the phantom model $\rbr{-,+}$}%
 %{233}
-\begin{alertblock}{Levels of the phantom model are discretised}
-\dots if one imposes Hermiticity of squared momenta under the Schrödinger
-product
-\end{alertblock}
+Levels of the phantom model are discretised if one imposes Hermiticity of 
+squared momenta under the Schrödinger product.
 
 \begin{itemize}
 \item This kind of subtlety on Hermiticity is named as \emph{self-adjoint 
@@ -978,7 +991,7 @@ possible.
 \begin{itemize}
 \item Beyond isotropy: generalise to Bianchi models
 \begin{itemize}
-\item Bianchi Type-I: natural extension; \alert{under investigation}
+\item Bianchi Type-I: a natural extension, \alert{under investigation}
 \end{itemize}
 
 \item Beyond homogeneity: cosmological perturbation,
@@ -993,7 +1006,8 @@ terms needed\footfullcite{Andrianov2015}
 
 \item Beyond classic matter
 \begin{itemize}
-\item Non-Hermitian, $PT$-symmetric Liouville fields\footfullcite{ANDRIANOV2010,Andrianov2016}: may avoid big-rip etc.
+\item Non-Hermitian, $PT$-symmetric Liouville 
+fields\footfullcite{ANDRIANOV2010,Andrianov2016}: may cross the phantom divide
 \end{itemize}
 
 \end{itemize}
@@ -1032,7 +1046,7 @@ which is of the standard inverse hyperbolic / trigonometric form
 
 \begin{frame}%
 {Integration of the separated minisuperspace WDW equation}%
-{233}
+%{233}
 In order to integrate the separated minisuperspace Wheeler--DeWitt equation
 \begin{align}
 % \ee^{-\ii k_\beta\mscrs_\beta\beta}\rbr{
