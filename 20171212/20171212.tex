@@ -111,11 +111,16 @@ Institut de Ci\`encies del Cosmos (ICCUB), Universitat de Barcelona, Spain}
 {Quintessence and phantom Liouville field}
 \begin{itemize}
 \item Observed accelerated expansion can be explained by a cosmological 
-constant\footfullcite{COPELAND2006,Bamba2012}, but its origin has not yet been 
+constant\footfullcite{COPELAND2006,Bamba2012}, but its origin has yet to be
 understood.
-\item Proposals have been made of quintessence and phantom fields, which are 
-minimally-coupled real scalar fields with $\mscrl = \pm 1$\footnote{The 
-signature of metric is mostly positive.}
+
+\item Proposals have been made of quintessence\footfullcite{Caldwell1998} and 
+phantom\footfullcite{Caldwell2002} matter, with barotropic 
+index\footnote{Barotropic index is the $w$ in equation of state $\rho = wp$.} 
+$-1 < w < -1/3$ and $w < -1$, respectively.
+
+\item They can be realised by minimally-coupled real scalar fields with $\mscrl 
+= \pm 1$\footnote{The signature of metric is mostly positive.}
 \begin{align}
 \mscrS = \int\dd^4 x\,\sqrt{-g}\,\cbr{-\mscrl \frac{g^{\mu\nu}}{2}
 \rbr{\partial_\mu\phi}\rbr{\partial_\nu\phi} - \rfun{\mscrV}{\phi}}.
@@ -133,7 +138,7 @@ of interest, and can be called Liouville\footfullcite{NAKAYAMA2004}.
 \item Assuming homogeneity and isotropy, one applies a flat Robertson--Walker 
 metric
 \begin{align}
-\dd s^2 = -\rfun{N^2}{t}\,\dd t^2 + \varkappa 
+g_{\mu\nu}\,\dd x^\mu\,\dd x^\nu = -\rfun{N^2}{t}\,\dd t^2 + \varkappa 
 \ee^{2\rfun{\alpha}{t}}\,\dd\Omega_{3\text{F}}^2
 \end{align}
 with $\varkappa \coloneqq 8\pp\nG$, $\dd\Omega_{3\text{F}}^2 \coloneqq 
@@ -262,8 +267,8 @@ $\rbr{\mscrl,\mscrs\mscrv}$, and
 {Specific integral for $p_\beta = 0$}
 \begin{itemize}
 \item For $p_\beta = 0$, one has $\beta \equiv \beta_0$ or $\phi-\phi_0 =
--\mscrl\lambda\alpha/\varkappa$, which is the familiar power-law special
-solution\footfullcite{Dabrowski2006}.
+-\mscrl\lambda\alpha/\varkappa$, which is the well-known power-law special
+solution\footfullcite[For instance][ch.\ 3]{Liddle2000}.
 
 \item Further integrating the transformed first Friedmann equation demands 
 $\rbr{+,-}$ or $\rbr{-,+}$ to guarantee $\overline{N} > 0$.
@@ -481,8 +486,8 @@ Writing $\rfun{\Psi}{\beta,\chi} = \rfun{\varphi}{\beta}
 % -\mscrs\frac{\hslash^2k_\beta^2}{12\varkappa^{1/2}}\rfun{\psi}{\chi}
 % +\varkappa^{3/2}V\ee^{g\mscrs_\chi\chi}\rfun{\psi}{\chi}
 % } = 0,
-\rfun{\ddot{\varphi}}{\beta} &\coloneqq
-\partial_\beta^2\rfun{\varphi}{\beta} = k_\beta^2\rfun{\varphi}{\beta};\\
+%\rfun{\ddot{\varphi}}{\beta} &\coloneqq
+\partial_\beta^2\rfun{\varphi}{\beta} &= k_\beta^2\rfun{\varphi}{\beta};\\
 \BbbD \rfun{\psi}{\chi} &= k_\beta^2 \rfun{\psi}{\chi},\qquad
 \BbbD \coloneqq
 -\mscrl \frac{6}{\varkappa} \partial_\chi^2
@@ -638,6 +643,8 @@ $\rfun{\mathrm{J}_{\nu}}{\sigma}$ for $\rbr{-,+}$.
 \begin{itemize}
 \item To make sense of amplitude and wave packet, an inner product is necessary
 
+\item Call $\beta$ the ``temporal'' variable, $\chi$ the ``spacial'' variable
+
 \item A common starting point is the \emph{Schrödinger product}
 \begin{align}
 \rbr{\Psi_1,\Psi_2}_\text{S} \coloneqq
@@ -785,7 +792,7 @@ is \textcolor{orange}{complex}
 {Mostafazadeh inner product and the corresponding density}%
 %{233}
 \begin{itemize}
-\item The real power of $\BbbD$ is defined by spectral decomposition
+\item Real power of $\BbbD$ is defined by spectral decomposition
 $\BbbD^{\gamma} \coloneqq \sum_\nu \nu^{2\gamma}\mbfP_\nu$,
 $\mbfP_\nu\Psi \coloneqq \Psi_\nu\rbr{\Psi_\nu,\Psi}_\text{S}$.
 \end{itemize}
@@ -1007,7 +1014,8 @@ terms needed\footfullcite{Andrianov2015}
 \item Beyond classic matter
 \begin{itemize}
 \item Non-Hermitian, $PT$-symmetric Liouville 
-fields\footfullcite{ANDRIANOV2010,Andrianov2016}: may cross the phantom divide
+fields\footfullcite{ANDRIANOV2010,Andrianov2016}: may cross the phantom divide 
+$w = -1$.
 \end{itemize}
 
 \end{itemize}
