@@ -28,8 +28,13 @@
 			backend=biber]{biblatex}
 \addbibresource{20171212.bib}
 \AtEveryCitekey{
-	\clearfield{title}\clearfield{issn}
+	\clearfield{issn}
 	\clearfield{month}\clearfield{url}
+\ifentrytype{book}{
+	\clearfield{publisher}
+}{
+	\clearfield{title}
+}
 }
 
 %% Falls Anzeige der \sections, \subsections etc. gewuenscht, kann zB.
@@ -243,7 +248,7 @@ $\overline{N} = -6\mscrs\sqrt{\varkappa}\dot{\beta}/p_\beta$, the trsfed.\
 \begin{align}
 \ee^{\mscrs_\chi g\chi} &=
 \frac{p_\beta^2}{12\varkappa^2\vbr{V}}
-\rfun{S^2}{\mscrs_\beta \sqrt{\frac{3}{2\varkappa}}\,g \beta+C},
+\rfun{S^2}{\mscrs_\beta \sqrt{\frac{3}{2\varkappa}}\,g \rbr{\beta-\beta_0}},
 %\ee^{\mscrs_\chi g\chi} &= p_\beta^2/12\varkappa^2\vbr{V}\cdot
 %\rfun{f^2}{s_\beta \sqrt{3/2\varkappa}\,g \beta}
 %\quad\text{or}\\
@@ -298,7 +303,7 @@ $\rbr{+,-}$ or $\rbr{-,+}$ to guarantee $\overline{N} > 0$.
 
 \begin{frame}%
 {Trajectories for quintessence model $\rbr{+,+}$}%
-{$\sech$, with $C = 0$, $\vbr{V} = \varkappa^{-2}$ and
+{$\sech$, with $\beta_0 = 0$, $\vbr{V} = \varkappa^{-2}$ and
 $p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$; varying $\lambda$}
 \includegraphics[width=\textwidth]{./plots.nb/sech_lamb.pdf}
 \begin{itemize}
@@ -308,7 +313,7 @@ $p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$; varying $\lambda$}
 
 \begin{frame}%
 {Trajectories for quintessence model $\rbr{+,+}$}%
-{$\sech$, with $C = 0$, $\vbr{V} = \varkappa^{-2}$ and
+{$\sech$, with $\beta_0 = 0$, $\vbr{V} = \varkappa^{-2}$ and
 $\lambda^2 = 3\varkappa$; varying $p_\beta$}
 \includegraphics[width=\textwidth]{./plots.nb/sech_pbet.pdf}
 \begin{itemize}
@@ -318,7 +323,7 @@ $\lambda^2 = 3\varkappa$; varying $p_\beta$}
 
 \begin{frame}%
 {Trajectories for quintessence model $\rbr{+,+}$}%
-{$\sech$, with $C = 0$, $\lambda^2 = 3\varkappa$ and
+{$\sech$, with $\beta_0 = 0$, $\lambda^2 = 3\varkappa$ and
 $p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$; varying $V$}
 \includegraphics[width=\textwidth]{./plots.nb/sech_Vsqr.pdf}
 \begin{itemize}
@@ -328,7 +333,7 @@ $p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$; varying $V$}
 
 % \begin{frame}%
 % {Trajectories for quintessence model $\rbr{+,+}$}%
-% {$\sech$, with $C = 0$, $\lambda^2 = 3\varkappa$ and
+% {$\sech$, with $\beta_0 = 0$, $\lambda^2 = 3\varkappa$ and
 % $p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$; varying $\varkappa$}
 % \includegraphics[width=\textwidth]{./plots.nb/sech_vark.pdf}
 % \begin{itemize}
@@ -339,7 +344,7 @@ $p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$; varying $V$}
 
 \begin{frame}%
 {Trajectories for quintessence model $\rbr{+,-}$}%
-{$\csch$, with $C = 0$, $\vbr{V} = \varkappa^{-2}$ and
+{$\csch$, with $\beta_0 = 0$, $\vbr{V} = \varkappa^{-2}$ and
 $p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$; varying $\lambda$}
 \includegraphics[width=\textwidth]{./plots.nb/csch_lamb_l.pdf}
 \begin{itemize}
@@ -350,7 +355,7 @@ $p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$; varying $\lambda$}
 
 \begin{frame}%
 {Trajectories for quintessence model $\rbr{+,-}$: $\csch$}%
-{$\csch$, with $C = 0$, $\vbr{V} = \varkappa^{-2}$ and
+{$\csch$, with $\beta_0 = 0$, $\vbr{V} = \varkappa^{-2}$ and
 $p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$; varying $\lambda$}
 \includegraphics[width=\textwidth]{./plots.nb/csch_lamb_r.pdf}
 \begin{itemize}
@@ -373,7 +378,7 @@ $\lambda^2 = \varkappa$; varying $p_\beta$}
 \begin{frame}%
 {Trajectories for phantom model $\rbr{-,+}$}%
 {$\csc$, with $V = \varkappa^{-2}$ and
-$p_\beta^2 = 3\varkappa^2\sqrt{\vbr{V}}$; varying $\lambda$}
+$p_\beta^2 = 3\varkappa^2\sqrt{\vbr{V}}$}
 \includegraphics[width=\textwidth]{./plots.nb/csc_lamb_l.pdf}
 %\begin{columns}
 %\begin{column}{.55\textwidth}
@@ -384,7 +389,7 @@ $p_\beta^2 = 3\varkappa^2\sqrt{\vbr{V}}$; varying $\lambda$}
 %\end{column}
 %\begin{column}{.4\textwidth}
 %\begin{itemize}
-%\item is $\beta$-even for $C = 0$
+%\item is $\beta$-even for $\beta_0 = 0$
 %\end{itemize}
 %\end{column}
 %\end{columns}
@@ -393,7 +398,7 @@ $p_\beta^2 = 3\varkappa^2\sqrt{\vbr{V}}$; varying $\lambda$}
 \begin{frame}%
 {Trajectories for phantom model $\rbr{-,+}$}%
 {$\csc$, with $V = \varkappa^{-2}$ and
-$p_\beta^2 = 3\varkappa^2\sqrt{\vbr{V}}$; varying $\lambda$}
+$p_\beta^2 = 3\varkappa^2\sqrt{\vbr{V}}$}
 \includegraphics[width=\textwidth]{./plots.nb/csc_lamb_r.pdf}
 %\begin{columns}
 %\begin{column}{.55\textwidth}
@@ -404,7 +409,7 @@ $p_\beta^2 = 3\varkappa^2\sqrt{\vbr{V}}$; varying $\lambda$}
 %\end{column}
 %\begin{column}{.4\textwidth}
 %\begin{itemize}
-%\item is $\beta$-even for $C = 0$
+%\item is $\beta$-even for $\beta_0 = 0$
 %\end{itemize}
 %\end{column}
 %\end{columns}
@@ -424,7 +429,7 @@ $\lambda^2 = 3\varkappa$; varying $p_\beta$}
 %\end{column}
 %\begin{column}{.4\textwidth}
 %\begin{itemize}
-%\item is $\beta$-even for $C = 0$
+%\item is $\beta$-even for $\beta_0 = 0$
 %\end{itemize}
 %\end{column}
 %\end{columns}
@@ -638,7 +643,8 @@ reads
 %$\rfun{\theta_\nu^{\pm}}{\sigma}$.
 Assuming $c_i$, $a_j$'s are real and applying \emph{the principle} to 
 $\rfun{\Psi_\nu}{\sigma}$, one has$\sigma/\nu = 
-\rfun{\sech}{\mscrs_\beta\gamma}$, which matches the trajectory with $C = 0$ if
+\rfun{\sech}{\mscrs_\beta\gamma}$, which matches the trajectory with
+$\beta_0 = 0$ if
 \begin{align}
 \hslash k_\beta \equiv \hslash \sqrt{\frac{3}{2\varkappa}}g\hslash\nu
 = p_\beta,
