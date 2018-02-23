@@ -1,7 +1,7 @@
 ﻿%% UzK - A BEAMER THEME FOR THE UNIVERSITY OF COLOGNE
 %% http://solstice.github.com/uzk-theme/
 
-\documentclass[9pt]{beamer}
+\documentclass[8pt]{beamer}
 
 \input{../preambles/unicode.tex}
 \setmainlanguage{english}
@@ -59,8 +59,8 @@ latexfonts,  %% Verwendet die latex-beamer-Standardschrift
 %nologo,      %% Kein Logo im Seitenhintergrund
 ]{UzK}
 
-\title{Classical and Quantum Liouville Cosmological Models}
-\subtitle{Integrability, Self-adjointness and Semi-classical Wave Packets}
+\title{Integrable Liouville Cosmological Models}
+\subtitle{Self-adjointness of the Hamiltonian and Semi-classical Wave Packets}
 
 \date{March 23, 2018}
 
@@ -181,74 +181,83 @@ the relation between its classical and quantum theory.
 \end{itemize}
 \end{frame}
 
-\section{Classical model and the implicit trajectories}
+\section{The classical model and the implicit trajectories}
 
 \subsection{Lagrangian formalism}
 
 \begin{frame}%
 {Decoupling the variables}%
-{Via \emph{rescaled} special orthogonal transformation}
+{Via orthogonal transformation}
 \begin{itemize}
-\item Setting $\overline{N} \coloneqq N\ee^{-3\alpha}$, \cref{eq:eff-lag-10}
-%the effective Lagrangian
-transforms to
-\begin{align}
-L = \varkappa^{3/2}\overline{N}
-\rbr{-\frac{3}{\varkappa}\frac{\dot{\alpha}^2}{\overline{N}^2}
-+\mscrl\frac{\dot{\phi}^2}{2\overline{N}^2} - V\ee^{\lambda\phi+6\alpha}}
-\end{align}
-
-\item Defining $\Delta \coloneqq \lambda^2 - 6\mscrl\varkappa$,
-$\mscrs \coloneqq \sgn \Delta$ and
-$g \coloneqq \mscrs \sqrt{\vbr{\Delta}} \equiv \mscrs\sqrt{\mscrs\Delta}$,
-the \emph{rescaled} special orthogonal transformation
+\item By rescaling $\overline{N} \coloneqq N\ee^{-3\alpha}$ and
+%\item Setting $\overline{N} \coloneqq N\ee^{-3\alpha}$, \cref{eq:eff-lag-10}
+%%the effective Lagrangian
+%transforms to
+%\begin{align}
+%L = \varkappa^{3/2}\overline{N}
+%\rbr{-\frac{3}{\varkappa}\frac{\dot{\alpha}^2}{\overline{N}^2}
+%+\mscrl\frac{\dot{\phi}^2}{2\overline{N}^2} - V\ee^{\lambda\phi+6\alpha}}
+%\end{align}
+%
+%\item Defining $\Delta \coloneqq \lambda^2 - 6\mscrl\varkappa$,
+%$\mscrs \coloneqq \sgn \Delta$ and
+%$g \coloneqq \mscrs \sqrt{\vbr{\Delta}} \equiv \mscrs\sqrt{\mscrs\Delta}$,
+the orthogonal transformation
 \begin{align}
 \begin{pmatrix}
-\alpha \\ \phi
+\rfun{\alpha}{t} \\ \rfun{\phi}{t}
 \end{pmatrix} = \frac{\mscrs}{g}
 \begin{pmatrix}
 \lambda & -\mscrl\varkappa \\
 -6 & \lambda
 \end{pmatrix}
 \begin{pmatrix}
-\mscrs_\beta \beta \\ \mscrs_\chi \chi
-\end{pmatrix}\qquad\text{where } \mscrs_\beta, \mscrs_\chi = \pm 1
+\mscrs_\beta \cdot \rfun{\beta}{t} \\ \mscrs_\chi \cdot \rfun{\chi}{t}
+\end{pmatrix}\qquad\text{where } \mscrs_\beta, \mscrs_\chi = \pm 1,
 \end{align}
-gives the decoupled Lagrangian
+the effective Lagrangian \cref{eq:eff-lag-10} can be decoupled 
+%gives the decoupled Lagrangian
 \begin{align}
 L = \varkappa^{3/2}\overline{N}
 \rbr{-\mscrs\frac{3}{\varkappa}\frac{\dot{\beta}^2}{\overline{N}^2}
 +\mscrl\mscrs\frac{\dot{\chi}^2}{2\overline{N}^2}
--V\ee^{\mscrs_\chi g\chi}}.
+-V\ee^{g \mscrs_\chi \chi}},
 \label{eq:lagrangian-decoupled}
 \end{align}
+where $\Delta \coloneqq \lambda^2 - 6\mscrl\varkappa$,
+$\mscrs \coloneqq \sgn \Delta$ and
+$g \coloneqq \mscrs \sqrt{\vbr{\Delta}} \equiv \mscrs\sqrt{\mscrs\Delta}$.
 
 \item
-The Euler--Lagrange equations w.r.t.\ $\overline{N}$, $\beta$ and
-$\chi$ will be called the trsfed.\ 1st, 2nd Friedmann eqs.\ and the
-Klein--Gordon eq., respectively.
+The Euler--Lagrange equations with respect to $\overline{N}$, $\beta$ and
+$\chi$ will be called the modified first, second Friedmann equations and the
+Klein--Gordon equation, respectively.
+
+\item Since $\rfun{\beta}{t}$ is cyclic, the modified second Friedmann equation
+can be readily integrated%
+\footfullcite[The same first integral has been found in][in canonical 
+formalism]{Lan2016,Andrianov2015}.
+
 \end{itemize}
 \end{frame}
 
 \begin{frame}%
-{Implicit integration}%
-{General integral for $p_\beta \neq 0$}
+{Integration and the implicit trajectories}%
+%{General integral for $p_\beta \neq 0$}
 \begin{itemize}
-\item Since $\beta$ is cyclic in \cref{eq:lagrangian-decoupled},
-the trsfed.\ 2nd Friedmann eq.\ can be integrated%
-\footfullcite[The same first integral has been found in][in canonical 
-formalism]{Lan2016,Andrianov2015}
-\begin{align}
-\alert{\text{const.} \equiv p_\beta} \coloneqq \frpa{L}{\dot{\beta}} &=
--6\mscrs\varkappa^{1/2}\frac{\dot{\beta}}{\overline{N}}
-\alert{\equiv
--6\mscrs\mscrs_\beta\frac{\varkappa^{1/2}}{g}
-\frac{\lambda\dot{\alpha}+\mscrl\varkappa\dot{\phi}}{\overline{N}}}.
-\end{align}
+
+%\begin{align}
+%\alert{\text{const.} \equiv p_\beta} \coloneqq \frpa{L}{\dot{\beta}} &=
+%-6\mscrs\varkappa^{1/2}\frac{\dot{\beta}}{\overline{N}}
+%\alert{\equiv
+%-6\mscrs\mscrs_\beta\frac{\varkappa^{1/2}}{g}
+%\frac{\lambda\dot{\alpha}+\mscrl\varkappa\dot{\phi}}{\overline{N}}}.
+%\end{align}
 
 \item For $p_\beta \neq 0$, fixing the \emph{implicit gauge}
-$\overline{N} = -6\mscrs\sqrt{\varkappa}\dot{\beta}/p_\beta$, the trsfed.\
-1st Friedmann equation \alert{can be integrated to get the trajectory}
+$\overline{N} = -6\mscrs\sqrt{\varkappa}\dot{\beta}/p_\beta$, the modified
+first Friedmann equation can be integrated, yielding the \alert{implicit}
+trajectory
 \begin{align}
 \ee^{\mscrs_\chi g\chi} &=
 \frac{p_\beta^2}{12\varkappa^2\vbr{V}}
@@ -270,192 +279,25 @@ $\rbr{\mscrl,\mscrs\mscrv}$, and
 &\qquad
 \rfun{{}_{\rbr{-,-}}S}{\gamma} &\coloneqq \rfun{\ii\csc}{\gamma}.\\
 \end{aligned}
-% \rfun{S}{\gamma} \coloneqq
-% \begin{cases}
-% \rfun{\sech}{\gamma+C_{++}} & \rbr{\mscrl, \mscrs\mscrv} = \rbr{+,+}, \\
-% \rfun{\csch}{\gamma+C_{+-}} & \rbr{\mscrl, \mscrs\mscrv} = \rbr{+,-}, \\
-% \rfun{\sec}{\gamma+C_{-+}} & \rbr{\mscrl, \mscrs\mscrv} = \rbr{-,+}, \\
-% \ii\rfun{\csc}{\gamma+C_{--}} & \rbr{\mscrl, \mscrs\mscrv} = \rbr{-,-}. \\
-% \end{cases}
 \end{align}
-\end{itemize}
-\end{frame}
-
-\begin{frame}%
-{Implicit integration}%
-{Specific integral for $p_\beta = 0$}
 \begin{itemize}
-\item For $p_\beta = 0$, integrating the transformed second Friedmann 
-equation yields $\beta \equiv \beta_0$ or $\phi-\phi_0 =
--\mscrl\lambda\alpha/\varkappa$, which is the well-known power-law special
-solution\footfullcite[For instance,][ch.\ 3]{Liddle2000}.
-
-\item Further integrating the transformed first Friedmann equation demands 
-$\rbr{+,-}$ or $\rbr{-,+}$ to guarantee $\overline{N} > 0$.
-% and the result is automatically consistent with the trsfed.\ Klein--Gordon 
-% equation.
-
-% \item Fixing $\overline{N} = \rbr{2\varkappa^2\vbr{V}}^{-1/2}$ yields
-% \begin{align}
-% \ee^{g\mscrs_\chi\chi} = \rbr{\frac{2\varkappa}{g\rbr{t-t_0}}}^2.
-%\end{align}
-\end{itemize}
-\end{frame}
-
-
-
-
-\begin{frame}%
-{Trajectories for quintessence model $\rbr{+,+}$}%
-{$\sech$, with $\beta_0 = 0$, $\vbr{V} = \varkappa^{-2}$ and
-$p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$; varying $\lambda$}
-\includegraphics[width=\textwidth]{../plots.nb/sech_lamb.pdf}
-\begin{itemize}
-	\item has two asymptotes $\chi \propto \pm \beta$
-\end{itemize}
-\end{frame}
-
-\begin{frame}%
-{Trajectories for quintessence model $\rbr{+,+}$}%
-{$\sech$, with $\beta_0 = 0$, $\vbr{V} = \varkappa^{-2}$ and
-$\lambda^2 = 3\varkappa$; varying $p_\beta$}
-\includegraphics[width=\textwidth]{../plots.nb/sech_pbet.pdf}
-\begin{itemize}
-	\item has two asymptotes $\chi \propto \pm \beta$
-\end{itemize}
-\end{frame}
-
-\begin{frame}%
-{Trajectories for quintessence model $\rbr{+,+}$}%
-{$\sech$, with $\beta_0 = 0$, $\lambda^2 = 3\varkappa$ and
-$p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$; varying $V$}
-\includegraphics[width=\textwidth]{../plots.nb/sech_Vsqr.pdf}
-\begin{itemize}
-	\item has two asymptotes $\chi \propto \pm \beta$
-\end{itemize}
-\end{frame}
-
-% \begin{frame}%
-% {Trajectories for quintessence model $\rbr{+,+}$}%
-% {$\sech$, with $\beta_0 = 0$, $\lambda^2 = 3\varkappa$ and
-% $p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$; varying $\varkappa$}
-% \includegraphics[width=\textwidth]{../plots.nb/sech_vark.pdf}
-% \begin{itemize}
-% 	\item has two asymptotes $\chi \propto \pm \beta$
-% \end{itemize}
-% \end{frame}
-
-
-\begin{frame}%
-{Trajectories for quintessence model $\rbr{+,-}$}%
-{$\csch$, with $\beta_0 = 0$, $\vbr{V} = \varkappa^{-2}$ and
-$p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$; varying $\lambda$}
-\includegraphics[width=\textwidth]{../plots.nb/csch_lamb_l.pdf}
-\begin{itemize}
-	\item contains two distinct solutions, separated by $\beta = 0$
-	\item has three asymptotes $\chi \propto \pm \beta$ and $\beta = 0$
-\end{itemize}
-\end{frame}
-
-\begin{frame}%
-{Trajectories for quintessence model $\rbr{+,-}$: $\csch$}%
-{$\csch$, with $\beta_0 = 0$, $\vbr{V} = \varkappa^{-2}$ and
-$p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$; varying $\lambda$}
-\includegraphics[width=\textwidth]{../plots.nb/csch_lamb_r.pdf}
-\begin{itemize}
-	\item contains two distinct solutions, separated by $\beta = 0$
-	\item has three asymptotes $\chi \propto \pm \beta$ and $\beta = 0$
-\end{itemize}
-\end{frame}
-
-\begin{frame}%
-{Trajectories for quintessence model $\rbr{+,-}$: $\csch$}%
-{$\csch$, with $V = \varkappa^{-2}$ and
-$\lambda^2 = \varkappa$; varying $p_\beta$}
-\includegraphics[width=\textwidth]{../plots.nb/csch_pbet_l.pdf}
-\begin{itemize}
-	\item contains two distinct solutions, separated by $\beta = 0$
-	\item has three asymptotes $\chi \propto \pm \beta$ and $\beta = 0$
-\end{itemize}
-\end{frame}
-
-\begin{frame}%
-{Trajectories for phantom model $\rbr{-,+}$}%
-{$\csc$, with $V = \varkappa^{-2}$ and
-$p_\beta^2 = 3\varkappa^2\sqrt{\vbr{V}}$}
-\includegraphics[width=\textwidth]{../plots.nb/csc_lamb_l.pdf}
-%\begin{columns}
-%\begin{column}{.55\textwidth}
-\begin{itemize}
-	\item contains infinite distinct solutions
-	\item has infinite parallel asymptotes $\beta \propto \rbr{n+1/2}\pp $
-\end{itemize}
-%\end{column}
-%\begin{column}{.4\textwidth}
-%\begin{itemize}
-%\item is $\beta$-even for $\beta_0 = 0$
-%\end{itemize}
-%\end{column}
-%\end{columns}
-\end{frame}
-
-\begin{frame}%
-{Trajectories for phantom model $\rbr{-,+}$}%
-{$\csc$, with $V = \varkappa^{-2}$ and
-$p_\beta^2 = 3\varkappa^2\sqrt{\vbr{V}}$}
-\includegraphics[width=\textwidth]{../plots.nb/csc_lamb_r.pdf}
-%\begin{columns}
-%\begin{column}{.55\textwidth}
-\begin{itemize}
-	\item contains infinite distinct solutions
-	\item has infinite parallel asymptotes $\beta \propto \rbr{n+1/2}\pp $
-\end{itemize}
-%\end{column}
-%\begin{column}{.4\textwidth}
-%\begin{itemize}
-%\item is $\beta$-even for $\beta_0 = 0$
-%\end{itemize}
-%\end{column}
-%\end{columns}
-\end{frame}
-
-\begin{frame}%
-{Trajectories for phantom model $\rbr{-,+}$}%
-{$\csc$, with $V = \varkappa^{-2}$ and
-$\lambda^2 = 3\varkappa$; varying $p_\beta$}
-\includegraphics[width=\textwidth]{../plots.nb/csc_pbet_l.pdf}
-%\begin{columns}
-%\begin{column}{.55\textwidth}
-\begin{itemize}
-	\item contains infinite distinct solutions
-	\item has infinite parallel asymptotes $\beta \propto \rbr{n+1/2}\pp $
-\end{itemize}
-%\end{column}
-%\begin{column}{.4\textwidth}
-%\begin{itemize}
-%\item is $\beta$-even for $\beta_0 = 0$
-%\end{itemize}
-%\end{column}
-%\end{columns}
-\end{frame}
-
-\begin{frame}%
-{Integration}%
-{Further discussions}
-\begin{itemize}
-%\item The integrals are consistent with the trsfed.\ Klein--Gordon equation.
-
 \item The integral for $\rbr{-,-}$ is not real.
-
 \item The trajectories can be parametrised by $\beta$, inspiring recognising
 $\beta$ as a `time variable'.
+\end{itemize}
 
-\item The implicit integration enables one to compare trajectories with wave 
-functions, see below.
+\item For $p_\beta = 0$, integrating the modified second Friedmann 
+equation yields $\beta \equiv \beta_0$ or $\phi-\phi_0 =
+-\mscrl\lambda\alpha/\varkappa$%
+\footnote{It only works for $\rbr{+,-}$ or $\rbr{-,+}$ if one checks consistency
+with the modified first Friedmann equation.}, which is the well-known power-law
+special solution\footfullcite[For instance,][ch.\ 3]{Liddle2000}.
+
+
 \end{itemize}
 \end{frame}
 
-\section{Quantised model and the wave packets}
+\section{The Dirac quantisation and the self-adjointness}
 
 \subsection{Canonical formalism and Dirac quantisation}
 
@@ -474,8 +316,8 @@ H_\perp &\coloneqq -\mscrs\frac{p_\beta^2}{12\varkappa^{1/2}}
 +\varkappa^{3/2}V\ee^{g\mscrs_\chi\chi}.
 \end{align}
 \item
-Applying the Dirac quantisation rules with Laplace--Beltrami
-operator\footfullcite[ch.\ 8]{Kiefer2012}, one 
+Applying the Dirac quantisation rules with the Laplace--Beltrami
+operator ordering\footfullcite[ch.\ 8]{Kiefer2012}, one 
 gets the minisuperspace Wheeler--DeWitt equation with $\rbr{\beta,\chi}$
 %$\widehat{H}_\perp \rfun{\Psi}{\beta,\chi} = 0$,
 \begin{align}
@@ -599,6 +441,8 @@ $\rfun{\mathrm{G}_{\ii\nu}}{\sigma}$ survives
 \end{itemize}
 
 \end{frame}
+
+\section{The semi-classical wave packets}
 
 \subsection{Semi-classical approximation}
 
@@ -1076,6 +920,144 @@ may cross the phantom divide $w = -1$.
 
 
 \section*{Appendix}
+
+\subsection*{Trajectories}
+
+\begin{frame}%
+{Trajectories for quintessence model $\rbr{+,+}$}%
+{$\sech$, with $\beta_0 = 0$, $\vbr{V} = \varkappa^{-2}$ and
+$p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$; varying $\lambda$}
+\includegraphics[width=\textwidth]{../plots.nb/sech_lamb.pdf}
+\begin{itemize}
+	\item has two asymptotes $\chi \propto \pm \beta$
+\end{itemize}
+\end{frame}
+
+\begin{frame}%
+{Trajectories for quintessence model $\rbr{+,+}$}%
+{$\sech$, with $\beta_0 = 0$, $\vbr{V} = \varkappa^{-2}$ and
+$\lambda^2 = 3\varkappa$; varying $p_\beta$}
+\includegraphics[width=\textwidth]{../plots.nb/sech_pbet.pdf}
+\begin{itemize}
+	\item has two asymptotes $\chi \propto \pm \beta$
+\end{itemize}
+\end{frame}
+
+\begin{frame}%
+{Trajectories for quintessence model $\rbr{+,+}$}%
+{$\sech$, with $\beta_0 = 0$, $\lambda^2 = 3\varkappa$ and
+$p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$; varying $V$}
+\includegraphics[width=\textwidth]{../plots.nb/sech_Vsqr.pdf}
+\begin{itemize}
+	\item has two asymptotes $\chi \propto \pm \beta$
+\end{itemize}
+\end{frame}
+
+% \begin{frame}%
+% {Trajectories for quintessence model $\rbr{+,+}$}%
+% {$\sech$, with $\beta_0 = 0$, $\lambda^2 = 3\varkappa$ and
+% $p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$; varying $\varkappa$}
+% \includegraphics[width=\textwidth]{../plots.nb/sech_vark.pdf}
+% \begin{itemize}
+% 	\item has two asymptotes $\chi \propto \pm \beta$
+% \end{itemize}
+% \end{frame}
+
+
+\begin{frame}%
+{Trajectories for quintessence model $\rbr{+,-}$}%
+{$\csch$, with $\beta_0 = 0$, $\vbr{V} = \varkappa^{-2}$ and
+$p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$; varying $\lambda$}
+\includegraphics[width=\textwidth]{../plots.nb/csch_lamb_l.pdf}
+\begin{itemize}
+	\item contains two distinct solutions, separated by $\beta = 0$
+	\item has three asymptotes $\chi \propto \pm \beta$ and $\beta = 0$
+\end{itemize}
+\end{frame}
+
+\begin{frame}%
+{Trajectories for quintessence model $\rbr{+,-}$: $\csch$}%
+{$\csch$, with $\beta_0 = 0$, $\vbr{V} = \varkappa^{-2}$ and
+$p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$; varying $\lambda$}
+\includegraphics[width=\textwidth]{../plots.nb/csch_lamb_r.pdf}
+\begin{itemize}
+	\item contains two distinct solutions, separated by $\beta = 0$
+	\item has three asymptotes $\chi \propto \pm \beta$ and $\beta = 0$
+\end{itemize}
+\end{frame}
+
+\begin{frame}%
+{Trajectories for quintessence model $\rbr{+,-}$: $\csch$}%
+{$\csch$, with $V = \varkappa^{-2}$ and
+$\lambda^2 = \varkappa$; varying $p_\beta$}
+\includegraphics[width=\textwidth]{../plots.nb/csch_pbet_l.pdf}
+\begin{itemize}
+	\item contains two distinct solutions, separated by $\beta = 0$
+	\item has three asymptotes $\chi \propto \pm \beta$ and $\beta = 0$
+\end{itemize}
+\end{frame}
+
+\begin{frame}%
+{Trajectories for phantom model $\rbr{-,+}$}%
+{$\csc$, with $V = \varkappa^{-2}$ and
+$p_\beta^2 = 3\varkappa^2\sqrt{\vbr{V}}$}
+\includegraphics[width=\textwidth]{../plots.nb/csc_lamb_l.pdf}
+%\begin{columns}
+%\begin{column}{.55\textwidth}
+\begin{itemize}
+	\item contains infinite distinct solutions
+	\item has infinite parallel asymptotes $\beta \propto \rbr{n+1/2}\pp $
+\end{itemize}
+%\end{column}
+%\begin{column}{.4\textwidth}
+%\begin{itemize}
+%\item is $\beta$-even for $\beta_0 = 0$
+%\end{itemize}
+%\end{column}
+%\end{columns}
+\end{frame}
+
+\begin{frame}%
+{Trajectories for phantom model $\rbr{-,+}$}%
+{$\csc$, with $V = \varkappa^{-2}$ and
+$p_\beta^2 = 3\varkappa^2\sqrt{\vbr{V}}$}
+\includegraphics[width=\textwidth]{../plots.nb/csc_lamb_r.pdf}
+%\begin{columns}
+%\begin{column}{.55\textwidth}
+\begin{itemize}
+	\item contains infinite distinct solutions
+	\item has infinite parallel asymptotes $\beta \propto \rbr{n+1/2}\pp $
+\end{itemize}
+%\end{column}
+%\begin{column}{.4\textwidth}
+%\begin{itemize}
+%\item is $\beta$-even for $\beta_0 = 0$
+%\end{itemize}
+%\end{column}
+%\end{columns}
+\end{frame}
+
+\begin{frame}%
+{Trajectories for phantom model $\rbr{-,+}$}%
+{$\csc$, with $V = \varkappa^{-2}$ and
+$\lambda^2 = 3\varkappa$; varying $p_\beta$}
+\includegraphics[width=\textwidth]{../plots.nb/csc_pbet_l.pdf}
+%\begin{columns}
+%\begin{column}{.55\textwidth}
+\begin{itemize}
+	\item contains infinite distinct solutions
+	\item has infinite parallel asymptotes $\beta \propto \rbr{n+1/2}\pp $
+\end{itemize}
+%\end{column}
+%\begin{column}{.4\textwidth}
+%\begin{itemize}
+%\item is $\beta$-even for $\beta_0 = 0$
+%\end{itemize}
+%\end{column}
+%\end{columns}
+\end{frame}
+
+\subsection*{Something else}
 
 \begin{frame}%
 {Integration of the transformed first Friedmann equation}%
