@@ -27,7 +27,7 @@
 			isbn = false, doi = false,
 			backend=biber]{biblatex}
 \addbibresource{../liouville-cosmology.bib}
-\AtEveryCitekey{
+\AtEveryCite{
 		\clearfield{issn}
 		\clearfield{month}\clearfield{url}
 	\ifentrytype{book}{
@@ -60,7 +60,7 @@ latexfonts,  %% Verwendet die latex-beamer-Standardschrift
 ]{UzK}
 
 \title{Integrable Liouville Cosmological Models}
-\subtitle{Self-adjointness of the Hamiltonian and Semi-classical Wave Packets}
+\subtitle{Self-adjointness of the Hamiltonian and Semi-classical Wave Functions}
 
 \date{March 23, 2018}
 
@@ -124,61 +124,67 @@ E-08028 Barcelona, Spanien}
 
 \begin{frame}%
 {Introduction}%
-{Quintessence and phantom Liouville field}
+{Friedmann--Lemaître model with quintessence and phantom Liouville fields}
 \begin{itemize}
-\item Observed accelerated expansion can be explained by a cosmological 
-constant\footfullcite{COPELAND2006,Bamba2012} as stationary Dark Energy, but 
-its 
-origin has yet to be understood.
+%\item Observed accelerated expansion can be explained by a cosmological 
+%constant\footfullcite{COPELAND2006,Bamba2012} as stationary Dark Energy, but 
+%its %origin has yet to be understood.
 
-\item Dynamical Dark Energy has been modeled by
+\item Dynamical Dark Energy has been modelled by
 quintessence\footfullcite{Caldwell1998} and phantom\footfullcite{Caldwell2002} 
-matter, with barotropic index\footnote{Barotropic index is the $w$ in equation
-of state $\rho = wp$.} $w > -1$ and $w < -1$, respectively.
-
-\item They can be realised by minimally-coupled real scalar fields with $\mscrl 
+matter, %with barotropic index\footnote{Barotropic index is the $w$ in equation
+%of state $\rho = wp$.} $w > -1$ and $w < -1$, respectively.
+%
+%\item They
+which can be realised by minimally-coupled real scalar fields with $\mscrl 
 = \pm 1$\footnote{The signature of metric is mostly positive.}
 \begin{align}
-\mscrS = \int\dd^4 x\,\sqrt{-g}\,\cbr{-\mscrl \frac{g^{\mu\nu}}{2}
+\mscrS_{\text{L}} = \int\dd^4 x\,\sqrt{-g}\,\cbr{-\mscrl \frac{g^{\mu\nu}}{2}
 \rbr{\partial_\mu\phi}\rbr{\partial_\nu\phi} - \rfun{\mscrV}{\phi}}.
 \end{align}
 
-\item $\rfun{\mscrV}{\phi} = V\ee^{\lambda\phi}$, $\lambda, V\in \BbbR$ is of
-interest: Liouville field\footfullcite{NAKAYAMA2004}.
+\item The Liouville field\footfullcite{NAKAYAMA2004} $\rfun{\mscrV}{\phi} =
+V\ee^{\lambda\phi}$ is of interest, where $\lambda, V\in \BbbR$.
+
+\item Assume a flat Robertson--Walker metric $g_{\mu\nu}\,\dd x^\mu\,\dd x^\nu
+= -\rfun{N^2}{t}\,\dd t^2
++ \varkappa \ee^{2\rfun{\alpha}{t}}\,\dd\Omega_{3\text{F}}^2$, where
+$\varkappa \coloneqq 8\pp\nG$,
+$\dd\Omega_{3\text{F}}^2 \coloneqq
+\dd\chi^2+\chi^2\rbr{\dd\theta^2+\sin^2\theta\,\dd\varphi^2}$, and
+$N$ lapse function
+
+\item The total action reads
+$\mscrS \coloneqq \mscrS_{\text{EH}} + \mscrS_\text{GHY} + \mscrS_\text{L}
+= \int\dd\Omega_{3\text{F}}^2\int\dd t\,L$, where
+\begin{align}
+L&\coloneqq \varkappa^{3/2}N\ee^{3\alpha}
+\rbr{-\frac{3}{\varkappa}\frac{\dot{\alpha}^2}{N^2}
++\mscrl\frac{\dot{\phi}^2}{2N^2}-V\ee^{\lambda\phi}}.
+\label{eq:eff-lag-10}
+\end{align}
+
 \end{itemize}
 \end{frame}
 
 \begin{frame}%
 {Introduction}%
-{Friedmann--Lemaître model}
-\begin{itemize}
-\item Assume flat Robertson--Walker metric for a homog.\ and isotr.\ model
-\begin{align}
-g_{\mu\nu}\,\dd x^\mu\,\dd x^\nu = -\rfun{N^2}{t}\,\dd t^2 + \varkappa 
-\ee^{2\rfun{\alpha}{t}}\,\dd\Omega_{3\text{F}}^2
-\end{align}
-w/ $\varkappa \coloneqq 8\pp\nG$, $\dd\Omega_{3\text{F}}^2 \coloneqq 
-\dd\chi^2+\chi^2\rbr{\dd\theta^2+\sin^2\theta\,\dd\varphi^2}$, $N$
-lapse function.
+{Highlights}
+\begin{block}{Integrability}
+Implicit trajectories can be obtained explicitly;
+the minisuperspace Wheeler--DeWitt equation can be integrated exactly.
+\end{block}
 
-\item Combined with the Liouville field, the total action reads
-$\mscrS \coloneqq \mscrS_{\text{EH}} + \mscrS_\text{GHY} + \mscrS_\text{L}
-= \int\dd\Omega_{3\text{F}}^2\int\dd t\,L$, where
-%in which the effective Lagrangian reads
-\begin{align}
-%S_{\text{Einstein--Hilbert}} + S_\text{Gibbons--Hawking--York} + 
-%S_\text{Liouville}
-L&\coloneqq \varkappa^{3/2}N\ee^{3\alpha}
-\rbr{-\frac{3}{\varkappa}\frac{\dot{\alpha}^2}{N^2}
-+\mscrl\frac{\dot{\phi}^2}{2N^2}-V\ee^{\lambda\phi}},
-\label{eq:eff-lag-10}
-\end{align}
-in which dot means $\dd/\dd t$.
+\begin{block}{Self-adjointness}
+The Hamiltonian is not even naturally symmetric;
+imposing self-adjointness leads to non-trivial physical results.
+\end{block}
 
-\item The model turns out to be integrable, both classically and 
-quantum-mechanically, enabling one to study its full physical properties, e.g.\
-the relation between its classical and quantum theory.
-\end{itemize}
+\begin{block}{Semi-classical wave functions}
+Semi-classical wave functions can be constructed by the principle of
+constructive interference, the JWKB approximation and numerical methods.
+\end{block}
+
 \end{frame}
 
 \section{The classical model and the implicit trajectories}
@@ -215,13 +221,14 @@ the orthogonal transformation
 \mscrs_\beta \cdot \rfun{\beta}{t} \\ \mscrs_\chi \cdot \rfun{\chi}{t}
 \end{pmatrix}\qquad\text{where } \mscrs_\beta, \mscrs_\chi = \pm 1,
 \end{align}
-the effective Lagrangian \cref{eq:eff-lag-10} can be decoupled 
+the effective Lagrangian \cref{eq:eff-lag-10} can be decoupled
+($\mscrs_\beta = \mscrs_\chi = +1$ from now on)
 %gives the decoupled Lagrangian
 \begin{align}
 L = \varkappa^{3/2}\overline{N}
 \rbr{-\mscrs\frac{3}{\varkappa}\frac{\dot{\beta}^2}{\overline{N}^2}
 +\mscrl\mscrs\frac{\dot{\chi}^2}{2\overline{N}^2}
--V\ee^{g \mscrs_\chi \chi}},
+-V\ee^{g \chi}},
 \label{eq:lagrangian-decoupled}
 \end{align}
 where $\Delta \coloneqq \lambda^2 - 6\mscrl\varkappa$,
@@ -233,10 +240,11 @@ The Euler--Lagrange equations with respect to $\overline{N}$, $\beta$ and
 $\chi$ will be called the modified first, second Friedmann equations and the
 Klein--Gordon equation, respectively.
 
-\item Since $\rfun{\beta}{t}$ is cyclic, the modified second Friedmann equation
-can be readily integrated%
-\footfullcite[The same first integral has been found in][in canonical 
-formalism]{Lan2016,Andrianov2015}.
+\item Since $\rfun{\beta}{t}$ is cyclic, its conjugate momentum $p_\beta$ is
+conserved\footfullcite[The same first integral has been found in][in canonical 
+formalism]{Lan2016,Andrianov2015},
+and the modified second Friedmann equation
+can be readily integrated.
 
 \end{itemize}
 \end{frame}
@@ -250,7 +258,7 @@ formalism]{Lan2016,Andrianov2015}.
 %\alert{\text{const.} \equiv p_\beta} \coloneqq \frpa{L}{\dot{\beta}} &=
 %-6\mscrs\varkappa^{1/2}\frac{\dot{\beta}}{\overline{N}}
 %\alert{\equiv
-%-6\mscrs\mscrs_\beta\frac{\varkappa^{1/2}}{g}
+%-6\mscrs\frac{\varkappa^{1/2}}{g}
 %\frac{\lambda\dot{\alpha}+\mscrl\varkappa\dot{\phi}}{\overline{N}}}.
 %\end{align}
 
@@ -259,10 +267,10 @@ $\overline{N} = -6\mscrs\sqrt{\varkappa}\dot{\beta}/p_\beta$, the modified
 first Friedmann equation can be integrated, yielding the \alert{implicit}
 trajectory
 \begin{align}
-\ee^{\mscrs_\chi g\chi} &=
+\ee^{g\chi} &=
 \frac{p_\beta^2}{12\varkappa^2\vbr{V}}
-\rfun{S^2}{\mscrs_\beta \sqrt{\frac{3}{2\varkappa}}\,g \rbr{\beta-\beta_0}},
-%\ee^{\mscrs_\chi g\chi} &= p_\beta^2/12\varkappa^2\vbr{V}\cdot
+\rfun{S^2}{ \sqrt{\frac{3}{2\varkappa}}\,g \rbr{\beta-\beta_0}},
+%\ee^{g\chi} &= p_\beta^2/12\varkappa^2\vbr{V}\cdot
 %\rfun{f^2}{s_\beta \sqrt{3/2\varkappa}\,g \beta}
 %\quad\text{or}\\
 %\ee^{6\alpha+\lambda\phi} &= p_\beta^2/12\varkappa^2\vbr{V}\cdot
@@ -302,7 +310,7 @@ special solution\footfullcite[For instance,][ch.\ 3]{Liddle2000}.
 \subsection{Canonical formalism and Dirac quantisation}
 
 \begin{frame}%
-{Dirac quantisation and the mode functions}%
+{Dirac quantisation}%
 %{233}
 \begin{itemize}
 \item
@@ -313,7 +321,7 @@ H^\text{p} &= \overline{N}H_\perp + v^{\overline{N}} p_{\overline{N}},
 \\
 H_\perp &\coloneqq -\mscrs\frac{p_\beta^2}{12\varkappa^{1/2}}
 +\mscrl\mscrs\frac{p_\chi^2}{2\varkappa^{3/2}}
-+\varkappa^{3/2}V\ee^{g\mscrs_\chi\chi}.
++\varkappa^{3/2}V\ee^{g\chi}.
 \end{align}
 \item
 Applying the Dirac quantisation rules with the Laplace--Beltrami
@@ -324,17 +332,49 @@ gets the minisuperspace Wheeler--DeWitt equation with $\rbr{\beta,\chi}$
 % -\mscrs \frac{12\varkappa^{1/2}}{\hslash^2}\widehat{H}_\perp 
 % \Psi \eqqcolon -\partial_\beta^2\Psi - \BbbD\Psi,\qquad
 % \BbbD = -\mscrl \frac{6}{\varkappa}\partial_\chi^2 +
-% \mscrs \frac{12\varkappa^2 V \ee^{g\mscrs_\chi\chi}}{\hslash^2}.
+% \mscrs \frac{12\varkappa^2 V \ee^{g\chi}}{\hslash^2}.
 0 &= \widehat{H}_\perp \rfun{\Psi}{\beta,\chi} \coloneqq
 \rbr{\mscrs\frac{\hslash^2}{12\varkappa^{1/2}}\partial_{\beta}^2
 -\mscrl\mscrs\frac{\hslash^2}{2\varkappa^{3/2}}\partial_{\chi}^2
-+\varkappa^{3/2}V\ee^{g\mscrs_\chi\chi}}\Psi.
++\varkappa^{3/2}V\ee^{g \chi}}\Psi.
 \label{eq:WDW-10}
 \end{align}
 \item
-\Cref{eq:WDW-10} is KG-like, hyperbolic for $\mscrl = +1$ and 
+\Cref{eq:WDW-10} is Klein--Gordon-like, hyperbolic for $\mscrl = +1$ and 
 \emph{elliptic} for $\mscrl = -1$.
 \end{itemize}
+\end{frame}
+
+\begin{frame}%
+{Integration of the Wheeler--DeWitt equation}%
+{Quantum-mechanical analogy}
+\begin{itemize}
+\item Fourier-transforming $\beta$ to $k_\beta$ yields
+\begin{align}
+\mscrl E \rfun{\psi}{x} = \widehat{H}_\text{eff} \rfun{\psi}{x} \coloneqq
+\rbr{-\frac{\hslash^2}{2 \mitsansM_\text{P}} \partial_x^2
++ \mscrl \mscrs \mscrv \widetilde{V} \ee^{\widetilde{g} x}} \rfun{\psi}{x},
+\end{align}
+in which $E \coloneqq \hslash^2 k_\beta^2 / 12 \varkappa^{1/2} \ge 0$,
+$\mitsansM_\text{P} \coloneqq \varkappa^{-1/2}$,
+$x \coloneqq \varkappa \chi$, and
+$\widetilde{V} \coloneqq \varkappa^{3/2} \vbr{V}$.
+%, and $\widetilde{g} \coloneqq \varkappa^{-1} g$.
+
+\item For the quintessence model $\rbr{+, +}$:
+$\widehat{H}_\text{eff}$ bounded below; generalised eigenfunctions are
+the Besselian $\BesselK_{\ii E}$'s.
+
+\item For the quintessence model  $\rbr{+, -}$:
+$\widehat{H}_\text{eff}$ bounded \alert{above}; generalised eigenfunctions 
+for positive spectrum / `scattering states' are the Besselian
+$\BesselF_{\ii E}$'s and $\BesselG_{\ii E}$'s\footfullcite{Dunster1990}.
+
+\item For the phantom model $\rbr{-, +}$:
+$\widehat{H}_\text{eff}$ bounded \alert{above}; generalised eigenfunctions 
+for negative spectrum / `bound states' are the Besselian $\BesselJ_{E}$'s.
+\end{itemize}
+
 \end{frame}
 
 \begin{frame}%
@@ -345,13 +385,13 @@ gets the minisuperspace Wheeler--DeWitt equation with $\rbr{\beta,\chi}$
 Writing $\rfun{\Psi}{\beta,\chi} = \rfun{\varphi}{\beta}
 \rfun{\psi}{\chi}$, \cref{eq:WDW-10} can be separated into
 % Inserting %the separating Ansatz
-% $\rfun{\Psi}{\beta,\chi} = \ee^{-\ii k_\beta\mscrs_\beta\beta} 
+% $\rfun{\Psi}{\beta,\chi} = \ee^{-\ii k_\beta\beta} 
 % \rfun{\psi}{\chi}$, the separated eq.\
 \begin{align}
-% \ee^{-\ii k_\beta\mscrs_\beta\beta}\rbr{
+% \ee^{-\ii k_\beta\beta}\rbr{
 % -\mscrl\mscrs\frac{\hslash^2}{2\varkappa^{3/2}}\rfun{\psi''}{\chi}
 % -\mscrs\frac{\hslash^2k_\beta^2}{12\varkappa^{1/2}}\rfun{\psi}{\chi}
-% +\varkappa^{3/2}V\ee^{g\mscrs_\chi\chi}\rfun{\psi}{\chi}
+% +\varkappa^{3/2}V\ee^{g\chi}\rfun{\psi}{\chi}
 % } = 0,
 %\rfun{\ddot{\varphi}}{\beta} &\coloneqq
 \partial_\beta^2\rfun{\varphi}{\beta} &= k_\beta^2\rfun{\varphi}{\beta};\\
@@ -373,7 +413,7 @@ turns out to be Besselian, and the mode functions are
 \nu \coloneqq \sqrt{\frac{2\varkappa}{3}}\frac{1}{g}\,k_\beta,\quad
 \gamma \coloneqq \sqrt{\frac{3}{2\varkappa}}\frac{g}{1}\,\beta,\qquad
 \sigma^2 \coloneqq 
-\frac{8\varkappa^3\vbr{V}\ee^{g\mscrs_\chi\chi}}{\hslash^2 g^2},
+\frac{8\varkappa^3\vbr{V}\ee^{g\chi}}{\hslash^2 g^2},
 \label{eq:trsf-quantum-sigma}
 \\
 % \end{align}
@@ -389,16 +429,6 @@ turns out to be Besselian, and the mode functions are
 \rfun{{}_{\rbr{-,-}}\mathrm{B}^{(i)}_{\nu}}{\sigma} &\coloneqq
 \mathrm{K}\text{ and }\rfun{\mathrm{I}_{\nu}}{\sigma}.
 \end{aligned}
-% \begin{cases}
-% \mathrm{K}\text{ or }\rfun{\mathrm{I}_{\ii\nu}}{\sigma}
-% & \rbr{\mscrl, \mscrs\mscrv} = \rbr{+,+}, \\
-% \mathrm{F}\text{ or }\rfun{\mathrm{G}_{\ii\nu}}{\sigma}
-% & \rbr{\mscrl, \mscrs\mscrv} = \rbr{+,-}, \\
-% \mathrm{J}\text{ or }\rfun{\mathrm{Y}_{\nu}}{\sigma}
-% & \rbr{\mscrl, \mscrs\mscrv} = \rbr{-,+}, \\
-% \mathrm{K}\text{ or }\rfun{\mathrm{I}_{\nu}}{\sigma}
-% & \rbr{\mscrl, \mscrs\mscrv} = \rbr{-,-}. \\
-% \end{cases}
 \end{align}
 \item Adapted to imaginary order, $\rfun{\mathrm{F}_{\nu}}{\sigma}$ and
 $\rfun{\mathrm{G}_{\nu}}{\sigma}$ are defined in \footfullcite{Dunster1990}.
@@ -491,7 +521,7 @@ reads
 %$\rfun{\theta_\nu^{\pm}}{\sigma}$.
 Assuming $c_i$, $a_j$'s are real and applying \emph{the principle} to 
 $\rfun{\Psi_\nu}{\sigma}$, one has$\sigma/\nu = 
-\rfun{\sech}{\mscrs_\beta\gamma}$, which matches the trajectory with
+\rfun{\sech}{\gamma}$, which matches the trajectory with
 $\beta_0 = 0$ if
 \begin{align}
 \hslash k_\beta \equiv \hslash \sqrt{\frac{3}{2\varkappa}}g\hslash\nu
@@ -1067,13 +1097,13 @@ In order to integrate the equation under the implicit gauge
 \mscrs\frac{p_\beta^2}{12}\rbr{
 -\mscrl\frac{\varkappa^{1/2}}{6}\rbr{\frde{\chi}{\beta}}^2
 +\varkappa^{-1/2}}
--\varkappa^{3/2}V\ee^{g\mscrs_\chi\chi} = 0,
+-\varkappa^{3/2}V\ee^{g\chi} = 0,
 \end{align}
 one can substitute
 \begin{align}
 \gamma \coloneqq \sqrt{\frac{3}{2\varkappa}}g\beta, \qquad
 \widetilde{\sigma}^2 \coloneqq \frac{p_\beta^2}{12\varkappa^2 \vbr{V}}
-\ee^{-g\mscrs_\chi\chi},
+\ee^{-g\chi},
 \end{align}
 to get
 \begin{align}
@@ -1092,10 +1122,10 @@ which is of the standard inverse hyperbolic / trigonometric form
 %{233}
 In order to integrate the separated minisuperspace Wheeler--DeWitt equation
 \begin{align}
-% \ee^{-\ii k_\beta\mscrs_\beta\beta}\rbr{
+% \ee^{-\ii k_\beta\beta}\rbr{
 % -\mscrl\mscrs\frac{\hslash^2}{2\varkappa^{3/2}}\rfun{\psi''}{\chi}
 % -\mscrs\frac{\hslash^2k_\beta^2}{12\varkappa^{1/2}}\rfun{\psi}{\chi}
-% +\varkappa^{3/2}V\ee^{g\mscrs_\chi\chi}\rfun{\psi}{\chi}
+% +\varkappa^{3/2}V\ee^{g\chi}\rfun{\psi}{\chi}
 % } = 0,
 \BbbD \rfun{\psi}{\chi} = k_\beta^2 \rfun{\psi}{\chi},\qquad
 \BbbD \coloneqq
@@ -1107,7 +1137,7 @@ one can transform
 \begin{align}
 \nu &\coloneqq \sqrt{\frac{2\varkappa}{3}}\frac{k_\beta}{g},\qquad
 \sigma^2 \coloneqq 
-\frac{8\varkappa^3\vbr{V}\ee^{g\mscrs_\chi\chi}}{\hslash^2 g^2},
+\frac{8\varkappa^3\vbr{V}\ee^{g\chi}}{\hslash^2 g^2},
 \tag{\ref{eq:trsf-quantum-sigma} rev.}
 \end{align}
 to get
