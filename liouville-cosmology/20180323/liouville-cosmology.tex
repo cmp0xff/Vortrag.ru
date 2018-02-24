@@ -27,7 +27,16 @@
 			isbn = false, doi = false,
 			backend=biber]{biblatex}
 \addbibresource{../liouville-cosmology.bib}
-\AtEveryCite{
+\AtEveryBibitem{
+		\clearfield{issn}
+		\clearfield{month}\clearfield{url}
+	\ifentrytype{book}{
+		\clearfield{publisher}
+ 	}{
+		\clearfield{title}
+	}
+}
+\AtEveryCitekey{
 		\clearfield{issn}
 		\clearfield{month}\clearfield{url}
 	\ifentrytype{book}{
@@ -152,7 +161,7 @@ V\ee^{\lambda\phi}$ is of interest, where $\lambda, V\in \BbbR$.
 $\varkappa \coloneqq 8\pp\nG$,
 $\dd\Omega_{3\text{F}}^2 \coloneqq
 \dd\chi^2+\chi^2\rbr{\dd\theta^2+\sin^2\theta\,\dd\varphi^2}$, and
-$N$ lapse function
+$N$ lapse function.
 
 \item The total action reads
 $\mscrS \coloneqq \mscrS_{\text{EH}} + \mscrS_\text{GHY} + \mscrS_\text{L}
@@ -189,7 +198,7 @@ constructive interference, the JWKB approximation and numerical methods.
 
 \section{The classical model and the implicit trajectories}
 
-\subsection{Lagrangian formalism}
+\subsection{Lagrangian formalism and a first integral}
 
 \begin{frame}%
 {Decoupling the variables}%
@@ -305,9 +314,9 @@ special solution\footfullcite[For instance,][ch.\ 3]{Liddle2000}.
 \end{itemize}
 \end{frame}
 
-\section{The Dirac quantisation and the self-adjointness}
+\section{The Dirac quantisation and the self-adjointness of Hamiltonian}
 
-\subsection{Canonical formalism and Dirac quantisation}
+\subsection{The Dirac quantisation and the quantum-mechanical analogy}
 
 \begin{frame}%
 {Dirac quantisation}%
@@ -347,7 +356,7 @@ gets the minisuperspace Wheeler--DeWitt equation with $\rbr{\beta,\chi}$
 
 \begin{frame}%
 {Integration of the Wheeler--DeWitt equation}%
-{Quantum-mechanical analogy}
+{The quantum-mechanical analogy}
 \begin{itemize}
 \item Fourier-transforming $\beta$ to $k_\beta$ yields
 \begin{align}
@@ -355,10 +364,10 @@ gets the minisuperspace Wheeler--DeWitt equation with $\rbr{\beta,\chi}$
 \rbr{-\frac{\hslash^2}{2 \mitsansM_\text{P}} \partial_x^2
 + \mscrl \mscrs \mscrv \widetilde{V} \ee^{\widetilde{g} x}} \rfun{\psi}{x},
 \end{align}
-in which $E \coloneqq \hslash^2 k_\beta^2 / 12 \varkappa^{1/2} \ge 0$,
-$\mitsansM_\text{P} \coloneqq \varkappa^{-1/2}$,
-$x \coloneqq \varkappa \chi$, and
-$\widetilde{V} \coloneqq \varkappa^{3/2} \vbr{V}$.
+in which $\mitsansM_\text{P} \coloneqq \varkappa^{-1/2}$,
+$x \coloneqq \varkappa \chi$,
+$\widetilde{V} \coloneqq \varkappa^{3/2} \vbr{V} \ge 0$, and
+$E \coloneqq \hslash^2 \mitsansM_\text{P} / 12 \cdot k_\beta^2 \ge 0$.
 %, and $\widetilde{g} \coloneqq \varkappa^{-1} g$.
 
 \item For the quintessence model $\rbr{+, +}$:
