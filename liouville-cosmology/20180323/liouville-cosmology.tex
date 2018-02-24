@@ -29,19 +29,27 @@
 \addbibresource{../liouville-cosmology.bib}
 \AtEveryBibitem{
 		\clearfield{issn}
-		\clearfield{month}\clearfield{url}
+		\clearfield{month}
+		\clearfield{url}
+		\clearfield{publisher}
+		\clearfield{series}
+		\clearfield{volume}
 	\ifentrytype{book}{
 		\clearfield{publisher}
- 	}{
+	}{
 		\clearfield{title}
 	}
 }
 \AtEveryCitekey{
 		\clearfield{issn}
-		\clearfield{month}\clearfield{url}
+		\clearfield{month}
+		\clearfield{url}
+		\clearfield{publisher}
+		\clearfield{series}
+		\clearfield{volume}
 	\ifentrytype{book}{
 		\clearfield{publisher}
- 	}{
+	}{
 		\clearfield{title}
 	}
 }
@@ -63,13 +71,13 @@
 %verw,        %% Universitaetsverwaltung
 %nav,         %% Schaltet die Navigationssymbole ein
 latexfonts,  %% Verwendet die latex-beamer-Standardschrift
-%colorful,    %% Farbige Balken im infolines-Theme
+colorful,    %% Farbige Balken im infolines-Theme
 %squares,     %% Aufzaehlungspunkte rechteckig
 %nologo,      %% Kein Logo im Seitenhintergrund
 ]{UzK}
 
 \title{Integrable Liouville Cosmological Models}
-\subtitle{Self-adjointness of the Hamiltonian and Semi-classical Wave Functions}
+\subtitle{The self-adjointness of Hamiltonian and the Semi-classical Wave Functions}
 
 \date{March 23, 2018}
 
@@ -133,7 +141,7 @@ E-08028 Barcelona, Spanien}
 
 \begin{frame}%
 {Introduction}%
-{Friedmann--Lemaître model with quintessence and phantom Liouville fields}
+{The Friedmann--Lemaître model with quintessence and phantom Liouville fields}
 \begin{itemize}
 %\item Observed accelerated expansion can be explained by a cosmological 
 %constant\footfullcite{COPELAND2006,Bamba2012} as stationary Dark Energy, but 
@@ -198,7 +206,7 @@ constructive interference, the JWKB approximation and numerical methods.
 
 \section{The classical model and the implicit trajectories}
 
-\subsection{Lagrangian formalism and a first integral}
+\subsection{Lagrangian formalism and the first integral}
 
 \begin{frame}%
 {Decoupling the variables}%
@@ -314,9 +322,9 @@ special solution\footfullcite[For instance,][ch.\ 3]{Liddle2000}.
 \end{itemize}
 \end{frame}
 
-\section{The Dirac quantisation and the self-adjointness of Hamiltonian}
+\section{Dirac quantisation and the self-adjointness of Hamiltonian}
 
-\subsection{The Dirac quantisation and the quantum-mechanical analogy}
+\subsection{Dirac quantisation and the quantum-mechanical analogy}
 
 \begin{frame}%
 {Dirac quantisation}%
@@ -358,32 +366,72 @@ gets the minisuperspace Wheeler--DeWitt equation with $\rbr{\beta,\chi}$
 {Integration of the Wheeler--DeWitt equation}%
 {The quantum-mechanical analogy}
 \begin{itemize}
-\item Fourier-transforming $\beta$ to $k_\beta$ yields
+\item Fourier-transforming $\beta$ to $k_\beta \in \BbbR$ yields the
+time-independent Schr\"odinger equation for $\widehat{H}_\text{eff}$
 \begin{align}
-\mscrl E \rfun{\psi}{x} = \widehat{H}_\text{eff} \rfun{\psi}{x} \coloneqq
+\mscrl \frac{\hslash^2\widetilde{g}^2\nu^2}{8\mitsansM_\text{P}} \rfun{\psi}{x}
+= \widehat{H}_\text{eff} \rfun{\psi}{x} \coloneqq
 \rbr{-\frac{\hslash^2}{2 \mitsansM_\text{P}} \partial_x^2
 + \mscrl \mscrs \mscrv \widetilde{V} \ee^{\widetilde{g} x}} \rfun{\psi}{x},
 \end{align}
-in which $\mitsansM_\text{P} \coloneqq \varkappa^{-1/2}$,
-$x \coloneqq \varkappa \chi$,
-$\widetilde{V} \coloneqq \varkappa^{3/2} \vbr{V} \ge 0$, and
-$E \coloneqq \hslash^2 \mitsansM_\text{P} / 12 \cdot k_\beta^2 \ge 0$.
+in which $\mitsansM_\text{P} \coloneqq \sqrt{\frac{\hslash}{\varkappa}}$,
+$x \coloneqq \sqrt{\hslash}\varkappa\cdot\chi$,
+$\widetilde{V} \coloneqq \mitsansM_\text{P}^{-3} \vbr{V} \ge 0$, and
+$\nu = \sqrt{\frac{2\varkappa}{3}} \frac{\vbr{k_\beta}}{g} \ge 0$.
 %, and $\widetilde{g} \coloneqq \varkappa^{-1} g$.
 
 \item For the quintessence model $\rbr{+, +}$:
-$\widehat{H}_\text{eff}$ bounded below; generalised eigenfunctions are
-the Besselian $\BesselK_{\ii E}$'s.
+$\widehat{H}_\text{eff}$ is bounded below; generalised eigenfunctions are
+the Besselian $\BesselK_{\ii \nu}$'s.
 
 \item For the quintessence model  $\rbr{+, -}$:
-$\widehat{H}_\text{eff}$ bounded \alert{above}; generalised eigenfunctions 
+$\widehat{H}_\text{eff}$ is bounded \alert{above}; generalised eigenfunctions 
 for positive spectrum / `scattering states' are the Besselian
-$\BesselF_{\ii E}$'s and $\BesselG_{\ii E}$'s\footfullcite{Dunster1990}.
+$\BesselF_{\ii \nu}$'s and $\BesselG_{\ii \nu}$'s\footfullcite[These are
+linear combinations of $\BesselJ_{\pm\ii \nu}$'s which are orthogonal;
+see][]{Dunster1990}.
 
 \item For the phantom model $\rbr{-, +}$:
-$\widehat{H}_\text{eff}$ bounded \alert{above}; generalised eigenfunctions 
-for negative spectrum / `bound states' are the Besselian $\BesselJ_{E}$'s.
+$\widehat{H}_\text{eff}$ is bounded \alert{above}; generalised eigenfunctions 
+for negative spectrum / `bound states' are the Besselian $\BesselJ_{\nu}$'s.
 \end{itemize}
 
+\end{frame}
+
+\subsection{The self-adjointness of Hamiltonian}
+
+\begin{frame}%
+{The self-adjointness of unbounded operators}%
+{The general theory}
+\begin{itemize}
+\item Even in quantum geometrodynamics, the self-adjointness of the matter
+Hamiltonian is desirable, which is typically an unbounded operator in the
+Hilbert space $\mscrF$ endowed with the Schr\"odinger inner product
+$\rbr{\cdot,\cdot}_\text{S}$.
+
+\item Mathematically\footfullcite{hall2013}, an \emph{unbounded} operator $H$ is
+characterised not only by its action on a vector, but also by its domain
+$\rfun{\mathrm{Dom}}{H} \subsetneq \mscrF$.
+
+\item In addition to symmetricity $\rbr{H^\dagger \phi_1, \phi_2} \equiv
+\rbr{H \phi_1, \phi_2}$, the self-adjointness of an unbounded operator also
+requires $\rfun{\mathrm{Dom}}{H^\dagger} = \rfun{\mathrm{Dom}}{H}$.
+
+\item For quantum systems not bounded below, not only the self-adjointness, but
+also the symmetricity of the Hamiltonian is not guaranteed automatically.
+
+\item Even when one could find a $\rfun{\mathrm{Dom}_0}{H}$ such that $H$ is
+symmetric, one would still be left with $\rfun{\mathrm{Dom}_0}{H^\dagger}
+\supset \rfun{\mathrm{Dom}_0}{H}$ in general.
+
+\item Sloppily speaking, the process of extending $\rfun{\mathrm{Dom}}{H}$ such
+that $\rfun{\mathrm{Dom}}{H^\dagger} = \rfun{\mathrm{Dom}}{H}$ is called
+\alert{self-adjoint extension}\footfullcite{Bonneau2001,Araujo2004,%
+Essin2006,Gitman2012}; if the extension is unique, the operator is called
+\emph{essentially self-adjoint}.
+
+%\item When the self-adjoint extension of the Hamiltonian is not unique, 
+\end{itemize}
 \end{frame}
 
 \begin{frame}%
@@ -482,74 +530,6 @@ $\rfun{\mathrm{G}_{\ii\nu}}{\sigma}$ survives
 \end{frame}
 
 \section{The semi-classical wave packets}
-
-\subsection{Semi-classical approximation}
-
-\begin{frame}%
-{Matching quantum number with classical first integral}%
-{Principle of constructive interference}
-\begin{itemize}
-\item Write the mode function in the WKB form
-\begin{align}
-\rfun{\Psi_{k_\beta}}{\beta,\chi} \sim \sqrt{\rfun{\rho}{\beta,\chi}}\,
-\cfun{\exp}{\frac{\ii}{\hslash}\rfun{S}{\beta,\chi}}.
-\end{align}
-
-\item For $S/\hslash \gg 1$ and $k_\beta \gg 1$\footnote{The common form is
-$\hslash\to 0^+$.}, $\rfun{S}{\beta,\chi}$ becomes the Hamilton principle
-function in the leading-order approximation.
-
-\item A Hamilton principle function is stationary with respect to variation of
-integral constants\footfullcite{Gerlach1969,Landau_1976}
-\begin{align}
-\frpa{S}{k_\beta} = 0.
-\label{eq:principle-const-interf}
-\end{align}
-
-\item Demanding \cref{eq:principle-const-interf} matching the classical
-trajectory, $k_\beta$ can be related to $p_\beta$.
-\end{itemize}
-\end{frame}
-
-\begin{frame}%
-{Matching quantum number with classical first integral}%
-{$\rbr{+,+}$ as exemplar}
-\begin{itemize}
-\item Fixing $\nu/\sigma>1$, the asymptotic expansion
-reads
-\begin{align}
-\rfun{\mathrm{K}_{\ii \nu}}{\sigma} \sim
-\frac{\sqrt{2\pp}\,
-\rfun{\cos}{\sqrt{\nu^2-\sigma^2}-\nu\arccos\frac{\nu}{\sigma}-\frac{\pp}{4}}
-}{
-\rbr{\nu^2-\sigma^2}^{1/4}\ee^{\pp\nu/2}}
-+\rfun{\Omicron}{\frac{1}{\sigma}}.
-\end{align}
-\begin{itemize}
-\item There are two phases with opposite signs.
-%$\rfun{\theta_\nu^{\pm}}{\sigma}$.
-Assuming $c_i$, $a_j$'s are real and applying \emph{the principle} to 
-$\rfun{\Psi_\nu}{\sigma}$, one has$\sigma/\nu = 
-\rfun{\sech}{\gamma}$, which matches the trajectory with
-$\beta_0 = 0$ if
-\begin{align}
-\hslash k_\beta \equiv \hslash \sqrt{\frac{3}{2\varkappa}}g\hslash\nu
-= p_\beta,
-\end{align}
-
-\item Non-vanishing $C$ can be compensated by the phase of $c_i$ and $a_j$'s.
-\end{itemize}
-
-\item Fixing $\nu/\sigma<1$, the asymptotic expansion is not oscillatory,
-but exponential; it is not within the WKB regime.
-\end{itemize}
-
-\begin{itemize}
-\item The conclusions also hold for $\rfun{\mathrm{F}_{\ii\nu}}{\sigma}$, 
-$\rfun{\mathrm{G}_{\ii\nu}}{\sigma}$ for $\rbr{+,-}$, and
-$\rfun{\mathrm{J}_{\nu}}{\sigma}$ for $\rbr{-,+}$.
-\end{itemize}
-\end{frame}
 
 \subsection{Inner product and wave packet}
 
