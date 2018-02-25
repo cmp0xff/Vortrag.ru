@@ -381,8 +381,8 @@ $\nu = \sqrt{\frac{2\varkappa}{3}} \frac{\vbr{k_\beta}}{g} \ge 0$.
 %, and $\widetilde{g} \coloneqq \varkappa^{-1} g$.
 
 \item For the quintessence model $\rbr{+, +}$:
-$\widehat{H}_\text{eff}$ is bounded below; generalised eigenfunctions are
-the Besselian $\BesselK_{\ii \nu}$'s.
+$\widehat{H}_\text{eff}$ is bounded \textcolor{blue}{below}; generalised
+eigenfunctions are the Besselian $\BesselK_{\ii \nu}$'s.
 
 \item For the quintessence model  $\rbr{+, -}$:
 $\widehat{H}_\text{eff}$ is bounded \alert{above}; generalised eigenfunctions 
@@ -401,7 +401,7 @@ for negative spectrum / `bound states' are the Besselian $\BesselJ_{\nu}$'s.
 \subsection{The self-adjointness of Hamiltonian}
 
 \begin{frame}%
-{The self-adjointness of unbounded operators}%
+{The self-adjointness of unbounded operator}%
 {The general theory}
 \begin{itemize}
 \item Even in quantum geometrodynamics, the self-adjointness of the matter
@@ -413,16 +413,16 @@ $\rbr{\cdot,\cdot}_\text{S}$.
 characterised not only by its action on a vector, but also by its domain
 $\rfun{\mathrm{Dom}}{H} \subsetneq \mscrF$.
 
-\item In addition to symmetricity $\rbr{H^\dagger \phi_1, \phi_2} \equiv
+\item In addition to symmetricity $\rbr{\phi_1, H^\dagger \phi_2} \equiv
 \rbr{H \phi_1, \phi_2}$, the self-adjointness of an unbounded operator also
 requires $\rfun{\mathrm{Dom}}{H^\dagger} = \rfun{\mathrm{Dom}}{H}$.
 
-\item For quantum systems not bounded below, not only the self-adjointness, but
+\item For quantum systems not bounded below, not only theself-adjointness, but
 also the symmetricity of the Hamiltonian is not guaranteed automatically.
 
 \item Even when one could find a $\rfun{\mathrm{Dom}_0}{H}$ such that $H$ is
 symmetric, one would still be left with $\rfun{\mathrm{Dom}_0}{H^\dagger}
-\supset \rfun{\mathrm{Dom}_0}{H}$ in general.
+\supseteq \rfun{\mathrm{Dom}_0}{H}$ in general.
 
 \item Sloppily speaking, the process of extending $\rfun{\mathrm{Dom}}{H}$ such
 that $\rfun{\mathrm{Dom}}{H^\dagger} = \rfun{\mathrm{Dom}}{H}$ is called
@@ -431,6 +431,43 @@ Essin2006,Gitman2012}; if the extension is unique, the operator is called
 \emph{essentially self-adjoint}.
 
 %\item When the self-adjoint extension of the Hamiltonian is not unique, 
+\end{itemize}
+\end{frame}
+
+\begin{frame}%
+{The self-adjointness of Hamiltonian}%
+%{General theory for unbounded operators}
+\begin{itemize}
+\item For the quintessence model $\rbr{+, +}$:
+$\widehat{H}_\text{eff}$ is \textcolor{blue}{essentially self-adjoint} with
+respect to $\cbr{\BesselK_{\ii \nu}}$.
+
+\item For the quintessence model $\rbr{+, -}$:
+%$\widehat{H}_\text{eff}$ is \textcolor{blue}{self-adjoint} with
+%respect to $\cbr{\BesselF_{\ii \nu},\BesselG_{\ii \nu}}$.
+
+\item For the phantom model $\rbr{-, +}$:
+$\widehat{H}_\text{eff}$ is \alert{not symmetric} with respect to
+$\cbr{\BesselJ_{\nu}}$:
+\begin{align}
+\rbr{\BesselJ_{\mu}, \widehat{p}^2 \BesselJ_{\nu}}_\text{S} - 
+\rbr{\widehat{p}^2 \BesselJ_{\mu}, \BesselJ_{\nu}}_\text{S} =
+\frac{2}{\pp}\sqrt{\mu\nu}\,\sin \frac{\pp\rbr{\mu-\nu}}{2}.
+\end{align}
+
+\begin{itemize}
+\item Imposing symmetricity suggests $\nu = 2n+a$, $n \in \BbbZ_\ge$,
+$a \in [0,2)$.
+
+\item $a$ parametrises different self-adjoint extensions; in terms of the full
+wave-function,
+\begin{align}
+\rfun{\Psi}{\beta,\chi} = \ee^{\ii\pp a} \rfun{\Psi}{\beta+,\chi}
+\end{align}
+
+\item Imposing (anti-)periodic boundary condition would fix $a = 1$ or $0$.
+
+\end{itemize}
 \end{itemize}
 \end{frame}
 
@@ -490,43 +527,6 @@ turns out to be Besselian, and the mode functions are
 \item Adapted to imaginary order, $\rfun{\mathrm{F}_{\nu}}{\sigma}$ and
 $\rfun{\mathrm{G}_{\nu}}{\sigma}$ are defined in \footfullcite{Dunster1990}.
 \end{itemize}
-\end{frame}
-
-\begin{frame}
-{Physical mode functions}%
-%{233}
-\begin{itemize}
-\item Physical mode functions are expected to be regular on the boundary.
-\item $\rbr{+,+}$: $\vbr{\rfun{\mathrm{I}_{\ii\nu}}{\sigma}} \to +\infty$
-as $\alpha \to +\infty$
-\item $\rbr{-,+}$: 
-\begin{itemize}
-\item
-$\forall n \in \BbbN$, $\vbr{\rfun{\mathrm{Y}_{n}}{\sigma}} \to +\infty$ as 
-$\alpha \to -\infty$.
-\item
-$\forall\nu\in\BbbR^+\backslash\BbbN$, choose $\mathrm{J}_{-\nu}$ instead of 
-$\mathrm{Y}_{\nu}$, since $\mathrm{J}_{\pm\nu}$ are also linearly independent.
-\item
-$\forall\nu\in\BbbR^+\backslash\BbbN$, $\vbr{\rfun{\mathrm{J}_{-\nu}}{\sigma}} 
-\to +\infty$ as $\alpha \to -\infty$.
-\end{itemize}
-\item $\rbr{-,-}$: $\vbr{\rfun{\mathrm{K}_{\nu}}{\sigma}} \to +\infty$
-as $\alpha \to -\infty$; $\vbr{\rfun{\mathrm{I}_{\nu}}{\sigma}} \to +\infty$
-as $\alpha \to +\infty$
-\item These are not to be included in the space of physical wave 
-functions. $\forall \nu \ge 0$,
-\begin{itemize}
-\item $\rbr{+,+}$: $\rfun{\mathrm{K}_{\ii\nu}}{\sigma}$ survives
-\item $\rbr{+,-}$: $\rfun{\mathrm{F}_{\ii\nu}}{\sigma}$ and
-$\rfun{\mathrm{G}_{\ii\nu}}{\sigma}$ survives
-\item $\rbr{-,+}$: $\rfun{\mathrm{J}_{\nu}}{\sigma}$ survives
-\item $\rbr{-,-}$: drops out
-\end{itemize}
-%\item For $\rbr{-,+}$, \emph{only $\mathrm{J}_{\nu}$ with 
-%$\nu \ge 0$ survives}.
-\end{itemize}
-
 \end{frame}
 
 \section{The semi-classical wave packets}
