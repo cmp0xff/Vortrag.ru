@@ -22,37 +22,37 @@
 \input{../preambles/math-brac.tex}
 \input{../preambles/phys-chem.tex}
 
-\usepackage[%style=numeric,
+\usepackage[style=science,
 			firstinits=true,
 			isbn = false, doi = false,
 			backend=biber]{biblatex}
 \addbibresource{../liouville-cosmology.bib}
-\AtEveryBibitem{
-		\clearfield{issn}
-		\clearfield{month}
-		\clearfield{url}
-		\clearfield{publisher}
-		\clearfield{series}
-		\clearfield{volume}
-	\ifentrytype{book}{
-		\clearfield{publisher}
-	}{
-		\clearfield{title}
-	}
-}
-\AtEveryCitekey{
-		\clearfield{issn}
-		\clearfield{month}
-		\clearfield{url}
-		\clearfield{publisher}
-		\clearfield{series}
-		\clearfield{volume}
-	\ifentrytype{book}{
-		\clearfield{publisher}
-	}{
-		\clearfield{title}
-	}
-}
+%\AtEveryBibitem{
+%		\clearfield{issn}
+%		\clearfield{month}
+%		\clearfield{url}
+%		\clearfield{publisher}
+%		\clearfield{series}
+%		\clearfield{volume}
+%	\ifentrytype{book}{
+%		\clearfield{publisher}
+%	}{
+%		\clearfield{title}
+%	}
+%}
+%\AtEveryCitekey{
+%		\clearfield{issn}
+%		\clearfield{month}
+%		\clearfield{url}
+%		\clearfield{publisher}
+%		\clearfield{series}
+%		\clearfield{volume}
+%	\ifentrytype{book}{
+%		\clearfield{publisher}
+%	}{
+%		\clearfield{title}
+%	}
+%}
 
 %% Falls Anzeige der \sections, \subsections etc. gewuenscht, kann zB.
 %% das infolines theme geladen werden. Wichtig ist jedoch, dass andere
@@ -366,34 +366,40 @@ gets the minisuperspace Wheeler--DeWitt equation with $\rbr{\beta,\chi}$
 {Integration of the Wheeler--DeWitt equation}%
 {The quantum-mechanical analogy}
 \begin{itemize}
-\item Fourier-transforming $\beta$ to $k_\beta \in \BbbR$ yields the
-time-independent Schr\"odinger equation for $\widehat{H}_\text{eff}$
+\item Fourier transforming $\beta$ to $k_\beta \in \BbbR$ yields the
+time-independent Schr\"odinger equation
 \begin{align}
 \mscrl \frac{\hslash^2\widetilde{g}^2\nu^2}{8\mitsansM_\text{P}} \rfun{\psi}{x}
 = \widehat{H}_\text{eff} \rfun{\psi}{x} \coloneqq
 \rbr{-\frac{\hslash^2}{2 \mitsansM_\text{P}} \partial_x^2
-+ \mscrl \mscrs \mscrv \widetilde{V} \ee^{\widetilde{g} x}} \rfun{\psi}{x},
++ \rfun{\widehat{V}_{\text{eff}}}{x}} \rfun{\psi}{x},\quad
+V_{\text{eff}} =
+\mscrl \mscrs \mscrv \widetilde{V} \ee^{\widetilde{g} x},
 \end{align}
 in which $\mitsansM_\text{P} \coloneqq \sqrt{\frac{\hslash}{\varkappa}}$,
 $x \coloneqq \sqrt{\hslash}\varkappa\cdot\chi$,
 $\widetilde{V} \coloneqq \mitsansM_\text{P}^{-3} \vbr{V} \ge 0$, and
 $\nu = \sqrt{\frac{2\varkappa}{3}} \frac{\vbr{k_\beta}}{g} \ge 0$.
 %, and $\widetilde{g} \coloneqq \varkappa^{-1} g$.
+\begin{itemize}
+\item $V_{\text{eff}}$ is a special case of the Morse potential%
+\footfullcite{Morse1929,Gitman2012}.
+\end{itemize}
 
 \item For the quintessence model $\rbr{+, +}$:
-$\widehat{H}_\text{eff}$ is bounded \textcolor{blue}{below}; generalised
+$V_{\text{eff}}$ is bounded \textcolor{blue}{below}; generalised
 eigenfunctions are the Besselian $\BesselK_{\ii \nu}$'s.
 
 \item For the quintessence model  $\rbr{+, -}$:
-$\widehat{H}_\text{eff}$ is bounded \alert{above}; generalised eigenfunctions 
-for positive spectrum / `scattering states' are the Besselian
+$V_{\text{eff}}$ is bounded \alert{above}; generalised eigenfunctions 
+for positive spectrum (scattering states) are the Besselian
 $\BesselF_{\ii \nu}$'s and $\BesselG_{\ii \nu}$'s\footfullcite[These are
 linear combinations of $\BesselJ_{\pm\ii \nu}$'s which are orthogonal;
 see][]{Dunster1990}.
 
 \item For the phantom model $\rbr{-, +}$:
-$\widehat{H}_\text{eff}$ is bounded \alert{above}; generalised eigenfunctions 
-for negative spectrum / `bound states' are the Besselian $\BesselJ_{\nu}$'s.
+$V_{\text{eff}}$ is bounded \alert{above}; eigenfunctions 
+for negative eigenvalues (bound states) are the Besselian $\BesselJ_{\nu}$'s.
 \end{itemize}
 
 \end{frame}
@@ -405,19 +411,19 @@ for negative spectrum / `bound states' are the Besselian $\BesselJ_{\nu}$'s.
 {The general theory}
 \begin{itemize}
 \item Even in quantum geometrodynamics, the self-adjointness of the matter
-Hamiltonian is desirable, which is typically an unbounded operator in the
-Hilbert space $\mscrF$ endowed with the Schr\"odinger inner product
-$\rbr{\cdot,\cdot}_\text{S}$.
+Hamiltonian is desirable,
+which is typically an unbounded operator in the Hilbert space $\mscrF$ endowed
+with the Schr\"odinger inner product $\rbr{\cdot,\cdot}_\text{S}$.
 
-\item Mathematically\footfullcite{hall2013}, an \emph{unbounded} operator $H$ is
-characterised not only by its action on a vector, but also by its domain
-$\rfun{\mathrm{Dom}}{H} \subsetneq \mscrF$.
+\item Mathematically, an \emph{unbounded} operator
+$H$ is characterised not only by its action on a vector, but also by its domain
+$\rfun{\mathrm{Dom}}{H} \subsetneq \mscrF$\footfullcite[ch.~9]{hall2013}.
 
-\item In addition to symmetricity $\rbr{\phi_1, H^\dagger \phi_2} \equiv
-\rbr{H \phi_1, \phi_2}$, the self-adjointness of an unbounded operator also
-requires $\rfun{\mathrm{Dom}}{H^\dagger} = \rfun{\mathrm{Dom}}{H}$.
+\item In addition to the \emph{symmetricity} $\rbr{\phi_1, H^\dagger \phi_2}
+\equiv \rbr{H \phi_1, \phi_2}$, the self-adjointness of an unbounded operator
+also requires $\rfun{\mathrm{Dom}}{H^\dagger} = \rfun{\mathrm{Dom}}{H}$.
 
-\item For quantum systems not bounded below, not only theself-adjointness, but
+\item For quantum systems not bounded below, not only the self-adjointness, but
 also the symmetricity of the Hamiltonian is not guaranteed automatically.
 
 \item Even when one could find a $\rfun{\mathrm{Dom}_0}{H}$ such that $H$ is
@@ -435,41 +441,65 @@ Essin2006,Gitman2012}; if the extension is unique, the operator is called
 \end{frame}
 
 \begin{frame}%
-{The self-adjointness of Hamiltonian}%
-%{General theory for unbounded operators}
+{The self-adjointness of the Hamiltonian}%
+{Results for the special Morse potential \footfullcite[sec.~8.5]{Gitman2012}}
 \begin{itemize}
-\item For the quintessence model $\rbr{+, +}$:
-$\widehat{H}_\text{eff}$ is \textcolor{blue}{essentially self-adjoint} with
-respect to $\cbr{\BesselK_{\ii \nu}}$.
+\item For the quintessence model $\rbr{+, +}$: $\widehat{H}_\text{eff}$ is
+\textcolor{blue}{essentially self-adjoint} on
+$\rfun{C_\text{c}^{\infty}}{\BbbR}$\footfullcite[See also][sec.~9.9]{hall2013}.
 
-\item For the quintessence model $\rbr{+, -}$:
-%$\widehat{H}_\text{eff}$ is \textcolor{blue}{self-adjoint} with
-%respect to $\cbr{\BesselF_{\ii \nu},\BesselG_{\ii \nu}}$.
-
-\item For the phantom model $\rbr{-, +}$:
-$\widehat{H}_\text{eff}$ is \alert{not symmetric} with respect to
-$\cbr{\BesselJ_{\nu}}$:
+\item For $\rbr{+, -}$ and $\rbr{-, +}$:
+$\widehat{H}_\text{eff}$ is \alert{not self-adjoint} but admits a family of
+self-adjoint extensions parametrised by $a \in [0,2)$, where the (generalised)
+eigenfunctions are
 \begin{align}
-\rbr{\BesselJ_{\mu}, \widehat{p}^2 \BesselJ_{\nu}}_\text{S} - 
-\rbr{\widehat{p}^2 \BesselJ_{\mu}, \BesselJ_{\nu}}_\text{S} =
-\frac{2}{\pp}\sqrt{\mu\nu}\,\sin \frac{\pp\rbr{\mu-\nu}}{2}.
+\Xi_\nu &\propto \BesselF_{\ii\nu}\cos\frac{\pp a_1}{2}
++ \BesselG_{\ii\nu}\sin\frac{\pp a_1}{2}; \\
+\Phi_{\nu} &\propto \BesselJ_{2n+a_2},\qquad \nu = 2n+a_2,\, n \in \BbbZ_\ge.
+\label{eq:Phi_nu}
 \end{align}
 
 \begin{itemize}
-\item Imposing symmetricity suggests $\nu = 2n+a$, $n \in \BbbZ_\ge$,
-$a \in [0,2)$.
-
-\item $a$ parametrises different self-adjoint extensions; in terms of the full
-wave-function,
-\begin{align}
-\rfun{\Psi}{\beta,\chi} = \ee^{\ii\pp a} \rfun{\Psi}{\beta+,\chi}
-\end{align}
-
-\item Imposing (anti-)periodic boundary condition would fix $a = 1$ or $0$.
-
+\item For $\rbr{-, +}$, this can be shown by noting
+$\rbr{\BesselJ_{\mu}, \widehat{p}^2 \BesselJ_{\nu}}_\text{S} - 
+\rbr{\widehat{p}^2 \BesselJ_{\mu}, \BesselJ_{\nu}}_\text{S} \propto
+\sin \frac{\pp\rbr{\mu-\nu}}{2}$;
+%were $\widehat{H}_{\text{eff}}$ symmetric for the $\BesselJ_{\nu}$'s, the right
+%hand side would be zero.
+Imposing symmetricity leads to the condition for \cref{eq:Phi_nu}.
 \end{itemize}
+
+\item For $\rbr{-, +}$, in terms of the full wave-function,
+\begin{align}
+\rfun{\Psi}{\beta,\chi} = \ee^{\ii\pp a_2} \rfun{\Psi}{\beta+,\chi}
+\end{align}
+
+\item Imposing (anti-)periodic boundary condition would fix $a_2 = 0$ ($1$).
+
+\item Using classical singularities as boundary condition, one can fix
+$\nu_0 = 1$.
+
 \end{itemize}
 \end{frame}
+
+
+\begin{frame}%
+{Discretisation of the phantom model $\rbr{-,+}$}%
+%{233}
+Levels of the phantom model are \alert{discretised} if one imposes Hermiticity 
+of squared momenta under the Schrödinger product.
+
+\begin{itemize}
+\item This kind of subtlety on Hermiticity is named as \emph{self-adjoint 
+extension}, which arises already for infinite square 
+well\footfullcite{Bonneau2001}.
+\item It also applies to $x^{-2}$ potentials%
+\footfullcite{Essin2006,Araujo2004}, which is of cosmological relevance%
+\footfullcite{Bouhmadi-Lopez2009}.
+\end{itemize}
+
+\end{frame}
+
 
 \begin{frame}%
 {Separation of the variables and mode functions}%
@@ -573,72 +603,6 @@ among themselves, as well as \textcolor{blue}{can be normalised}.
 
 \end{itemize}
 \end{frame}
-
-\begin{frame}%
-{Peculiarity of the phantom model $\rbr{-,+}$}%
-{Orthogonality for mode functions; Hermiticity for operators}
-\begin{itemize}
-% \item Imposing self-adjointness for $\widehat{p}_\chi = -\ii\hslash
-% \partial_\chi$, one finds that $\mathrm{J}_{-\vbr{\nu}}$ leads to
-% divergent $\rbr{\mathrm{J}_{-\vbr{\nu}}, \widehat{p}_\chi
-% \mathrm{J}_{-\vbr{\nu}}}_\text{S}$, since\footfullcite[eq.\ (10.2.2)]%
-% {NIST:DLMF}
-% \begin{align}
-% \rfun{\mathrm{J}_{\nu}}{z} = \rbr{\frac{z}{2}}^\nu
-% \rbr{\frac{1}{\rfun{\mupGamma}{\nu+1}} + \rfun{\Omicron}{z^2}}.
-% \end{align}
-
-\item $\rfun{\mathrm{J}_{\nu}}{\sigma}$'s are
-\textcolor{orange}{not orthogonal} under the Schrödinger product
-\begin{align}
-\rbr{\mathrm{J}_{\nu},\mathrm{J}_{\tilde{\nu}}}_\text{S}
-\propto \int_{-\infty}^{+\infty} \dd x\,
-\rfun{\mathrm{J}_{\nu}^*}{\ee^x}
-\rfun{\mathrm{J}_{\tilde{\nu}}}{\ee^x} =
-\frac{2\rfun{\sin}{\pp\rbr{\nu-\tilde{\nu}}/2}}{\pp\rbr{\nu^2-\tilde{\nu}^2}},
-\end{align}
-therefore $\BbbD$ in \cref{eq:separated-10} is
-\textcolor{orange}{not Hermitian} (though we do not need it so far)
-
-\item $\widehat{p}_\chi^2$ is \textcolor{orange}{not Hermitian} for
-$\cbr{\rfun{\mathrm{J}_{\nu}}{\sigma}}$ under the Schrödinger product
-\begin{align}
-\int_{-\infty}^{+\infty} \dd x\,
-\mathrm{J}_{\nu}^*\rbr{-\partial_x^2\mathrm{J}_{\tilde{\nu}}}
--\int_{-\infty}^{+\infty} \dd x\,
-\rbr{-\partial_x^2\mathrm{J}_{\nu}}^*\mathrm{J}_{\tilde{\nu}}
-= \frac{2}{\pp}\sin\frac{\pp\rbr{\nu-\tilde{\nu}}}{2}.
-\end{align}
-
-\item In order to save Hermiticity for $p_\chi^2$ and $\BbbD$ and 
-orthogonality of the modes under Schrödinger product, one can restrict
-\begin{align}
-\nu = 2n+\nu_0,\qquad \alert{n\in\BbbN},\quad\nu_0\in \left[0,2\right).
-\end{align}
-
-\item Using classical singularities as boundary condition, one can fix
-$\nu_0 = 1$.
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}%
-{Discretisation of the phantom model $\rbr{-,+}$}%
-%{233}
-Levels of the phantom model are \alert{discretised} if one imposes Hermiticity 
-of squared momenta under the Schrödinger product.
-
-\begin{itemize}
-\item This kind of subtlety on Hermiticity is named as \emph{self-adjoint 
-extension}, which arises already for infinite square 
-well\footfullcite{Bonneau2001}.
-\item It also applies to $x^{-2}$ potentials%
-\footfullcite{Essin2006,Araujo2004}, which is of cosmological relevance%
-\footfullcite{Bouhmadi-Lopez2009}.
-\end{itemize}
-
-\end{frame}
-
 
 \begin{frame}%
 {Further inner products for wave functions}%
