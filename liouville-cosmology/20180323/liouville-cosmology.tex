@@ -17,6 +17,7 @@
 \usepackage{mathtools}
 \usepackage{siunitx}
 \usepackage{cleveref}
+\usepackage{booktabs}
 
 \input{../preambles/math-single.tex}
 \input{../preambles/math-brac.tex}
@@ -194,7 +195,8 @@ the minisuperspace Wheeler--DeWitt equation can be integrated exactly.
 
 \begin{block}{Self-adjointness}
 The Hamiltonian is not even naturally symmetric;
-imposing self-adjointness leads to non-trivial physical results.
+imposing self-adjointness leads to removal of degeneracy and discretisation
+of levels.
 \end{block}
 
 \begin{block}{Semi-classical wave functions}
@@ -292,12 +294,12 @@ in which $\mscrv \coloneqq \sgn V$, $\rbr{\mathrm{sgn},\mathrm{sgn}}$ means
 $\rbr{\mscrl,\mscrs\mscrv}$, and
 \begin{align}
 \begin{aligned}
-\rfun{{}_{\rbr{+,+}}s}{\gamma} &\coloneqq \rfun{\sech}{\gamma},
+\rfun{s_{++}}{\gamma} &\coloneqq \rfun{\sech}{\gamma},
 &\qquad
-\rfun{{}_{\rbr{+,-}}s}{\gamma} &\coloneqq \rfun{\csch}{\gamma},\\
-\rfun{{}_{\rbr{-,+}}s}{\gamma} &\coloneqq \rfun{\sec}{\gamma},
+\rfun{s_{+-}}{\gamma} &\coloneqq \rfun{\csch}{\gamma},\\
+\rfun{s_{-+}}{\gamma} &\coloneqq \rfun{\sec}{\gamma},
 &\qquad
-\rfun{{}_{\rbr{-,-}}s}{\gamma} &\coloneqq \rfun{\ii\csc}{\gamma}.\\
+\rfun{s_{--}}{\gamma} &\coloneqq \rfun{\ii\csc}{\gamma}.\\
 \end{aligned}
 \end{align}
 \begin{itemize}
@@ -366,11 +368,12 @@ gets the minisuperspace Wheeler--DeWitt equation with $\rbr{\beta,\chi}$
 \item Fourier transforming $\beta$ to $k_\beta \in \BbbR$ yields the
 time-independent Schr\"odinger equation
 \begin{align}
-\mscrl \frac{\hslash^2\widetilde{g}^2\nu^2}{8\mitsansM_\text{P}} \rfun{\psi}{x}
-= \widehat{H}_\text{eff} \rfun{\psi}{x} \coloneqq
+E \rfun{\psi}{x} \coloneqq
+\mscrl \frac{\hslash^2\widetilde{g}^2\nu^2}{8\mitsansM_\text{P}} \psi
+= \widehat{H}_\text{eff} \psi \coloneqq
 \rbr{-\frac{\hslash^2}{2 \mitsansM_\text{P}} \partial_x^2
-+ \rfun{\widehat{V}_{\text{eff}}}{x}} \rfun{\psi}{x},\quad
-V_{\text{eff}} =
++ \rfun{\widehat{V}_{\text{eff}}}{x}} \psi,\quad
+V_{\text{eff}} \coloneqq
 \mscrl \mscrs \mscrv \widetilde{V} \ee^{\widetilde{g} x},
 \end{align}
 in which $\mitsansM_\text{P} \coloneqq \sqrt{\frac{\hslash}{\varkappa}}$,
@@ -383,26 +386,46 @@ $\nu = \sqrt{\frac{2\varkappa}{3}} \frac{\vbr{k_\beta}}{g} \ge 0$.
 \footfullcite{Morse1929,Gitman2012}.
 \end{itemize}
 
-\item For the quintessence model $\rbr{+, +}$:
-$V_{\text{eff}}$ is bounded \textcolor{blue}{below};
-generalised eigenfunctions are the Besselian
-$\rfun{\BesselK_{\ii \nu}}{\ee^{\widetilde{x}}}$'s, $\ee^{2\widetilde{x}} =
+\item Let $\ee^{2\widetilde{x}} =
 8\mitsansM_{\text{P}}\widetilde{V}/\hslash^2\widetilde{g}^2\cdot
-\ee^{\widetilde{g}x}$.
+\ee^{\widetilde{g}x}$
+%\item For the quintessence model $\rbr{+, +}$:
+%$V_{\text{eff}}$ is bounded \textcolor{blue}{below};
+%generalised eigenfunctions are the Besselian
+%$\rfun{\BesselK_{\ii \nu}}{\ee^{\widetilde{x}}}$'s, $\ee^{2\widetilde{x}} =
+%8\mitsansM_{\text{P}}\widetilde{V}/\hslash^2\widetilde{g}^2\cdot
+%\ee^{\widetilde{g}x}$.
 
-\item For the quintessence model  $\rbr{+, -}$:
-$V_{\text{eff}}$ is bounded \alert{above}; generalised eigenfunctions 
-for positive spectrum (scattering states) are the Besselian
-$\rfun{\BesselF_{\ii \nu}}{\ee^{\widetilde{x}}}$'s and
-$\rfun{\BesselG_{\ii \nu}}{\ee^{\widetilde{x}}}$'s\footfullcite[These are
-linear combinations of $\rfun{\BesselJ_{\pm\ii \nu}}{\ee^{\widetilde{x}}}$;
-see][]{Dunster1990}.
+%\item For the quintessence model  $\rbr{+, -}$:
+%$V_{\text{eff}}$ is bounded \alert{above}; generalised eigenfunctions 
+%for positive spectrum (scattering states) are the Besselian
+%$\rfun{\BesselF_{\ii \nu}}{\ee^{\widetilde{x}}}$'s and
+%$\rfun{\BesselG_{\ii \nu}}{\ee^{\widetilde{x}}}$'s\footfullcite[These are
+%linear combinations of $\rfun{\BesselJ_{\pm\ii \nu}}{\ee^{\widetilde{x}}}$;
+%see][]{Dunster1990}.
 
-\item For the phantom model $\rbr{-, +}$:
-$V_{\text{eff}}$ is bounded \alert{above}; eigenfunctions 
-for negative eigenvalues (bound states) are the Besselian
-$\rfun{\BesselJ_{\nu}}{{\ee^{\widetilde{x}}}}$'s.
+%\item For the phantom model $\rbr{-, +}$:
+%$V_{\text{eff}}$ is bounded \alert{above}; eigenfunctions 
+%for negative eigenvalues (bound states) are the Besselian
+%$\rfun{\BesselJ_{\nu}}{{\ee^{\widetilde{x}}}}$'s.
 \end{itemize}
+
+\begin{center}
+\begin{tabular}{c||r@{; }l|r@{; }l}
+\toprule
+& \multicolumn{2}{c}{$E \ge 0$} & \multicolumn{2}{|c}{$E < 0$} \\
+\midrule
+$V_{\text{eff}}\,\textcolor{blue}{>}\,0$ &
+$\rbr{+,+}$ & $\rfun{\BesselK_{\ii \nu}}{\ee^{\widetilde{x}}}$ &
+$\rbr{-,-}$ & none \\
+$V_{\text{eff}}\,\textcolor{red}{<}\,0$ &
+$\rbr{+,-}$ &
+$\rfun{\BesselF_{\ii \nu}}{\ee^{\widetilde{x}}}$,
+$\rfun{\BesselG_{\ii \nu}}{\ee^{\widetilde{x}}}$ &
+$\rbr{-,+}$& $\rfun{\BesselJ_{\nu}}{\ee^{\widetilde{x}}}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
 
 \end{frame}
 
@@ -444,72 +467,89 @@ Essin2006,Gitman2012}; if the extension is unique, the operator is called
 
 \begin{frame}%
 {The self-adjointness of the Hamiltonian}%
-{Results for the special Morse potential \footfullcite[sec.~8.5]{Gitman2012}}
+{Results for the Liouville potential\footfullcite[sec.~8.5]{Gitman2012}}
 \begin{itemize}
-\item For the quintessence model $\rbr{+, +}$: $\widehat{H}_\text{eff}$ is
-\textcolor{blue}{essentially self-adjoint} on
-$\rfun{C_\text{c}^{\infty}}{\BbbR}$\footfullcite[See also][sec.~9.9]{hall2013}.
+\item For $V_{\text{eff}} > 0$: $\widehat{H}_\text{eff}$ is
+\textcolor{blue}{essentially self-adjoint}%
+\footfullcite[See also][sec.~9.9]{hall2013}.
+\begin{itemize}
+\item For the quintessence model $\rbr{+, +}$, nothing special.
+\end{itemize}
 
-\item For $\rbr{+, -}$ and $\rbr{-, +}$:
-$\widehat{H}_\text{eff}$ is \alert{not self-adjoint} but admits a family of
-self-adjoint extensions parametrised by $a \in [0,2)$.
-
-\item For the quintessence model $\rbr{+,-}$, the generalised eigenfunctions are
-\begin{align}
-{}_{\rbr{+,-}}\psi_\nu &\propto \BesselF_{\ii\nu}\cos\frac{\pp a_\ge}{2}
-+ \BesselG_{\ii\nu}\sin\frac{\pp a_\ge}{2}
-\end{align}
-with asymptotic behaviour $\rfun{{}_{\rbr{+,-}}\psi_\nu}{\ee^{\widetilde{x}}}
-\sim \ee^{-\widetilde{x}/2}
-\rfun{\cos}{\ee^{\widetilde{x}}-\frac{\pp a}{2}-\frac{\pp}{4}}$
-as $x \to +\infty$.
-
+\item For $V_{\text{eff}} < 0$: $\widehat{H}_\text{eff}$ admits
+\alert{a family of self-adjoint extensions}.
+\begin{itemize}
+\item For the quintessence model $\rbr{+,-}$, the generalised eigenfunction is a
+linear combination of $\BesselF$ and $\BesselG$, and
+\alert{the degeneracy is removed}.
 \item For the phantom model $\rbr{-, +}$, the eigenfunctions are
+\alert{discretised}
 \begin{align}
-{}_{\rbr{-,+}}\psi_{\nu} &\propto \BesselJ_{\nu},\qquad \nu = 2n+a_<,\, n \in
+\psi_{-+,\nu} &\propto \BesselJ_{\nu},\qquad \nu = 2n+a_<,\, n \in
 \BbbZ_\ge,
 \label{eq:Phi_nu}
 \end{align}
 and the corresponding full wave-functions are Bloch-periodic
-$\rfun{{}_{\rbr{-,+}}\Psi_{n}}{\beta,\chi} = \ee^{\ii\pp a_<}
-\rfun{{}_{\rbr{-,+}}\Psi_{n}}{\beta + T_\beta,\chi}$.
-
-\begin{itemize}
-\item \Cref{eq:Phi_nu} can also be shown by noting
-$\rbr{\BesselJ_{\mu}, \widehat{H}_{\text{eff}} \BesselJ_{\nu}}_\text{S} - 
-\rbr{\widehat{H}_{\text{eff}} \BesselJ_{\mu}, \BesselJ_{\nu}}_\text{S} \propto
-\sin \frac{\pp\rbr{\mu-\nu}}{2}$
-and then imposing symmetricity.
-
-\item Imposing (anti-)periodic boundary condition would fix $a_< = 0$ ($1$).
+$\rfun{\Psi_{-+,n}}{\beta,\chi} = \ee^{\ii\pp a_<}
+\rfun{\Psi_{-+,n}}{\beta + T_\beta,\chi}$. Imposing (anti-)periodic
+boundary condition would fix $a_< = 0$ ($1$).
 \end{itemize}
 
-\end{itemize}
+%\item For $\rbr{+, -}$ and $\rbr{-, +}$:
+%$\widehat{H}_\text{eff}$ is \alert{not self-adjoint} but admits a family of
+%self-adjoint extensions parametrised by $a \in [0,2)$.
 
-\end{frame}
+%\item For the quintessence model $\rbr{+,-}$, the generalised eigenfunctions are
+%\begin{align}
+%{}_{\rbr{+,-}}\psi_\nu &\propto \BesselF_{\ii\nu}\cos\frac{\pp a_\ge}{2}
+%+ \BesselG_{\ii\nu}\sin\frac{\pp a_\ge}{2}
+%\end{align}
+%with asymptotic behaviour $\rfun{{}_{\rbr{+,-}}\psi_\nu}{\ee^{\widetilde{x}}}
+%\sim \ee^{-\widetilde{x}/2}
+%\rfun{\cos}{\ee^{\widetilde{x}}-\frac{\pp a}{2}-\frac{\pp}{4}}$
+%as $x \to +\infty$.
 
 
-\begin{frame}%
-{The self-adjointness of the Hamiltonian}%
-{Discussions}%
-%{233}
+%\begin{itemize}
+%\item \Cref{eq:Phi_nu} can also be shown by noting
+%$\rbr{\BesselJ_{\mu}, \widehat{H}_{\text{eff}} \BesselJ_{\nu}}_\text{S} - 
+%\rbr{\widehat{H}_{\text{eff}} \BesselJ_{\mu}, \BesselJ_{\nu}}_\text{S} \propto
+%\sin \frac{\pp\rbr{\mu-\nu}}{2}$
+%and then imposing symmetricity.
 
-\begin{itemize}
-\item The self-adjointness of $\widehat{H}_\text{eff}$ is non-trivial and not
-unique for $\rbr{+, -}$ and $\rbr{-, +}$.
-
-\item For the phantom model $\rbr{-, +}$, it \alert{discretises} the spectrum.
+%\item 
+%\end{itemize}
 
 \item The self-adjointness has been discussed in quantum cosmology in e.g.\
 \footfullcite{Almeida2015} (in the operator ordering scenario) and more 
 recently in \footfullcite{Gryb2018}.
 
-\item The self-adjoint extension is also non-trivial for the $x^{-2}$
-potential\footfullcite{Essin2006}, which is of cosmological relevance as well%
-\footfullcite{Bouhmadi-Lopez2009}.
 \end{itemize}
 
 \end{frame}
+
+
+%\begin{frame}%
+%{The self-adjointness of the Hamiltonian}%
+%{Discussion}%
+%{233}
+
+%\begin{itemize}
+%\item The self-adjointness of $\widehat{H}_\text{eff}$ is non-trivial and not
+%unique for $\rbr{+, -}$ and $\rbr{-, +}$.
+
+%\item For the phantom model $\rbr{-, +}$, it \alert{discretises} the spectrum.
+
+%\item The self-adjointness has been discussed in quantum cosmology in e.g.\
+%\footfullcite{Almeida2015} (in the operator ordering scenario) and more 
+%recently in \footfullcite{Gryb2018}.
+
+%\item The self-adjoint extension is also non-trivial for the $x^{-2}$
+%potential\footfullcite{Essin2006}, which is of cosmological relevance as well%
+%\footfullcite{Bouhmadi-Lopez2009}.
+%\end{itemize}
+
+%\end{frame}
 
 
 
@@ -518,13 +558,14 @@ potential\footfullcite{Essin2006}, which is of cosmological relevance as well%
 \subsection{Inner product and wave packet}
 
 \begin{frame}%
-{Inner product for wave functions}%
-{Schrödinger product}
-\begin{itemize}
-\item To make sense of amplitude and wave packet, an inner product is necessary
+{Inner products for wave functions}%
+{Schrödinger and Mostafazadeh inner product}
 
-\item In terms of a Klein--Gordon equation, call $\beta$ the ``temporal'' 
-variable, and $\chi$ the ``spacial'' variable.
+\begin{itemize}
+%\item To make sense of amplitude and wave packet, an inner product is necessary
+
+%\item In terms of the Wheeler--DeWitt equation of Klein--Gordon type,
+%call $\beta$ the ``temporal'' variable, and $\chi$ the ``spacial'' variable.
 
 \item A common starting point is the
 \emph{Schrödinger product}\footfullcite[ch.\ 5]{Kiefer2012}
@@ -532,56 +573,20 @@ variable, and $\chi$ the ``spacial'' variable.
 \rbr{\Psi_1,\Psi_2}_\text{S} \coloneqq
 \int \dd \chi\,\rfun{\Psi_1^*}{\beta,\chi} \rfun{\Psi_2}{\beta,\chi};
 \end{align}
+
+\begin{itemize}
 \item $\rbr{\Psi, \Psi}_\text{S}$ is \textcolor{blue}{positive-definite},
 and the integrand $\rfun{\rho_\text{S}}{\beta,\chi}$ is
 \textcolor{blue}{non-negative}
 
-%\item In terms of a norm, $\rbr{\Psi, \Psi}_\text{S} \equiv \int \dd \chi\,
-%\rfun{\rho_\text{S}}{\beta,\chi},$ in which $\rho_\text{S} \coloneqq 
-%\Psi^*\Psi$. Manifestly $\rho_\text{S} \textcolor{blue}{\ge 0}$, and
-%$\rbr{\Psi, \Psi}_\text{S}$.
-
 \item The corresponding Schrödinger current is \textcolor{blue}{real} but
 \textcolor{orange}{does not satisfy continuity equation}
-$\dot{\rho}_\text{S} + \nabla\cdot \vec{j}_\text{S} = 0$, because 
-\cref{eq:WDW-10} is KG-like.
-\item $\mathrm{K}_{\ii\nu}$%
-\footfullcite{Yakubovich2006,Passian2009,Szmytkowski2010} for $\rbr{+,+}$, 
-$\mathrm{F}_{\ii\nu}$ and $\mathrm{G}_{\ii\nu}$ for $\rbr{+,-}$ can be proved 
-to be \textcolor{blue}{orthogonal} and \textcolor{blue}{complete}
-among themselves, as well as \textcolor{blue}{can be normalised}.
-\begin{itemize}
-\item $\mathrm{J}_{\ii\nu}$'s for $\rbr{+,-}$ are
-\textcolor{orange}{not orthogonal}
-\end{itemize}
-
-\end{itemize}
-\end{frame}
-
-\begin{frame}%
-{Further inner products for wave functions}%
-{Klein--Gordon and Mostafazadeh product}
-\begin{itemize}
-\item Since \cref{eq:WDW-10} is KG-like, another popular choice is the KG 
-product
-\begin{align}
-\rbr{\Psi_1,\Psi_2}_\text{KG}^g \coloneqq \ii g \cbr{
-\rbr{\Psi_1,\partial_\beta\Psi_2}_\text{S} -
-\rbr{\partial_\beta\Psi_1,\Psi_2}_\text{S}},\qquad g > 0.
-\end{align}
-\begin{itemize}
-\item $\rbr{\Psi,\Psi}_\text{KG}^g$ is \textcolor{blue}{real} but
-\textcolor{orange}{not positive-definite}, so does the integrand
-$\rho_\text{KG}$;
-%is \textcolor{blue}{real} but may go \textcolor{orange}{negative},
-\item The corresponding $\vec{J}_\text{KG}$ is
-\textcolor{blue}{conserved} $\dot{\rho}_\text{KG} +
-\nabla\cdot \vec{J}_\text{KG} = 0$ and \textcolor{blue}{real}.
+%$\dot{\rho}_\text{S} + \nabla\cdot \vec{j}_\text{S} = 0$, because 
+%\cref{eq:WDW-10} is Klein--Gordon-like.
 \end{itemize}
 
 \item Mostafazadeh\footfullcite{Mostafazadeh2002} found
-% a class of
-a product \emph{for Hermitian $\BbbD$ with positive spectrum}:
+an inner product \emph{for self-adjoint $\BbbD$ with positive spectrum}:
 \begin{align}
 % \rbr{\Psi_1,\Psi_2}_\text{M}^{\kappa,a} &\coloneqq
 % \rbr{\Psi_1,\Psi_2}_\text{M}^{\kappa} +
@@ -591,43 +596,26 @@ a product \emph{for Hermitian $\BbbD$ with positive spectrum}:
 +\rbr{\partial_\beta\Psi_1,
 \BbbD^{-1/2}\partial_\beta\Psi_2}_\text{S}}, \qquad \kappa > 0.
 \end{align}
-% and $-1 < a < 1$.
-\begin{itemize}
-%\item Varying $a$ leads to unitarily equivalent 
-%products\footfullcite{Mostafazadeh2004}; restrict to $a=0$
-\item $\rbr{\Psi,\Psi}_\text{M}^{\kappa}$ is
-\textcolor{blue}{positive-definite}, but the integrand $\rho_\text{M}^\kappa$
-is \textcolor{orange}{complex}
-\item The corresponding $\vec{J}_\text{M}^\kappa$ is
-\textcolor{blue}{conserved} $\dot{\rho}_\text{M}^\kappa + 
-\nabla\cdot \vec{J}_\text{M}^\kappa = 0$ but also \textcolor{orange}{complex}.
-\end{itemize}
-\end{itemize}
-\end{frame}
 
-\begin{frame}%
-{Mostafazadeh inner product and the corresponding density}%
-%{233}
 \begin{itemize}
+
 \item Real power of $\BbbD$ is defined by spectral decomposition
-$\BbbD^{\gamma} \coloneqq \sum_\nu \nu^{2\gamma}\mbfP_\nu$,
-$\mbfP_\nu\Psi \coloneqq \Psi_\nu\rbr{\Psi_\nu,\Psi}_\text{S}$.
-\end{itemize}
-\begin{itemize}
+%$\BbbD^{\gamma} \coloneqq \sum_\nu \nu^{2\gamma}\mbfP_\nu$,
+%$\mbfP_\nu\Psi \coloneqq \Psi_\nu\rbr{\Psi_\nu,\Psi}_\text{S}$.
+
 \item It can be shown\footfullcite{Mostafazadeh2006} that \emph{the density}
 \begin{align}
 \varrho_\text{M}^\kappa \coloneqq\kappa\cbr{
 \vbr{\BbbD^{+1/4}\Psi}^2+\vbr{\BbbD^{-1/4}\partial_\beta{\Psi}}^2}
 \end{align}
+
 \begin{itemize}
-\item is \textcolor{blue}{equivalent to $\rho_\text{M}^\kappa$} up to a
-boundary term
-\begin{align}
-\int\dd\chi\,\varrho_\text{M}^\kappa = 
+\item is \textcolor{blue}{equivalent to the integrand} $\rho_\text{M}^\kappa$ 
+up to a boundary term
+$\int\dd\chi\,\varrho_\text{M}^\kappa = 
 \int\dd\chi\,\rho_\text{M}^\kappa \equiv
-\rbr{\Psi_1,\Psi_2}_\text{M}^{\kappa};
-\end{align}
-\item is \textcolor{blue}{non-negative}.
+\rbr{\Psi_1,\Psi_2}_\text{M}^{\kappa}$
+\item is \textcolor{blue}{non-negative}
 %\item may be understood as a probability density;
 \item The corresponding current $\vec{\mscrJ}_\text{M}^\kappa$
 is \textcolor{blue}{real} but
@@ -635,7 +623,55 @@ is \textcolor{blue}{real} but
 \end{itemize}
 
 \end{itemize}
+
+\end{itemize}
 \end{frame}
+
+%\begin{frame}%
+%{Further inner products for wave functions}%
+%{Klein--Gordon and Mostafazadeh product}
+%\begin{itemize}
+%\item Since \cref{eq:WDW-10} is KG-like, another popular choice is the KG 
+%product
+%\begin{align}
+%\rbr{\Psi_1,\Psi_2}_\text{KG}^g \coloneqq \ii g \cbr{
+%\rbr{\Psi_1,\partial_\beta\Psi_2}_\text{S} -
+%\rbr{\partial_\beta\Psi_1,\Psi_2}_\text{S}},\qquad g > 0.
+%\end{align}
+%\begin{itemize}
+%\item $\rbr{\Psi,\Psi}_\text{KG}^g$ is \textcolor{blue}{real} but
+%\textcolor{orange}{not positive-definite}, so does the integrand
+%$\rho_\text{KG}$;
+%%is \textcolor{blue}{real} but may go \textcolor{orange}{negative},
+%\item The corresponding $\vec{J}_\text{KG}$ is
+%\textcolor{blue}{conserved} $\dot{\rho}_\text{KG} +
+%\nabla\cdot \vec{J}_\text{KG} = 0$ and \textcolor{blue}{real}.
+%\end{itemize}
+
+%\item Mostafazadeh\footfullcite{Mostafazadeh2002} found
+%an inner product \emph{for Hermitian $\BbbD$ with positive spectrum}:
+%\begin{align}
+%% \rbr{\Psi_1,\Psi_2}_\text{M}^{\kappa,a} &\coloneqq
+%% \rbr{\Psi_1,\Psi_2}_\text{M}^{\kappa} +
+%% \kappa \rbr{\Psi_1,\Psi_2}_\text{KG}^a,\\
+%\rbr{\Psi_1,\Psi_2}_\text{M}^{\kappa} &\coloneqq\kappa\cbr{
+%\rbr{\Psi_1,\BbbD^{+1/2}\Psi_2}_\text{S}
+%+\rbr{\partial_\beta\Psi_1,
+%\BbbD^{-1/2}\partial_\beta\Psi_2}_\text{S}}, \qquad \kappa > 0.
+%\end{align}
+%% and $-1 < a < 1$.
+%\begin{itemize}
+%%\item Varying $a$ leads to unitarily equivalent 
+%%products\footfullcite{Mostafazadeh2004}; restrict to $a=0$
+%\item $\rbr{\Psi,\Psi}_\text{M}^{\kappa}$ is
+%\textcolor{blue}{positive-definite}, but the integrand $\rho_\text{M}^\kappa$
+%is \textcolor{orange}{complex}
+%\item The corresponding $\vec{J}_\text{M}^\kappa$ is
+%\textcolor{blue}{conserved} $\dot{\rho}_\text{M}^\kappa + 
+%\nabla\cdot \vec{J}_\text{M}^\kappa = 0$ but also \textcolor{orange}{complex}.
+%\end{itemize}
+%\end{itemize}
+%\end{frame}
 
 \begin{frame}%
 {Wave packets of Gaussian amplitude for continuous spectrum}%
