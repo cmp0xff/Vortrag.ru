@@ -194,14 +194,15 @@ the minisuperspace Wheeler--DeWitt equation can be integrated exactly.
 \end{block}
 
 \begin{block}{Self-adjointness}
-The Hamiltonian is not even naturally symmetric;
+The Hamiltonian can be asymmetric;
 imposing self-adjointness leads to removal of degeneracy and discretisation
 of levels.
 \end{block}
 
 \begin{block}{Semi-classical wave functions}
 Semi-classical wave functions can be constructed by the principle of
-constructive interference, the JWKB approximation and numerical methods.
+constructive interference, the Wentzel--Kramers--Brillouin approximation and
+numerical methods.
 \end{block}
 
 \end{frame}
@@ -555,7 +556,56 @@ recently in \footfullcite{Gryb2018}.
 
 \section{The semi-classical wave packets}
 
-\subsection{Inner product and wave packet}
+\subsection{The Wentzel--Kramers--Brillouin approximation}
+
+\begin{frame}%
+{Matching quantum number with classical first integral}%
+{Principle of constructive interference; $\rbr{+,+}$ as the example}
+
+\begin{itemize}
+\item Write the mode function in the Wentzel--Kramers--Brillouin form
+$\rfun{\Psi_{\nu}}{\beta,\chi} \sim \sqrt{\rfun{\rho}{\beta,\chi}}\,
+\cfun{\exp}{\frac{\ii}{\hslash}\rfun{S}{\beta,\chi}}$.
+For $S/\hslash \gg 1$ and $\nu \gg 1$, $\rfun{S}{\beta,\chi}$ becomes
+the Hamilton principle function in the leading-order approximation, which is
+\alert{stationary} with respect to the variation of integral constants
+$\partial S/\partial \nu = 0$.
+\end{itemize}
+
+%\item Demanding \cref{eq:principle-const-interf} matching the classical
+%trajectory, $k_\beta$ can be related to $p_\beta$.
+
+\begin{itemize}
+\item Fixing $\nu/\sigma>1$,
+\begin{align}
+\rfun{\mathrm{K}_{\ii \nu}}{\sigma} \sim
+\frac{\sqrt{2\pp}\,
+\rfun{\cos}{\sqrt{\nu^2-\sigma^2}-\nu\arccos\frac{\nu}{\sigma}-\frac{\pp}{4}}
+}{
+\rbr{\nu^2-\sigma^2}^{1/4}\ee^{\pp\nu/2}}
++\rfun{\Omicron}{\frac{1}{\sigma}}.
+\end{align}
+
+\item Applying \emph{the principle} to the phase of $\rfun{\Psi_\nu}{\sigma}$, one has
+$\sigma/\nu = \rfun{\sech}{\mscrs_\beta\gamma}$, which matches the trajectory
+if $\hslash k_\beta \equiv \hslash \sqrt{\frac{3}{2\varkappa}}g\nu
+= p_\beta$.
+
+%\item Non-vanishing $C$ can be compensated by the phase of $c_i$ and $a_j$'s.
+%\end{itemize}
+
+\item Fixing $\nu/\sigma<1$, the asymptotic expansion is not oscillatory,
+but exponential; it is not within the Wentzel--Kramers--Brillouin regime.
+\end{itemize}
+
+\begin{itemize}
+\item The conclusions also hold for $\rfun{\mathrm{F}_{\ii\nu}}{\sigma}$, 
+$\rfun{\mathrm{G}_{\ii\nu}}{\sigma}$ for $\rbr{+,-}$, and
+$\rfun{\mathrm{J}_{\nu}}{\sigma}$ for $\rbr{-,+}$.
+\end{itemize}
+\end{frame}
+
+\subsection{The inner product and wave packet}
 
 \begin{frame}%
 {Inner products for wave functions}%
@@ -805,29 +855,29 @@ $V = +\varkappa^{-2}$ and $\overline{k}_\beta = 8$}
 \end{columns}
 \end{frame}
 
-\begin{frame}%
-{Wave packets of Gaussian amplitude for phantom model}%
-{$\mathrm{J}_{\nu}$, with $\lambda = 2\varkappa^{1/2}$,
-$V = +\varkappa^{-2}$, $\overline{k}_\beta = 8$ and $\sigma_\beta = 11/2$}
-\begin{columns}
-\begin{column}{.49\textwidth}
-\begin{block}{Schrödinger}
-\only<1>{
-\includegraphics[width=\textwidth]{../plots.paper.nb/naive_cos_gauss_2d.pdf}}
-\only<2>{
-\includegraphics[width=\textwidth]{../plots.paper.nb/naive_cos_gauss_3d.pdf}}
-\end{block}
-\end{column}
-\begin{column}{.49\textwidth}
-\begin{block}{Mostafazadeh}
-\only<1>{
-\includegraphics[width=\textwidth]{../plots.paper.nb/mosta_cos_gauss_2d.pdf}}
-\only<2>{
-\includegraphics[width=\textwidth]{../plots.paper.nb/mosta_cos_gauss_3d.pdf}}
-\end{block}
-\end{column}
-\end{columns}
-\end{frame}
+%\begin{frame}%
+%{Wave packets of Gaussian amplitude for phantom model}%
+%{$\mathrm{J}_{\nu}$, with $\lambda = 2\varkappa^{1/2}$,
+%$V = +\varkappa^{-2}$, $\overline{k}_\beta = 8$ and $\sigma_\beta = 11/2$}
+%\begin{columns}
+%\begin{column}{.49\textwidth}
+%%\begin{block}{Schrödinger}
+%\only<1>{
+%\includegraphics[width=\textwidth]{../plots.paper.nb/naive_cos_gauss_2d.pdf}}
+%\only<2>{
+%\includegraphics[width=\textwidth]{../plots.paper.nb/naive_cos_gauss_3d.pdf}}
+%\end{block}
+%\end{column}
+%\begin{column}{.49\textwidth}
+%\begin{block}{Mostafazadeh}
+%\only<1>{
+%\includegraphics[width=\textwidth]{../plots.paper.nb/mosta_cos_gauss_2d.pdf}}
+%\only<2>{
+%\includegraphics[width=\textwidth]{../plots.paper.nb/mosta_cos_gauss_3d.pdf}}
+%\end{block}
+%\end{column}
+%\end{columns}
+%\end{frame}
 
 \section{Conclusions}
 
@@ -1074,14 +1124,14 @@ In order to integrate the separated minisuperspace Wheeler--DeWitt equation
 \BbbD \coloneqq
 -\mscrl \frac{6}{\varkappa} \partial_\chi^2
 + \mscrs\mscrv \frac{12\varkappa^2\vbr{V}}{\hslash^2},
-\tag{\ref{eq:separated-10} rev.}
+%\tag{\ref{eq:separated-10} rev.}
 \end{align}
 one can transform
 \begin{align}
 \nu &\coloneqq \sqrt{\frac{2\varkappa}{3}}\frac{k_\beta}{g},\qquad
 \sigma^2 \coloneqq 
 \frac{8\varkappa^3\vbr{V}\ee^{g\chi}}{\hslash^2 g^2},
-\tag{\ref{eq:trsf-quantum-sigma} rev.}
+%\tag{\ref{eq:trsf-quantum-sigma} rev.}
 \end{align}
 to get
 \begin{align}
