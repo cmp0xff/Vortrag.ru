@@ -154,8 +154,9 @@ matter, %with barotropic index\footnote{Barotropic index is the $w$ in equation
 %of state $\rho = wp$.} $w > -1$ and $w < -1$, respectively.
 %
 %\item They
-which can be realised by minimally-coupled real scalar fields with $\mscrl 
-= \pm 1$\footnote{The signature of metric is mostly positive.}
+which can be realised by minimally-coupled real scalar fields with 
+\textcolor{blue}{$\mscrl = \pm 1$}\footnote{The signature of metric is $\rbr{-, 
++, \ldots, +}$.}
 \begin{align}
 \mscrS_{\text{L}} = \int\dd^4 x\,\sqrt{-g}\,\cbr{-\mscrl \frac{g^{\mu\nu}}{2}
 \rbr{\partial_\mu\phi}\rbr{\partial_\nu\phi} - \rfun{\mscrV}{\phi}}.
@@ -238,89 +239,155 @@ the orthogonal transformation
 -6 & \lambda
 \end{pmatrix}
 \begin{pmatrix}
-\mscrs_\beta \cdot \rfun{\beta}{t} \\ \mscrs_\chi \cdot \rfun{\chi}{t}
-\end{pmatrix}\qquad\text{where } \mscrs_\beta, \mscrs_\chi = \pm 1,
+%\mscrs_\beta \cdot \rfun{\beta}{t} \\ \mscrs_\chi \cdot \rfun{\chi}{t}
+\rfun{\beta}{t} \\ \rfun{\chi}{t}
+\end{pmatrix}%\qquad\text{where } \mscrs_\beta, \mscrs_\chi = \pm 1,
 \end{align}
-the effective Lagrangian \cref{eq:eff-lag-10} can be decoupled
-($\mscrs_\beta = \mscrs_\chi = +1$ from now on)
+the system can be decoupled
+%($\mscrs_\beta = \mscrs_\chi = +1$ from now on)
 %gives the decoupled Lagrangian
+($\Delta \coloneqq \lambda^2 - 6\mscrl\varkappa$,
+\textcolor{blue}{$\mscrs \coloneqq \sgn \Delta$} and
+$g \coloneqq \mscrs \sqrt{\vbr{\Delta}} \equiv \mscrs\sqrt{\mscrs\Delta}$.)
 \begin{align}
 L = \varkappa^{3/2}\overline{N}
-\rbr{-\mscrs\frac{3}{\varkappa}\frac{\dot{\beta}^2}{\overline{N}^2}
-+\mscrl\mscrs\frac{\dot{\chi}^2}{2\overline{N}^2}
+\rbr{-\mscrs\tfrac{3}{\varkappa}\tfrac{\dot{\beta}^2}{\overline{N}^2}
++\mscrl\mscrs\tfrac{\dot{\chi}^2}{2\overline{N}^2}
 -V\ee^{g \chi}},
 \label{eq:lagrangian-decoupled}
 \end{align}
-where $\Delta \coloneqq \lambda^2 - 6\mscrl\varkappa$,
-$\mscrs \coloneqq \sgn \Delta$ and
-$g \coloneqq \mscrs \sqrt{\vbr{\Delta}} \equiv \mscrs\sqrt{\mscrs\Delta}$.
 
-\item
-The Euler--Lagrange equations with respect to $\overline{N}$, $\beta$ and
-$\chi$ will be called the modified first, second Friedmann equations and the
-Klein--Gordon equation, respectively.
+%\item
+%The Euler--Lagrange equations with respect to $\overline{N}$, $\beta$ and
+%$\chi$ will be called the modified first, second Friedmann equations and the
+%Klein--Gordon equation, respectively.
 
-\item Since $\rfun{\beta}{t}$ is cyclic, its conjugate momentum $p_\beta$ is
-conserved\footfullcite[The same first integral has been found in][in canonical 
-formalism]{Lan2016,Andrianov2015},
-and the modified second Friedmann equation
-can be readily integrated.
+\item Using the \alert{conservation of $p_\beta$}\footfullcite[The same 
+first integral has been found in][in canonical 
+formalism]{Lan2016,Andrianov2015}, $\rfun{\overline{N}}{t}$ can be eliminated, 
+leading to the exact integrations of the equations of motion as \alert{implicit 
+trajectories}.
+\begin{itemize}
+\item $p_\beta \neq 0$: four cases according to $\rbr{\mscrl, \mscrs \mscrv}$,
+\textcolor{blue}{$v = \sgn V$}
+\item $p_\beta = 0$: well-known power-law special solution for $\rbr{+,-}$ 
+and $\rbr{-,+}$.
+\end{itemize}
 
 \end{itemize}
+\end{frame}
+
+
+\begin{frame}%
+{Trajectories for quintessence model $\rbr{+,+}$}%
+{$\sech$, with $\beta_0 = 0$, $\vbr{V} = \varkappa^{-2}$ and
+$p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$; varying $\lambda$}
+
+\begin{align}
+\ee^{g\textcolor{red}{\chi}} = 
+\tfrac{p_\beta^2}{12\varkappa^2\vbr{V}}
+\rfun{\sech^2}{ \sqrt{\tfrac{3}{2\varkappa}}\,g 
+\rbr{\textcolor{red}{\beta}-\beta_0}}
+\end{align}
+\includegraphics[width=\textwidth]{../plots.nb/sech_lamb.pdf}
+
+%\begin{itemize}
+%	\item has two asymptotes $\chi \propto \pm \beta$
+%\end{itemize}
 \end{frame}
 
 \begin{frame}%
-{Integration and the implicit trajectories}%
-%{General integral for $p_\beta \neq 0$}
-\begin{itemize}
-
-%\begin{align}
-%\alert{\text{const.} \equiv p_\beta} \coloneqq \frpa{L}{\dot{\beta}} &=
-%-6\mscrs\varkappa^{1/2}\frac{\dot{\beta}}{\overline{N}}
-%\alert{\equiv
-%-6\mscrs\frac{\varkappa^{1/2}}{g}
-%\frac{\lambda\dot{\alpha}+\mscrl\varkappa\dot{\phi}}{\overline{N}}}.
-%\end{align}
-
-\item For $p_\beta \neq 0$, fixing the \emph{implicit gauge}
-$\overline{N} = -6\mscrs\sqrt{\varkappa}\dot{\beta}/p_\beta$, the modified
-first Friedmann equation can be integrated, yielding the \alert{implicit}
-trajectory
+{Trajectories for quintessence model $\rbr{+,-}$}%
+{$\csch$, with $\beta_0 = 0$, $\vbr{V} = \varkappa^{-2}$ and
+$p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$; varying $\lambda$}
 \begin{align}
-\ee^{g\chi} &=
-\frac{p_\beta^2}{12\varkappa^2\vbr{V}}
-\rfun{s^2}{ \sqrt{\frac{3}{2\varkappa}}\,g \rbr{\beta-\beta_0}},
+\ee^{g\textcolor{red}{\chi}} = 
+\tfrac{p_\beta^2}{12\varkappa^2\vbr{V}}
+\rfun{\csch^2}{ \sqrt{\tfrac{3}{2\varkappa}}\,g 
+\rbr{\textcolor{red}{\beta}-\beta_0}}
 \end{align}
-in which $\mscrv \coloneqq \sgn V$, $\rbr{\mathrm{sgn},\mathrm{sgn}}$ means 
-$\rbr{\mscrl,\mscrs\mscrv}$, and
-\begin{align}
-\begin{aligned}
-\rfun{s_{++}}{\gamma} &\coloneqq \rfun{\sech}{\gamma},
-&\qquad
-\rfun{s_{+-}}{\gamma} &\coloneqq \rfun{\csch}{\gamma},\\
-\rfun{s_{-+}}{\gamma} &\coloneqq \rfun{\sec}{\gamma},
-&\qquad
-\rfun{s_{--}}{\gamma} &\coloneqq \rfun{\ii\csc}{\gamma}.\\
-\end{aligned}
-\end{align}
-\begin{itemize}
-\item The integral for the phantom model with $\rbr{-,+}$ is periodic for
-$\beta$ with $T_\beta = \sqrt{\frac{2\varkappa}{3}}\frac{2\pp}{g}$.
-\item The integral for the phantom model with $\rbr{-,-}$ is not real.
-\item The trajectories can be parametrised by $\beta$, inspiring recognising
-$\beta$ as a `time variable'.
-\end{itemize}
+\includegraphics[width=\textwidth]{../plots.nb/csch_lamb_l.pdf}
 
-\item For $p_\beta = 0$, integrating the modified second Friedmann 
-equation yields $\beta \equiv \beta_0$ or $\phi-\phi_0 =
--\mscrl\lambda\alpha/\varkappa$%
-\footnote{It only works for $\rbr{+,-}$ or $\rbr{-,+}$ if one checks consistency
-with the modified first Friedmann equation.}, which is the well-known power-law
-special solution\footfullcite[For instance,][ch.\ 3]{Liddle2000}.
-
-
-\end{itemize}
+% \begin{itemize}
+% 	\item contains two distinct solutions, separated by $\beta = 0$
+% 	\item has three asymptotes $\chi \propto \pm \beta$ and $\beta = 0$
+% \end{itemize}
 \end{frame}
+
+
+\begin{frame}%
+{Trajectories for phantom model $\rbr{-,+}$}%
+{$\sec$, with $V = \varkappa^{-2}$ and
+$p_\beta^2 = 3\varkappa^2\sqrt{\vbr{V}}$}
+\begin{align}
+\ee^{g\textcolor{red}{\chi}} = 
+\tfrac{p_\beta^2}{12\varkappa^2\vbr{V}}
+\rfun{\sec^2}{ \sqrt{\tfrac{3}{2\varkappa}}\,g 
+\rbr{\textcolor{red}{\beta}-\beta_0}}
+\end{align}
+\includegraphics[width=\textwidth]{../plots.nb/csc_lamb_l.pdf}
+
+%\begin{columns}
+%\begin{column}{.55\textwidth}
+% \begin{itemize}
+% 	\item contains infinite distinct solutions
+% 	\item has infinite parallel asymptotes $\beta \propto \rbr{n+1/2}\pp $
+% \end{itemize}
+%\end{column}
+%\begin{column}{.4\textwidth}
+%\begin{itemize}
+%\item is $\beta$-even for $\beta_0 = 0$
+%\end{itemize}
+%\end{column}
+%\end{columns}
+\end{frame}
+
+
+% \begin{frame}%
+% {Integration and the implicit trajectories}%
+% %{General integral for $p_\beta \neq 0$}
+% \begin{itemize}
+% 
+% 
+% \item For $p_\beta \neq 0$, fixing the \emph{implicit gauge}
+% $\overline{N} = -6\mscrs\sqrt{\varkappa}\dot{\beta}/p_\beta$, the modified
+% first Friedmann equation can be integrated, yielding the \alert{implicit}
+% trajectory
+% \begin{align}
+% \ee^{g\chi} &=
+% \frac{p_\beta^2}{12\varkappa^2\vbr{V}}
+% \rfun{s^2}{ \sqrt{\frac{3}{2\varkappa}}\,g \rbr{\beta-\beta_0}},
+% \end{align}
+% in which $\mscrv \coloneqq \sgn V$, $\rbr{\mathrm{sgn},\mathrm{sgn}}$ means 
+% $\rbr{\mscrl,\mscrs\mscrv}$, and
+% \begin{align}
+% \begin{aligned}
+% \rfun{s_{++}}{\gamma} &\coloneqq \rfun{\sech}{\gamma},
+% &\qquad
+% \rfun{s_{+-}}{\gamma} &\coloneqq \rfun{\csch}{\gamma},\\
+% \rfun{s_{-+}}{\gamma} &\coloneqq \rfun{\sec}{\gamma},
+% &\qquad
+% \rfun{s_{--}}{\gamma} &\coloneqq \rfun{\ii\csc}{\gamma}.\\
+% \end{aligned}
+% \end{align}
+% \begin{itemize}
+% \item The integral for the phantom model with $\rbr{-,+}$ is periodic for
+% $\beta$ with $T_\beta = \sqrt{\frac{2\varkappa}{3}}\frac{2\pp}{g}$.
+% \item The integral for the phantom model with $\rbr{-,-}$ is not real.
+% \item The trajectories can be parametrised by $\beta$, inspiring recognising
+% $\beta$ as a `time variable'.
+% \end{itemize}
+% 
+% \item For $p_\beta = 0$, integrating the modified second Friedmann 
+% equation yields $\beta \equiv \beta_0$ or $\phi-\phi_0 =
+% -\mscrl\lambda\alpha/\varkappa$%
+% \footnote{It only works for $\rbr{+,-}$ or $\rbr{-,+}$ if one checks consistency
+% with the modified first Friedmann equation.}, which is the well-known power-law
+% special solution\footfullcite[For instance,][ch.\ 3]{Liddle2000}.
+% 
+% 
+% \end{itemize}
+% \end{frame}
 
 \section{Dirac quantisation and the self-adjointness of Hamiltonian}
 
@@ -373,7 +440,7 @@ E \rfun{\psi}{x} \coloneqq
 \mscrl \frac{\hslash^2\widetilde{g}^2\nu^2}{8\mitsansM_\text{P}} \psi
 = \widehat{H}_\text{eff} \psi \coloneqq
 \rbr{-\frac{\hslash^2}{2 \mitsansM_\text{P}} \partial_x^2
-+ \rfun{\widehat{V}_{\text{eff}}}{x}} \psi,\quad
++ V_{\text{eff}}} \psi,\quad
 V_{\text{eff}} \coloneqq
 \mscrl \mscrs \mscrv \widetilde{V} \ee^{\widetilde{g} x},
 \end{align}
@@ -387,7 +454,7 @@ $\nu = \sqrt{\frac{2\varkappa}{3}} \frac{\vbr{k_\beta}}{g} \ge 0$.
 \footfullcite{Morse1929,Gitman2012}.
 \end{itemize}
 
-\item Let $\ee^{2\widetilde{x}} =
+\item Let $\ee^{2y} \coloneqq
 8\mitsansM_{\text{P}}\widetilde{V}/\hslash^2\widetilde{g}^2\cdot
 \ee^{\widetilde{g}x}$
 %\item For the quintessence model $\rbr{+, +}$:
@@ -417,13 +484,13 @@ $\nu = \sqrt{\frac{2\varkappa}{3}} \frac{\vbr{k_\beta}}{g} \ge 0$.
 & \multicolumn{2}{c}{$E \ge 0$} & \multicolumn{2}{|c}{$E < 0$} \\
 \midrule
 $V_{\text{eff}}\,\textcolor{blue}{>}\,0$ &
-$\rbr{+,+}$ & $\rfun{\BesselK_{\ii \nu}}{\ee^{\widetilde{x}}}$ &
+$\rbr{+,+}$ & $\rfun{\BesselK_{\ii \nu}}{\ee^{y}}$ &
 $\rbr{-,-}$ & none \\
 $V_{\text{eff}}\,\textcolor{red}{<}\,0$ &
 $\rbr{+,-}$ &
-$\rfun{\BesselF_{\ii \nu}}{\ee^{\widetilde{x}}}$,
-$\rfun{\BesselG_{\ii \nu}}{\ee^{\widetilde{x}}}$ &
-$\rbr{-,+}$& $\rfun{\BesselJ_{\nu}}{\ee^{\widetilde{x}}}$ \\
+$\rfun{\BesselF_{\ii \nu}}{\ee^{y}}$,
+$\rfun{\BesselG_{\ii \nu}}{\ee^{y}}$ &
+$\rbr{-,+}$& $\rfun{\BesselJ_{\nu}}{\ee^{y}}$ \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -433,67 +500,37 @@ $\rbr{-,+}$& $\rfun{\BesselJ_{\nu}}{\ee^{\widetilde{x}}}$ \\
 \subsection{The self-adjointness of Hamiltonian}
 
 \begin{frame}%
-{The self-adjointness of unbounded operators}%
-{The general theory}
+{Self-adjointness of the Hamiltonian}%
+{Results for the Liouville potential\footfullcite[See 
+also][sec.~8.5]{Gitman2012}}
 \begin{itemize}
-\item Even in quantum geometrodynamics, the self-adjointness of the matter
-Hamiltonian is desirable,
-which is typically an unbounded operator in the Hilbert space $\mbfF$ endowed
-with the Schr\"odinger inner product $\rbr{\cdot,\cdot}_\text{S}$.
+\item $k_\beta \in \BbbR$, enforcing the self-adjointness of 
+$\widehat{H}_{\text{eff}}$.
 
-\item Mathematically, an \emph{unbounded} operator
-$H$ is characterised not only by its action on a vector, but also by its domain
-$\rfun{\mathrm{Dom}}{H} \subsetneq \mbfF$\footfullcite[ch.~9]{hall2013}.
-
-\item In addition to the \emph{symmetricity} $\rbr{H^\dagger \phi_1, \phi_2}
-\equiv \rbr{\phi_1, H \phi_2}$, the self-adjointness of an unbounded operator
-also requires $\rfun{\mathrm{Dom}}{H^\dagger} = \rfun{\mathrm{Dom}}{H}$.
-
-\item For quantum systems not bounded below, not only the self-adjointness, but
-also the symmetricity of the Hamiltonian is not guaranteed automatically.
-
-\item Even when one could find a $\rfun{\mathrm{Dom}_0}{H}$ such that $H$ is
-symmetric, one would still be left with $\rfun{\mathrm{Dom}_0}{H^\dagger}
-\supseteq \rfun{\mathrm{Dom}_0}{H}$ in general.
-
-\item Sloppily speaking, the process of extending $\rfun{\mathrm{Dom}}{H}$ such
-that $\rfun{\mathrm{Dom}}{H^\dagger} = \rfun{\mathrm{Dom}}{H}$ is called
-\alert{self-adjoint extension}\footfullcite{Bonneau2001,Araujo2004,%
-Essin2006,Gitman2012}; if the extension is unique, the operator is called
-\emph{essentially self-adjoint}.
-
-%\item When the self-adjoint extension of the Hamiltonian is not unique, 
-\end{itemize}
-\end{frame}
-
-\begin{frame}%
-{The self-adjointness of the Hamiltonian}%
-{Results for the Liouville potential\footfullcite[sec.~8.5]{Gitman2012}}
-\begin{itemize}
 \item For $V_{\text{eff}} > 0$: $\widehat{H}_\text{eff}$ is
 \textcolor{blue}{essentially self-adjoint}%
 \footfullcite[See also][sec.~9.9]{hall2013}.
 \begin{itemize}
-\item For the quintessence model $\rbr{+, +}$, nothing special.
+\item Quintessence $\rbr{+, +}$: nothing special.
 \end{itemize}
 
 \item For $V_{\text{eff}} < 0$: $\widehat{H}_\text{eff}$ admits
-\alert{a family of self-adjoint extensions}.
+\textcolor{orange}{a family of self-adjoint extensions}.
 \begin{itemize}
-\item For the quintessence model $\rbr{+,-}$, the generalised eigenfunction is a
-linear combination of $\BesselF$ and $\BesselG$, and
-\alert{the degeneracy is removed}.
-\item For the phantom model $\rbr{-, +}$, the eigenfunctions are
-\alert{discretised}
+\item Quintessence $\rbr{+,-}$: ``eigenfunctions'' are
+lin.\ combi.\ of $\BesselF$ and $\BesselG$;
+\alert{the degeneracy is removed}
+\item Phantom $\rbr{-, +}$: the eigenfunctions are \alert{discretised}
 \begin{align}
-\psi_{-+,\nu} &\propto \BesselJ_{\nu},\qquad \nu = 2n+a_<,\, n \in
-\BbbZ_\ge,
+\rfun{\psi_{-+,\nu}}{\ee^y} &\propto
+\rfun{\BesselJ_{\nu}}{\ee^y},\qquad \nu = 2n+a_<,\, \alert{n \in
+\BbbZ_\ge},
 \label{eq:Phi_nu}
 \end{align}
 and the corresponding full wave-functions are Bloch-periodic
-$\rfun{\Psi_{-+,n}}{\beta,\chi} = \ee^{\ii\pp a_<}
-\rfun{\Psi_{-+,n}}{\beta + T_\beta,\chi}$. Imposing (anti-)periodic
-boundary condition would fix $a_< = 0$ ($1$).
+%$\rfun{\Psi_{-+,n}}{\beta,\chi} = \ee^{\ii\pp a_<}
+%\rfun{\Psi_{-+,n}}{\beta + T_\beta,\chi}$.
+Imposing (anti-)periodic boundary condition fixes $a_< = 0$ ($1$).
 \end{itemize}
 
 %\item For $\rbr{+, -}$ and $\rbr{-, +}$:
@@ -930,30 +967,22 @@ classical trajectory under the Schrödinger and Mostafazadeh inner product.
 {Outlook}%
 %{233}
 \begin{itemize}
-\item Beyond isotropy: generalise to Bianchi models
+\item Beyond isotropy: Bianchi models
 
-\item Beyond homogeneity: cosmological perturbation
+\item Beyond homogeneity: cosmological perturbations
 
-\item Beyond single Liouville field: multiple potential / multiple potential
+\item Beyond single Liouville field: multiple potentials / multiple fields
 
-\item Beyond classical matter and Schrödinger inner product: $PT$ field
+\item Beyond classical matter and Schrödinger inner product: $PT$-symmetric 
+field
+
 \end{itemize}
 \end{frame}
 
 
 \section*{Appendix}
 
-\subsection*{Trajectories}
-
-\begin{frame}%
-{Trajectories for quintessence model $\rbr{+,+}$}%
-{$\sech$, with $\beta_0 = 0$, $\vbr{V} = \varkappa^{-2}$ and
-$p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$; varying $\lambda$}
-\includegraphics[width=\textwidth]{../plots.nb/sech_lamb.pdf}
-\begin{itemize}
-	\item has two asymptotes $\chi \propto \pm \beta$
-\end{itemize}
-\end{frame}
+\subsection*{More trajectories}
 
 \begin{frame}%
 {Trajectories for quintessence model $\rbr{+,+}$}%
@@ -987,17 +1016,6 @@ $p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$; varying $V$}
 
 
 \begin{frame}%
-{Trajectories for quintessence model $\rbr{+,-}$}%
-{$\csch$, with $\beta_0 = 0$, $\vbr{V} = \varkappa^{-2}$ and
-$p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$; varying $\lambda$}
-\includegraphics[width=\textwidth]{../plots.nb/csch_lamb_l.pdf}
-\begin{itemize}
-	\item contains two distinct solutions, separated by $\beta = 0$
-	\item has three asymptotes $\chi \propto \pm \beta$ and $\beta = 0$
-\end{itemize}
-\end{frame}
-
-\begin{frame}%
 {Trajectories for quintessence model $\rbr{+,-}$: $\csch$}%
 {$\csch$, with $\beta_0 = 0$, $\vbr{V} = \varkappa^{-2}$ and
 $p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$; varying $\lambda$}
@@ -1021,7 +1039,7 @@ $\lambda^2 = \varkappa$; varying $p_\beta$}
 
 \begin{frame}%
 {Trajectories for phantom model $\rbr{-,+}$}%
-{$\csc$, with $V = \varkappa^{-2}$ and
+{$\sec$, with $V = \varkappa^{-2}$ and
 $p_\beta^2 = 3\varkappa^2\sqrt{\vbr{V}}$}
 \includegraphics[width=\textwidth]{../plots.nb/csc_lamb_l.pdf}
 %\begin{columns}
@@ -1141,6 +1159,42 @@ to get
 which is of the standard Besselian form.
 \end{frame}
 
+\subsection*{Self-adjointness}
+
+\begin{frame}%
+{Self-adjointness of unbounded operators}%
+{General theory}
+\begin{itemize}
+\item Even in quantum geometrodynamics, the self-adjointness of the matter
+Hamiltonian is desirable,
+which is typically an unbounded operator in the Hilbert space $\mbfF$ endowed
+with the Schr\"odinger inner product $\rbr{\cdot,\cdot}_\text{S}$.
+
+\item Mathematically, an \emph{unbounded} operator
+$H$ is characterised not only by its action on a vector, but also by its domain
+$\rfun{\mathrm{Dom}}{H} \subsetneq \mbfF$\footfullcite[ch.~9]{hall2013}.
+
+\item In addition to the \emph{symmetricity} $\rbr{H^\dagger \phi_1, \phi_2}
+\equiv \rbr{\phi_1, H \phi_2}$, the self-adjointness of an unbounded operator
+also requires $\rfun{\mathrm{Dom}}{H^\dagger} = \rfun{\mathrm{Dom}}{H}$.
+
+\item For quantum systems not bounded below, not only the self-adjointness, but
+also the symmetricity of the Hamiltonian is not guaranteed automatically.
+
+\item Even when one could find a $\rfun{\mathrm{Dom}_0}{H}$ such that $H$ is
+symmetric, one would still be left with $\rfun{\mathrm{Dom}_0}{H^\dagger}
+\supseteq \rfun{\mathrm{Dom}_0}{H}$ in general.
+
+\item Sloppily speaking, the process of extending $\rfun{\mathrm{Dom}}{H}$ such
+that $\rfun{\mathrm{Dom}}{H^\dagger} = \rfun{\mathrm{Dom}}{H}$ is called
+\alert{self-adjoint extension}\footfullcite{Bonneau2001,Araujo2004,%
+Essin2006,Gitman2012}; if the extension is unique, the operator is called
+\emph{essentially self-adjoint}.
+
+%\item When the self-adjoint extension of the Hamiltonian is not unique, 
+\end{itemize}
+\end{frame}
+
 % \begin{frame}
 %   \frametitle{Allgemeines}
 
@@ -1186,7 +1240,7 @@ which is of the standard Besselian form.
 %     \item Balken mit allen Fakultätsfarben (Option \texttt{uk})
 %     \item Balken in jeweils einer Fakultätsfarbe (Optionen \texttt{wiso, jura,
 %         medizin, philo, matnat, human, verw})\footnote{Es werden die 
-offiziellen
+% offiziellen
 %         RGB-Werte aus dem 2-D Handbuch Corporate Design verwendet.}
 %     \end{itemize}
 %   \item "`Universität zu Köln"' sowie der Name der Fakultät sind im
