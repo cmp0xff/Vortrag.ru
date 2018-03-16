@@ -78,7 +78,7 @@ colorful,    %% Farbige Balken im infolines-Theme
 ]{UzK}
 
 \title{Integrable Liouville Cosmological Models}
-\subtitle{The self-adjointness of Hamiltonian and the Semi-classical Wave Functions}
+\subtitle{Self-adjointness of the Hamiltonian and Semi-classical Wave Functions}
 
 \date{March 23, 2018}
 
@@ -190,14 +190,14 @@ L&\coloneqq \varkappa^{3/2}N\ee^{3\alpha}
 {Introduction}%
 {Highlights}
 \begin{block}{Integrability}
-Implicit trajectories can be obtained explicitly;
-the minisuperspace Wheeler--DeWitt equation can be integrated exactly.
+With the help of an integral of motion, implicit trajectories can be obtained 
+explicitly, and the minisuperspace Wheeler--DeWitt equation can be integrated 
+exactly.
 \end{block}
 
 \begin{block}{Self-adjointness}
-The Hamiltonian can be asymmetric;
-imposing self-adjointness leads to removal of degeneracy and discretisation
-of levels.
+Imposing self-adjointness of the Hamiltonian leads to removal of the degeneracy 
+and discretisation of the spectrum.
 \end{block}
 
 \begin{block}{Semi-classical wave functions}
@@ -252,8 +252,8 @@ the system can be decoupled
 $g \coloneqq \mscrs \sqrt{\vbr{\Delta}} \equiv \mscrs\sqrt{\mscrs\Delta}$)
 \begin{align}
 L = \varkappa^{3/2}\overline{N}
-\rbr{-\mscrs\tfrac{3}{\varkappa}\tfrac{\dot{\beta}^2}{\overline{N}^2}
-+\mscrl\mscrs\tfrac{\dot{\chi}^2}{2\overline{N}^2}
+\rbr{-\mscrs\frac{3}{\varkappa}\frac{\dot{\beta}^2}{\overline{N}^2}
++\mscrl\mscrs\frac{\dot{\chi}^2}{2\overline{N}^2}
 -V\ee^{g \chi}}.
 \label{eq:lagrangian-decoupled}
 \end{align}
@@ -270,7 +270,7 @@ leading to the exact integrations of the equations of motion as \alert{implicit
 trajectories}.
 \begin{itemize}
 \item $p_\beta \neq 0$: four cases according to $\rbr{\mscrl, \mscrs \mscrv}$,
-\textcolor{blue}{$v \coloneqq \sgn V$}.
+\textcolor{blue}{$\mscrv \coloneqq \sgn V$}.
 \item $p_\beta = 0$: well-known power-law special solution for $\rbr{+,-}$ 
 and $\rbr{-,+}$.
 \end{itemize}
@@ -292,10 +292,8 @@ $p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$; varying $\lambda$}
 \end{align}
 \includegraphics[width=\textwidth]{../plots.nb/sech_lamb.pdf}
 
-%\begin{itemize}
-%	\item has two asymptotes $\chi \propto \pm \beta$
-%\end{itemize}
 \end{frame}
+
 
 \begin{frame}%
 {Trajectories for quintessence model $\rbr{+,-}$}%
@@ -309,10 +307,6 @@ $p_\beta^2 = \varkappa^2\sqrt{\vbr{V}}$; varying $\lambda$}
 \end{align}
 \includegraphics[width=\textwidth]{../plots.nb/csch_lamb_l.pdf}
 
-% \begin{itemize}
-% 	\item contains two distinct solutions, separated by $\beta = 0$
-% 	\item has three asymptotes $\chi \propto \pm \beta$ and $\beta = 0$
-% \end{itemize}
 \end{frame}
 
 
@@ -328,69 +322,9 @@ $p_\beta^2 = 3\varkappa^2\sqrt{\vbr{V}}$}
 \end{align}
 \includegraphics[width=\textwidth]{../plots.nb/csc_lamb_l.pdf}
 
-%\begin{columns}
-%\begin{column}{.55\textwidth}
-% \begin{itemize}
-% 	\item contains infinite distinct solutions
-% 	\item has infinite parallel asymptotes $\beta \propto \rbr{n+1/2}\pp $
-% \end{itemize}
-%\end{column}
-%\begin{column}{.4\textwidth}
-%\begin{itemize}
-%\item is $\beta$-even for $\beta_0 = 0$
-%\end{itemize}
-%\end{column}
-%\end{columns}
 \end{frame}
 
-
-% \begin{frame}%
-% {Integration and the implicit trajectories}%
-% %{General integral for $p_\beta \neq 0$}
-% \begin{itemize}
-% 
-% 
-% \item For $p_\beta \neq 0$, fixing the \emph{implicit gauge}
-% $\overline{N} = -6\mscrs\sqrt{\varkappa}\dot{\beta}/p_\beta$, the modified
-% first Friedmann equation can be integrated, yielding the \alert{implicit}
-% trajectory
-% \begin{align}
-% \ee^{g\chi} &=
-% \frac{p_\beta^2}{12\varkappa^2\vbr{V}}
-% \rfun{s^2}{ \sqrt{\frac{3}{2\varkappa}}\,g \rbr{\beta-\beta_0}},
-% \end{align}
-% in which $\mscrv \coloneqq \sgn V$, $\rbr{\mathrm{sgn},\mathrm{sgn}}$ means 
-% $\rbr{\mscrl,\mscrs\mscrv}$, and
-% \begin{align}
-% \begin{aligned}
-% \rfun{s_{++}}{\gamma} &\coloneqq \rfun{\sech}{\gamma},
-% &\qquad
-% \rfun{s_{+-}}{\gamma} &\coloneqq \rfun{\csch}{\gamma},\\
-% \rfun{s_{-+}}{\gamma} &\coloneqq \rfun{\sec}{\gamma},
-% &\qquad
-% \rfun{s_{--}}{\gamma} &\coloneqq \rfun{\ii\csc}{\gamma}.\\
-% \end{aligned}
-% \end{align}
-% \begin{itemize}
-% \item The integral for the phantom model with $\rbr{-,+}$ is periodic for
-% $\beta$ with $T_\beta = \sqrt{\frac{2\varkappa}{3}}\frac{2\pp}{g}$.
-% \item The integral for the phantom model with $\rbr{-,-}$ is not real.
-% \item The trajectories can be parametrised by $\beta$, inspiring recognising
-% $\beta$ as a `time variable'.
-% \end{itemize}
-% 
-% \item For $p_\beta = 0$, integrating the modified second Friedmann 
-% equation yields $\beta \equiv \beta_0$ or $\phi-\phi_0 =
-% -\mscrl\lambda\alpha/\varkappa$%
-% \footnote{It only works for $\rbr{+,-}$ or $\rbr{-,+}$ if one checks consistency
-% with the modified first Friedmann equation.}, which is the well-known power-law
-% special solution\footfullcite[For instance,][ch.\ 3]{Liddle2000}.
-% 
-% 
-% \end{itemize}
-% \end{frame}
-
-\section{Dirac quantisation and the self-adjointness of Hamiltonian}
+\section{Dirac quantisation and self-adjointness of the Hamiltonian}
 
 \subsection{Dirac quantisation and the quantum-mechanical analogy}
 
@@ -453,11 +387,14 @@ $\nu = \sqrt{\frac{2\varkappa}{3}} \frac{\vbr{k_\beta}}{g} \ge 0$.
 \begin{itemize}
 \item The Liouville potential $V_{\text{eff}}$ is a special case of the Morse
 potential\footfullcite{Morse1929,Gitman2012}.
+\item The Starobinsky model in the Einstein frame is related to the Morse 
+potential.
 \end{itemize}
 
 \item Let $\ee^{2y} \coloneqq
 8\mitsansM_{\text{P}}\widetilde{V}/\hslash^2\widetilde{g}^2\cdot
-\ee^{\widetilde{g}x}$
+\ee^{\widetilde{g}x}$; there are four cases according to $\rbr{\mscrl, \mscrs 
+\mscrv}$, and the mode functions are
 %\item For the quintessence model $\rbr{+, +}$:
 %$V_{\text{eff}}$ is bounded \textcolor{blue}{below};
 %generalised eigenfunctions are the Besselian
@@ -498,7 +435,7 @@ $\rbr{-,+}$& $\rfun{\BesselJ_{\nu}}{\ee^{y}}$ \\
 
 \end{frame}
 
-\subsection{The self-adjointness of Hamiltonian}
+\subsection{Self-adjointness of the Hamiltonian}
 
 \begin{frame}%
 {Self-adjointness of the Hamiltonian}%
@@ -519,16 +456,16 @@ $\widehat{H}_{\text{eff}}$.
 \textcolor{orange}{a family of self-adjoint extensions}.
 \begin{itemize}
 \item Quintessence $\rbr{+,-}$: ``eigenfunctions'' are
-lin.\ combi.\ of $\BesselF$ and $\BesselG$;
+linear combinations of $\BesselF$ and $\BesselG$;
 \alert{the degeneracy is removed}
-\item Phantom $\rbr{-, +}$: the eigenfunctions are \alert{discretised}
+\item Phantom $\rbr{-, +}$: the spectrum becomes \alert{discrete}
 \begin{align}
 \rfun{\psi_{-+,\nu}}{\ee^y} &\propto
 \rfun{\BesselJ_{\nu}}{\ee^y},\qquad \nu = 2n+a_<,\, \alert{n \in
 \BbbZ_\ge},
 \label{eq:Phi_nu}
 \end{align}
-and the corresponding full wave-functions are Bloch-periodic
+and the corresponding full wave-functions are Bloch-periodic.
 %$\rfun{\Psi_{-+,n}}{\beta,\chi} = \ee^{\ii\pp a_<}
 %\rfun{\Psi_{-+,n}}{\beta + T_\beta,\chi}$.
 Imposing (anti-)periodic boundary condition fixes $a_< = 0$ ($1$).
@@ -592,7 +529,7 @@ recently in \footfullcite{Gryb2018} ($\Lambda$ as a quantum number).
 
 
 
-\section{The semi-classical wave packets}
+\section{The semi-classical wave functions}
 
 \subsection{The Wentzel--Kramers--Brillouin approximation}
 
@@ -644,7 +581,7 @@ $\rfun{\mathrm{J}_{\nu}}{\sigma}$ for $\rbr{-,+}$.
 \end{itemize}
 \end{frame}
 
-\subsection{The inner product and wave packet}
+\subsection{Inner products and wave packets}
 
 \begin{frame}%
 {Inner products for wave functions}%
@@ -894,30 +831,6 @@ $V = +\varkappa^{-2}$ and $\overline{k}_\beta = 8$}
 \end{columns}
 \end{frame}
 
-%\begin{frame}%
-%{Wave packets of Gaussian amplitude for phantom model}%
-%{$\mathrm{J}_{\nu}$, with $\lambda = 2\varkappa^{1/2}$,
-%$V = +\varkappa^{-2}$, $\overline{k}_\beta = 8$ and $\sigma_\beta = 11/2$}
-%\begin{columns}
-%\begin{column}{.49\textwidth}
-%%\begin{block}{Schrödinger}
-%\only<1>{
-%\includegraphics[width=\textwidth]{../plots.paper.nb/naive_cos_gauss_2d.pdf}}
-%\only<2>{
-%\includegraphics[width=\textwidth]{../plots.paper.nb/naive_cos_gauss_3d.pdf}}
-%\end{block}
-%\end{column}
-%\begin{column}{.49\textwidth}
-%\begin{block}{Mostafazadeh}
-%\only<1>{
-%\includegraphics[width=\textwidth]{../plots.paper.nb/mosta_cos_gauss_2d.pdf}}
-%\only<2>{
-%\includegraphics[width=\textwidth]{../plots.paper.nb/mosta_cos_gauss_3d.pdf}}
-%\end{block}
-%\end{column}
-%\end{columns}
-%\end{frame}
-
 \section{Conclusions}
 
 \begin{frame}%
@@ -928,13 +841,13 @@ $V = +\varkappa^{-2}$ and $\overline{k}_\beta = 8$}
 model.
 \begin{itemize}
 \item Implicit trajectories in minisuperspace were obtained explicitly.
-\item The minisuperspace Wheeler--Dewitt equation was integrated exactly.
+\item The minisuperspace Wheeler--DeWitt equation was integrated exactly.
 \end{itemize}
-\item The \alert{self-adjointness} of matter Hamiltonian was found to be 
+\item The \alert{self-adjointness} of the matter Hamiltonian was found to be 
 non-trivial.
 \begin{itemize}
 \item The degeneracy of the quintessence model $\rbr{+,-}$ was removed.
-\item The levels of the phantom model $\rbr{-,+}$ were discretised.
+\item The spectrum of the phantom model $\rbr{-,+}$ became discrete.
 \end{itemize}
 \item The \alert{semi-classical wave functions} were compared with the 
 classical trajectory.
@@ -968,14 +881,17 @@ classical trajectory under the Schrödinger and Mostafazadeh inner product.
 {Outlook}%
 %{233}
 \begin{itemize}
-\item Beyond isotropy: Bianchi models
+\item Beyond isotropy: Bianchi models\footfullcite{Kamenshchik2017}
 
-\item Beyond homogeneity: cosmological perturbations
+\item Beyond homogeneity: cosmological perturbations 
+\footfullcite{Brizuela2016a,Brizuela2016b,Novikov2017,Kamenshchik2018,
+Kiefer2018}
 
-\item Beyond single Liouville field: multiple potentials / multiple fields
+\item Beyond single Liouville field: multiple potentials / multiple 
+fields\footfullcite{Andrianov2015}
 
 \item Beyond classical matter and Schrödinger inner product: $PT$-symmetric 
-field
+field \footfullcite{ANDRIANOV2010,Andrianov2016}
 
 \end{itemize}
 \end{frame}
