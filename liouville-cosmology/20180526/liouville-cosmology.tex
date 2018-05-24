@@ -219,8 +219,8 @@ numerical methods.
 {Decoupling the variables}%
 {Via orthogonal transformation}
 \begin{itemize}
-\item By rescaling $\overline{N} \coloneqq N\ee^{-3\alpha}$ and a
-the orthogonal transformation from $\rbr{\alpha, \phi}$ to $\rbr{\beta, \chi}$,
+\item By rescaling $\overline{N} \coloneqq N\ee^{-3\alpha}$ and an
+orthogonal transformation from $\rbr{\alpha, \phi}$ to $\rbr{\beta, \chi}$,
 % \begin{align}
 % \begin{pmatrix}
 % \rfun{\alpha}{t} \\ \rfun{\phi}{t}
@@ -235,7 +235,7 @@ the orthogonal transformation from $\rbr{\alpha, \phi}$ to $\rbr{\beta, \chi}$,
 % \end{pmatrix},
 % %\qquad\text{where } \mscrs_\beta, \mscrs_\chi = \pm 1,
 % \end{align}
-the system can be decoupled
+the system can be \color{orange}{decoupled}
 % ($\Delta \coloneqq \lambda^2 - 6\mscrl\varkappa$,
 % \textcolor{blue}{$\mscrs \coloneqq \sgn \Delta$} and
 % $g \coloneqq \mscrs \sqrt{\vbr{\Delta}} \equiv \mscrs\sqrt{\mscrs\Delta}$)
@@ -246,9 +246,10 @@ L = \varkappa^{3/2}\overline{N}
 -V\ee^{g \chi}},
 \label{eq:lagrangian-decoupled}
 \end{align}
-where \textcolor{blue}{$\mscrs$ is the sign of $\lambda^2 - 6\mscrl\varkappa$},
-and $g$ (replacing $\lambda$) is $\mscrs\sqrt{\vbr{\lambda^2 -
-6\mscrl\varkappa}}$.
+where \textcolor{blue}{$\mscrs$ is the sign of $\rbr{\lambda^2 -
+6\mscrl\varkappa}$},
+and $g = \mscrs\sqrt{\vbr{\lambda^2 -
+6\mscrl\varkappa}}$ takes the place of $\lambda$.
 
 \item Using the \alert{conservation of $p_\beta$}\footfullcite[The same 
 first integral has been found in][in canonical 
@@ -259,8 +260,8 @@ trajectories}.
 \item $p_\beta \neq 0$: four cases according to $\rbr{\mscrl, \mscrs \mscrv}$,
 \textcolor{blue}{$\mscrv$ is the sign of $V$}; see below.
 \item $p_\beta = 0$: well-known power-law special solution for $\rbr{+,-}$ 
-and $\rbr{-,+}$\footfullcite[For instance,][ch.\ 3]{Liddle2000}; read
-literature.
+and $\rbr{-,+}$; read literature\footfullcite[For
+instance,][ch.\ 3]{Liddle2000}.
 \end{itemize}
 
 \end{itemize}
@@ -358,14 +359,14 @@ gets the minisuperspace Wheeler--DeWitt equation with $\rbr{\beta,\chi}$
 {The quantum-mechanical analogy}
 \begin{itemize}
 \item Fourier transforming $\beta$ to $k_\beta \in \BbbR$ yields the
-time-independent Schr\"odinger equation
+\alert{time-independent Schr\"odinger equation}
 \begin{align}
 E \rfun{\psi}{x} \coloneqq
 \widehat{H}_\text{eff} \psi \coloneqq
 \rbr{-\frac{\hslash^2}{2 \mitsansM_\text{P}} \partial_x^2
 + V_{\text{eff}}} \psi,\quad
 V_{\text{eff}} \coloneqq
-\mscrl \mscrs \mscrv \widetilde{V} \ee^{\widetilde{g} x},
+\textcolor{blue}{\mscrl \mscrs \mscrv} \widetilde{V} \ee^{\widetilde{g} x},
 \end{align}
 in which $E \propto \mscrl \nu^2$,
 $\mitsansM_\text{P} \coloneqq \sqrt{\frac{\hslash}{\varkappa}}$,
@@ -416,7 +417,7 @@ $\rbr{-,+}$& $\rfun{\BesselJ_{\nu}}{\ee^{y}}$ \\
 {Results for the Liouville potential\footfullcite[See 
 also][sec.~8.5]{Gitman2012}}
 \begin{itemize}
-\item $k_\beta$ being real, enforces the reality of $E$ and the
+\item $k_\beta$ being real enforces the reality of $E$ and the
 self-adjointness of $\widehat{H}_{\text{eff}}$.
 
 \item For $V_{\text{eff}} > 0$: $\widehat{H}_\text{eff}$ is
@@ -426,7 +427,7 @@ Nothing special for quintessence $\rbr{+, +}$.
 
 \item For $V_{\text{eff}} < 0$: $\widehat{H}_\text{eff}$ admits
 \textcolor{orange}{a family of self-adjoint extensions}.
-\begin{itemize}
+%\begin{itemize}
 \item Quintessence $\rbr{+,-}$: ``eigenfunctions'' are
 linear combinations of $\BesselF$ and $\BesselG$;
 \alert{the degeneracy is removed}
@@ -441,7 +442,7 @@ and the corresponding full wave-functions are Bloch-periodic.
 %$\rfun{\Psi_{-+,n}}{\beta,\chi} = \ee^{\ii\pp a_<}
 %\rfun{\Psi_{-+,n}}{\beta + T_\beta,\chi}$.
 Imposing (anti-)periodic boundary condition fixes $a_< = 0$ ($1$).
-\end{itemize}
+%\end{itemize}
 
 %\item For $\rbr{+, -}$ and $\rbr{-, +}$:
 %$\widehat{H}_\text{eff}$ is \alert{not self-adjoint} but admits a family of
