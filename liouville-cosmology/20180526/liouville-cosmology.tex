@@ -79,11 +79,14 @@ colorful,    %% Farbige Balken im infolines-Theme
 
 \usepackage{xeCJK}
 
-\title{Integrable Liouville Minisuperspace Model}
+\title{Integrable Liouville Minisuperspace Model \\
+可積的劉維爾小超空間模型}
 \subtitle{Self-adjointness of the Energy Density and
-Semi-classical Wave Functions}
+Semi-classical Wave Functions\\
+能量密度的自伴性與準經典波函數}
 
-\date{May 26, 2018}
+\date{中國物理學會引力與相對論天體物理分會 2018 年年會 \\
+May 26, 2018}
 
 \author[Andrianov \and Lan \and Novikov \and \underline{Wang}]{
 	Alexander A.\ Andrianov\inst{1,4} %\thanks{a.andrianov@spbu.ru}
@@ -235,7 +238,7 @@ orthogonal transformation from $\rbr{\alpha, \phi}$ to $\rbr{\beta, \chi}$,
 % \end{pmatrix},
 % %\qquad\text{where } \mscrs_\beta, \mscrs_\chi = \pm 1,
 % \end{align}
-the system can be \color{orange}{decoupled}
+the system can be \textcolor{orange}{decoupled}
 % ($\Delta \coloneqq \lambda^2 - 6\mscrl\varkappa$,
 % \textcolor{blue}{$\mscrs \coloneqq \sgn \Delta$} and
 % $g \coloneqq \mscrs \sqrt{\vbr{\Delta}} \equiv \mscrs\sqrt{\mscrs\Delta}$)
@@ -255,7 +258,7 @@ and $g = \mscrs\sqrt{\vbr{\lambda^2 -
 first integral has been found in][in canonical 
 formalism]{Lan2016,Andrianov2015}, $\rfun{\overline{N}}{t}$ can be eliminated, 
 leading to the exact integrations of the equations of motion as \alert{implicit 
-trajectories}.
+trajectories} (without $t$).
 \begin{itemize}
 \item $p_\beta \neq 0$: four cases according to $\rbr{\mscrl, \mscrs \mscrv}$,
 \textcolor{blue}{$\mscrv$ is the sign of $V$}; see below.
@@ -351,6 +354,11 @@ gets the minisuperspace Wheeler--DeWitt equation with $\rbr{\beta,\chi}$
 \item
 \Cref{eq:WDW-10} is Klein--Gordon-like, hyperbolic for $\mscrl = +1$ and 
 \alert{elliptic} for $\mscrl = -1$.
+\begin{itemize}
+\item The Klein--Gordon nature of the Wheeler--DeWitt equation
+often results in the non-existence of a probability interpretation. But see
+below!
+\end{itemize}
 \end{itemize}
 \end{frame}
 
@@ -361,7 +369,7 @@ gets the minisuperspace Wheeler--DeWitt equation with $\rbr{\beta,\chi}$
 \item Fourier transforming $\beta$ to $k_\beta \in \BbbR$ yields the
 \alert{time-independent Schr\"odinger equation}
 \begin{align}
-E \rfun{\psi}{x} \coloneqq
+E \rfun{\psi}{x} =
 \widehat{H}_\text{eff} \psi \coloneqq
 \rbr{-\frac{\hslash^2}{2 \mitsansM_\text{P}} \partial_x^2
 + V_{\text{eff}}} \psi,\quad
@@ -515,7 +523,8 @@ example}
 \item Write the mode function in the Wentzel--Kramers--Brillouin form
 $\rfun{\Psi_{\nu}}{\beta,\chi} \sim \sqrt{\rfun{\rho}{\beta,\chi}}\,
 \cfun{\exp}{\frac{\ii}{\hslash}\rfun{S}{\beta,\chi}}$.
-For $S/\hslash \gg 1$ and $\nu \gg 1$, $\rfun{S}{\beta,\chi}$ becomes
+For $S/\hslash \gg 1$ and $\nu \gg 1$, the \alert{phase}
+$\rfun{S}{\beta,\chi}$ becomes
 the Hamilton principal function in the leading-order approximation, which is
 \alert{stationary} with respect to the variation of integral constants
 $\partial S/\partial \nu = 0$.
@@ -525,7 +534,8 @@ $\partial S/\partial \nu = 0$.
 %trajectory, $k_\beta$ can be related to $p_\beta$.
 
 \begin{itemize}
-\item Fixing $\nu/\sigma>1$,
+\item Fixing $\nu/\sigma>1$, where $\sigma^2 \propto \ee^{g\chi}$,
+$\nu \propto k_\beta$, $\gamma \propto \beta$,
 \begin{align}
 \rfun{\mathrm{K}_{\ii \nu}}{\sigma} \sim
 \frac{\sqrt{2\pp}\,
@@ -535,11 +545,13 @@ $\partial S/\partial \nu = 0$.
 +\rfun{\Omicron}{\frac{1}{\sigma}}.
 \end{align}
 
-\item Applying \emph{the principle} to the phase of $\rfun{\Psi_\nu}{\sigma}$, 
+\item Applying \emph{the principle},
+%to the phase of $\rfun{\Psi_\nu}{\sigma}$, 
 one has
 $\sigma/\nu = \rfun{\sech}{\mscrs_\beta\gamma}$, which matches the trajectory
 if $\hslash k_\beta \equiv \hslash \sqrt{\frac{3}{2\varkappa}}g\nu
-= p_\beta$.
+= p_\beta$, so that the \alert{quantum} $k_\beta$ is matched to the
+\alert{classical} $p_\beta$.
 
 %\item Non-vanishing $C$ can be compensated by the phase of $c_i$ and $a_j$'s.
 %\end{itemize}
@@ -559,7 +571,7 @@ $\rfun{\mathrm{J}_{\nu}}{\sigma}$ for $\rbr{-,+}$.
 
 \begin{frame}%
 {Inner products for wave functions}%
-{Schrödinger and Mostafazadeh inner product}
+{Schrödinger and Mostafazadeh inner products}
 
 \begin{itemize}
 %\item To make sense of amplitude and wave packet, an inner product is necessary
@@ -567,7 +579,8 @@ $\rfun{\mathrm{J}_{\nu}}{\sigma}$ for $\rbr{-,+}$.
 %\item In terms of the Wheeler--DeWitt equation of Klein--Gordon type,
 %call $\beta$ the ``temporal'' variable, and $\chi$ the ``spacial'' variable.
 
-\item A common starting point is the
+\item Take $\rbr{\beta, \chi}$ as `temporal' and `spatial'.
+Begin with the
 \emph{Schrödinger product}\footfullcite[ch.\ 5]{Kiefer2012}
 \begin{align}
 \rbr{\Psi_1,\Psi_2}_\text{S} \coloneqq
@@ -575,102 +588,66 @@ $\rfun{\mathrm{J}_{\nu}}{\sigma}$ for $\rbr{-,+}$.
 \end{align}
 
 \begin{itemize}
-\item $\rbr{\Psi, \Psi}_\text{S}$ is \textcolor{blue}{positive-definite},
-and the integrand $\rfun{\rho_\text{S}}{\beta,\chi}$ is
+\item $\rbr{\Psi, \Psi}_\text{S}$ \textcolor{blue}{positive-definite};
+the integrand $\rfun{\rho_\text{S}}{\beta,\chi}$ 
 \textcolor{blue}{non-negative}
 
-\item The corresponding Schrödinger current is \textcolor{blue}{real} but
-\textcolor{orange}{does not satisfy continuity equation}
+\item The Schrödinger current \textcolor{blue}{real} but
+\textcolor{orange}{no continuity} since the WdW eq.\ is Klein--Gordon-like
 %$\dot{\rho}_\text{S} + \nabla\cdot \vec{j}_\text{S} = 0$, because 
 %\cref{eq:WDW-10} is Klein--Gordon-like.
 \end{itemize}
 
-\item Mostafazadeh\footfullcite{Mostafazadeh2002}: \emph{for self-adjoint $\BbbD$ with positive spectrum} in $\rbr{-\partial_t^2+\BbbD}\Psi = 0$:
+\item Mostafazadeh\footfullcite{Mostafazadeh2002}: for self-adjoint
+$\widehat{H}_\text{eff}$
+%$\BbbD$
+with positive spectrum,
+% in $\rbr{-\partial_t^2+\BbbD}\Psi = 0$:
 \begin{align}
-% \rbr{\Psi_1,\Psi_2}_\text{M}^{\kappa,a} &\coloneqq
-% \rbr{\Psi_1,\Psi_2}_\text{M}^{\kappa} +
-% \kappa \rbr{\Psi_1,\Psi_2}_\text{KG}^a,\\
-\rbr{\Psi_1,\Psi_2}_\text{M}^{\kappa} &\coloneqq\kappa\cbr{
-\rbr{\Psi_1,\BbbD^{+1/2}\Psi_2}_\text{S}
-+\rbr{\partial_\beta\Psi_1,
-\BbbD^{-1/2}\partial_\beta\Psi_2}_\text{S}}, \qquad \kappa > 0.
+\rbr{\Psi_1, \Psi_2}_\text{M} \propto
+\rbr{\Psi_1, \widehat{H}_\text{eff}^{+1/2}\Psi_2}_\text{S}
++\rbr{\dot{\Psi}_1,
+\widehat{H}_\text{eff}^{-1/2}\dot{\Psi}_2}_\text{S}
+% &\coloneqq\kappa\cbr{
+% \rbr{\Psi_1,\BbbD^{+1/2}\Psi_2}_\text{S}
+% +\rbr{\partial_\beta\Psi_1,
+% \BbbD^{-1/2}\partial_\beta\Psi_2}_\text{S}}, \qquad \kappa > 0.
 \end{align}
 
 \begin{itemize}
 
-\item Real power of $\BbbD$ is defined by spectral decomposition
+\item Real power of $\widehat{H}_\text{eff}$ is defined by spectral decomposition
 %$\BbbD^{\gamma} \coloneqq \sum_\nu \nu^{2\gamma}\mbfP_\nu$,
 %$\mbfP_\nu\Psi \coloneqq \Psi_\nu\rbr{\Psi_\nu,\Psi}_\text{S}$.
 
-\item It can be shown\footfullcite{Mostafazadeh2006} that \emph{the density}
+\item For the density\footfullcite{Mostafazadeh2006}
 \begin{align}
-\varrho_\text{M}^\kappa \coloneqq\kappa\cbr{
-\vbr{\BbbD^{+1/4}\Psi}^2+\vbr{\BbbD^{-1/4}\partial_\beta{\Psi}}^2}
+\varrho_\text{M} \propto
+\vbr{\widehat{H}_\text{eff}^{+1/4}\Psi}^2+
+\vbr{\widehat{H}_\text{eff}^{-1/4}\dot{\Psi}}^2,
+% \coloneqq\kappa\cbr{
+% \vbr{\BbbD^{+1/4}\Psi}^2+\vbr{\BbbD^{-1/4}\partial_\beta{\Psi}}^2},
 \end{align}
+continuity can be partially recovered. A candidate for
+\alert{probability density}.
 
-\begin{itemize}
-\item is \textcolor{blue}{equivalent to the integrand} $\rho_\text{M}^\kappa$ 
-up to a boundary term
-$\int\dd\chi\,\varrho_\text{M}^\kappa = 
-\int\dd\chi\,\rho_\text{M}^\kappa \equiv
-\rbr{\Psi_1,\Psi_2}_\text{M}^{\kappa}$
-\item is \textcolor{blue}{non-negative}
-%\item may be understood as a probability density;
-\item The corresponding current $\vec{\mscrJ}_\text{M}^\kappa$
-is \textcolor{blue}{real} but
-\textcolor{orange}{not conserved}\footfullcite{Rosenstein1985}.
-\end{itemize}
+%\begin{itemize}
+%\item is \textcolor{blue}{equivalent to the integrand} $\rho_\text{M}^\kappa$ 
+%up to a boundary term
+%$\int\dd\chi\,\varrho_\text{M}^\kappa = 
+%\int\dd\chi\,\rho_\text{M}^\kappa \equiv
+%\rbr{\Psi_1,\Psi_2}_\text{M}^{\kappa}$
+%\item is \textcolor{blue}{non-negative}
+%\item The corresponding current $\vec{\mscrJ}_\text{M}^\kappa$
+%is \textcolor{blue}{real} but
+%\textcolor{orange}{not conserved}\footfullcite{Rosenstein1985}.
+%\end{itemize}
 
 \end{itemize}
 
 \end{itemize}
 \end{frame}
 
-%\begin{frame}%
-%{Further inner products for wave functions}%
-%{Klein--Gordon and Mostafazadeh product}
-%\begin{itemize}
-%\item Since \cref{eq:WDW-10} is KG-like, another popular choice is the KG 
-%product
-%\begin{align}
-%\rbr{\Psi_1,\Psi_2}_\text{KG}^g \coloneqq \ii g \cbr{
-%\rbr{\Psi_1,\partial_\beta\Psi_2}_\text{S} -
-%\rbr{\partial_\beta\Psi_1,\Psi_2}_\text{S}},\qquad g > 0.
-%\end{align}
-%\begin{itemize}
-%\item $\rbr{\Psi,\Psi}_\text{KG}^g$ is \textcolor{blue}{real} but
-%\textcolor{orange}{not positive-definite}, so does the integrand
-%$\rho_\text{KG}$;
-%%is \textcolor{blue}{real} but may go \textcolor{orange}{negative},
-%\item The corresponding $\vec{J}_\text{KG}$ is
-%\textcolor{blue}{conserved} $\dot{\rho}_\text{KG} +
-%\nabla\cdot \vec{J}_\text{KG} = 0$ and \textcolor{blue}{real}.
-%\end{itemize}
-
-%\item Mostafazadeh\footfullcite{Mostafazadeh2002} found
-%an inner product \emph{for Hermitian $\BbbD$ with positive spectrum}:
-%\begin{align}
-%% \rbr{\Psi_1,\Psi_2}_\text{M}^{\kappa,a} &\coloneqq
-%% \rbr{\Psi_1,\Psi_2}_\text{M}^{\kappa} +
-%% \kappa \rbr{\Psi_1,\Psi_2}_\text{KG}^a,\\
-%\rbr{\Psi_1,\Psi_2}_\text{M}^{\kappa} &\coloneqq\kappa\cbr{
-%\rbr{\Psi_1,\BbbD^{+1/2}\Psi_2}_\text{S}
-%+\rbr{\partial_\beta\Psi_1,
-%\BbbD^{-1/2}\partial_\beta\Psi_2}_\text{S}}, \qquad \kappa > 0.
-%\end{align}
-%% and $-1 < a < 1$.
-%\begin{itemize}
-%%\item Varying $a$ leads to unitarily equivalent 
-%%products\footfullcite{Mostafazadeh2004}; restrict to $a=0$
-%\item $\rbr{\Psi,\Psi}_\text{M}^{\kappa}$ is
-%\textcolor{blue}{positive-definite}, but the integrand $\rho_\text{M}^\kappa$
-%is \textcolor{orange}{complex}
-%\item The corresponding $\vec{J}_\text{M}^\kappa$ is
-%\textcolor{blue}{conserved} $\dot{\rho}_\text{M}^\kappa + 
-%\nabla\cdot \vec{J}_\text{M}^\kappa = 0$ but also \textcolor{orange}{complex}.
-%\end{itemize}
-%\end{itemize}
-%\end{frame}
 
 \begin{frame}%
 {Wave packets of Gaussian amplitude for continuous spectrum}%
@@ -858,7 +835,7 @@ classical trajectory under the Schrödinger and Mostafazadeh inner product.
 
 \item Beyond homogeneity: cosmological perturbations 
 \footfullcite{Brizuela2016a,Brizuela2016b,Novikov2017,Kamenshchik2018,
-Kiefer2018} (working)
+Kiefer2018} (current work)
 
 \item Beyond single Liouville field: multiple potentials / multiple 
 fields\footfullcite{Andrianov2015}
